@@ -1,0 +1,195 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* base styles */
+}
+
+* li {
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+}
+
+* body {
+  color: #212121;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#frontpage {
+  width: 100vw;
+  height: 100vh;
+  /* padding: 20px; */
+  /* background-color: #fffcd5; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+#frontpage .frontpage-inner {
+  /* background-color: #ffeded; */
+  background-color: #f3f7fc;
+  /* height: 100vh; */
+  padding: 40px;
+  /* margin: 20px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#frontpage .frontpage-inner .fp-inner-headline {
+  color: #212121;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+#frontpage .frontpage-inner .fp-inner-headline h1 {
+  font-family: 'Londrina Solid', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+#frontpage .frontpage-inner .fp-inner-headline p {
+  font-size: 18px;
+  color: #686868;
+}
+
+#frontpage .frontpage-inner .fp-inner-main {
+  background-color: #fff;
+  border: 3px solid #fcd06a;
+  border-radius: 30px;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .dot-left {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fcd06a;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .dot-right {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fcd06a;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-img {
+  height: 180px;
+  width: 180px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background-image: url("/images/frontpage/meal.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -80px;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-ul {
+  font-size: 18px;
+  padding: 0 15px;
+  margin-top: -60px;
+  margin-bottom: 10px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li {
+  margin-bottom: 15px;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li span {
+  color: white;
+  text-align: center;
+  margin-right: 5px;
+  padding: 6px 11px;
+  border-radius: 50%;
+  background-color: #d34338;
+  font-weight: 500;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li:last-child {
+  margin-bottom: 5px;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-btn {
+  font-size: 20px;
+  padding: 20px 30px;
+  color: white;
+  /* background-color: #fd3232; */
+  background-color: #d34338;
+  font-weight: 400;
+  border: 2px solid #d34338;
+  border-radius: 15px;
+  text-transform: uppercase;
+  position: relative;
+  bottom: -20px;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+#frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:hover, #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:active {
+  cursor: pointer;
+  /* color: #d34338; */
+  background-color: #d34338;
+  /* color: #fd3232;
+                        background-color: #fff; */
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+// variables
+$colorPrimary: #fcd06a;
+$colorSecondary: #212121;
+$colorButton: #d34338;
+$colorBg: #f3f7fc;
+$gray: #686868;
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    /* base styles */
+    body {
+        color: $colorSecondary;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .5px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+// imports
+@import "./_frontpage";
+@import "./_homepage";
