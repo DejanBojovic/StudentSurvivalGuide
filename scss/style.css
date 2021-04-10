@@ -192,4 +192,197 @@
   /* color: #fd3232;
                         background-color: #fff; */
 }
+
+#homepage {
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  background-color: #f3f7fc;
+}
+
+#homepage .header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0 40px 0;
+}
+
+#homepage .header h1 {
+  color: #212121;
+}
+
+#homepage .header h1 span {
+  color: #686868;
+}
+
+#homepage .header .header-img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-image: url("/images/frontpage/meal.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#homepage .searchbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+#homepage .searchbar .searchbar-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#homepage .searchbar .searchbar-main i {
+  font-size: 14px;
+  padding: 12px;
+  height: 40px;
+  color: #686868;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #fcd06a;
+}
+
+#homepage .searchbar .searchbar-main i:hover, #homepage .searchbar .searchbar-main i:active {
+  cursor: pointer;
+}
+
+#homepage .searchbar .searchbar-main input {
+  width: 80%;
+  font-size: 18px;
+  background-color: #fcd06a;
+  color: #212121;
+  border: none;
+  outline: none;
+  padding: 10px;
+  height: 40px;
+  border-radius: 0 10px 10px 0;
+}
+
+#homepage .searchbar .searchbar-main input ::-webkit-input-placeholder {
+  color: #686868;
+}
+
+#homepage .searchbar .searchbar-main input :-ms-input-placeholder {
+  color: #686868;
+}
+
+#homepage .searchbar .searchbar-main input ::-ms-input-placeholder {
+  color: #686868;
+}
+
+#homepage .searchbar .searchbar-main input ::placeholder {
+  color: #686868;
+}
+
+#homepage .searchbar .search-toggle {
+  width: 40px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 20px;
+  background-color: #d34338;
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#homepage .searchbar .search-toggle:hover, #homepage .searchbar .search-toggle:active {
+  cursor: pointer;
+}
+
+#homepage .searchbar .search-toggle .toggle-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  left: 1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#homepage .results {
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 300px;
+  background-color: red;
+}
+
+#homepage .results div {
+  display: inline-block;
+  margin: 10px;
+  width: 200px;
+  height: 80%;
+  background-color: GREEN;
+}
+
+#homepage .menu {
+  margin: 10px auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d34338;
+  padding: 15px;
+  border-radius: 20px;
+  width: 150px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#homepage .menu .home {
+  padding: 5px;
+  font-size: 25px;
+  color: #212121;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#homepage .menu .home:hover, #homepage .menu .home:active {
+  cursor: pointer;
+}
+
+#homepage .menu .favorites {
+  padding: 5px;
+  font-size: 25px;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#homepage .menu .favorites:hover, #homepage .menu .favorites:active {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */

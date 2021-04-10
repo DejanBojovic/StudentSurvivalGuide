@@ -4,6 +4,7 @@ $colorSecondary: #212121;
 $colorButton: #d34338;
 $colorBg: #f3f7fc;
 $gray: #686868;
+$time: .2s;
 
 /* reset */
 * {
@@ -36,3 +37,5 @@ $gray: #686868;
 // imports
 @import "./_frontpage";
 @import "./_homepage";
+@import "./mealpage";
+@import "./userpage";

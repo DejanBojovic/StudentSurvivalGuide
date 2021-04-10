@@ -1,0 +1,176 @@
+#homepage {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    background-color: $colorBg;
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 40px 0;
+
+        h1 {
+            color: $colorSecondary;
+
+            span {
+                color: $gray;
+            }
+        }
+
+        .header-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-image: url("/images/frontpage/meal.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .searchbar {
+        // padding: 10px;
+        // border: 1px solid $colorSecondary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .searchbar-main {
+            // background-color: $colorPrimary;
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 14px;
+                padding: 12px;
+                height: 40px;
+                color: $gray;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $colorPrimary;
+
+                &:hover,
+                &:active {
+                    cursor: pointer;
+                }
+            }
+        
+            input {
+                width: 80%;
+                font-size: 18px;
+                background-color: $colorPrimary;
+                color: $colorSecondary;
+                border: none;
+                outline: none;
+                padding: 10px;
+                height: 40px;
+
+                // ne radi
+                border-radius: 0 10px 10px 0;
+
+
+                ::placeholder {
+                    color: $gray;
+                }
+            }
+        }
+
+        .search-toggle {
+            width: 40px;
+            height: 30px;
+            padding: 2px;
+            border-radius: 20px;
+            background-color: $colorButton;
+            transition: .3s;
+
+            display: flex;
+            align-items: center;
+
+            -webkit-tap-highlight-color: transparent;
+
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+
+            .toggle-thumb {
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: #fff;
+                position: relative;
+                left: 1px;
+                transition: $time;
+
+            }
+
+        }
+
+
+    }
+
+    .results {
+        overflow: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        height: 300px;
+        background-color: red;
+        // display: flex;
+        
+
+        div {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+            height: 80%;
+            background-color: GREEN;
+        }
+    }
+
+    .menu {
+        margin: 10px auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: $colorButton;
+        padding: 15px;
+        border-radius: 20px;
+        width: 150px;
+        height: 60px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .home {
+            padding: 5px;
+            font-size: 25px;
+            color: $colorSecondary;
+
+            transition: $time;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+        }
+
+        .favorites {
+            padding: 5px;
+            font-size: 25px;
+            color: #fff;
+
+            transition: $time;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+        }
+    }
+}

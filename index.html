@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon/favicon-meal.png" type="image/x-icon">  
+
     <title>Student Survival Guide</title>
 
     <link rel="stylesheet" href="/scss/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
     <section id="frontpage">
@@ -20,7 +24,6 @@
             </div>
     
             <div class="fp-inner-main">
-
                 <div class="dot-left"></div>
                 <div class="dot-right"></div>
                 
@@ -33,19 +36,52 @@
                 </ul>
 
                 <div class="fpi-main-btn">Get Started</div>
-
-
             </div>
-
         </div>
-
     </section>
 
     <section id="homepage">
-        <h1>muda</h1>
+        <div class="header">
+            <h1>Welcome Back,<br> <span>Chef</span></h1>
+            <div class="header-img"></div>
+        </div>
+        <div class="search">
+            <div class="searchbar">
+                <div class="searchbar-main">
+                    <i class="search-btn fas fa-search"></i>
+
+                    <input type="search" placeholder="Dish name">
+                </div>
+
+                <!-- TODO - range button somehow not working in firefox -->
+                <!-- <input class="search-toggle" type="range" min="0" max="1" value="0"> -->
+
+                <div class="search-toggle">
+                    <div class="toggle-thumb"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="menu">
+            <div class="home">
+                <i class="fas fa-home"></i>
+            </div>
+
+            <div class="favorites">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
     </section>
 
     <script src="js/script.js"></script>
-
 </body>
 </html>
