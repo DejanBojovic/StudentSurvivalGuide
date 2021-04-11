@@ -6,11 +6,17 @@ $colorBg: #f3f7fc;
 $gray: #686868;
 $time: .2s;
 
+html {
+
+    width: 100vw !important;
+}
 /* reset */
 * {
+
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    // border: 1px solid #f00 !important;
 
     li {
         list-style: none;
@@ -19,17 +25,31 @@ $time: .2s;
     a {
         text-decoration: none;
     }
+
+    html {
+        width: 360px !important;
+        overflow:auto; 
+    }
     
     /* base styles */
     body {
         color: $colorSecondary;
         font-family: 'Roboto', sans-serif;
         letter-spacing: .5px;
-        height: 100vh;
+        // width: 100vw !important;
+        width: 360px !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        overflow: hidden !important;
+
+        border: 1px solid #f00 !important;
+
+
+        // border: 1px solid purple !important;
+
     }
 
 }
