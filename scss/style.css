@@ -1,13 +1,9 @@
-html {
-  width: 100vw !important;
-}
-
 /* reset */
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
   /* base styles */
 }
 
@@ -20,15 +16,13 @@ html {
 }
 
 * html {
-  width: 360px !important;
-  overflow: auto;
+  max-width: 260px;
 }
 
 * body {
   color: #212121;
   font-family: 'Roboto', sans-serif;
   letter-spacing: .5px;
-  width: 360px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,14 +30,16 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden !important;
-  border: 1px solid #f00 !important;
+  max-width: 260px;
+  margin: 0;
+}
+
+* html, * body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 #frontpage {
@@ -61,6 +57,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  overflow-x: hidden !important;
 }
 
 #frontpage .frontpage-inner {
@@ -205,7 +202,7 @@ html {
 }
 
 #homepage {
-  width: 100vw !important;
+  width: 100vw;
   padding: 20px;
   background-color: #f3f7fc;
   display: -webkit-box;
@@ -218,12 +215,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #f00 !important;
-  overflow: hidden;
 }
 
 #homepage .header {
-  width: 100%;
+  width: 100vw;
+  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,7 +341,7 @@ html {
 }
 
 #homepage .results {
-  width: 100% !important;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,8 +365,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 20px;
   margin: 20px 0px;
-  width: 100%;
+  width: 90%;
   color: #000;
   border: 1px solid #fcd06a;
   border-radius: 20px;

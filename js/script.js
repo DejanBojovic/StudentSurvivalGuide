@@ -5,7 +5,7 @@ const homepage = document.querySelector('#homepage')
 // homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
-sessionStorage.setItem('frontpage', 'false')
+// sessionStorage.setItem('frontpage', 'false')
 
 // btn.addEventListener('click', () => {
 

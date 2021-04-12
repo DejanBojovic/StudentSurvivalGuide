@@ -1,6 +1,6 @@
 #homepage {
     // height: 100vh;
-    width: 100vw !important;
+    width: 100vw;
     padding: 20px;
     background-color: $colorBg;
 
@@ -8,15 +8,18 @@
     flex-direction: column;
     align-items: center;
 
-    border: 1px solid #f00 !important;
+    // border: 1px solid #f00 !important;
 
-    overflow: hidden;
+    // overflow-x: hidden !important;
+
 
     .header {
-        width: 100%;
+        width: 100vw;
+        padding: 0 20px;
         display: flex;
         justify-content: space-between;
         margin: 20px 0 40px 0;
+        // overflow-x: hidden !important;
 
         h1 {
             color: $colorSecondary;
@@ -124,13 +127,17 @@
         // white-space: nowrap;
         // ovo je skrolovanje za mobilne - sredi to posle
         // -webkit-overflow-scrolling: touch;
-        width: 100% !important;
+        width: 100vw;
         // height: 300px;
         // background-color: red;
         // display: flex;
+
+        // overflow-x: auto;
+        // overflow-y: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
+
 
 
         
@@ -139,9 +146,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            // padding: 20px;
+            padding: 20px;
+            // display: inline-block;
+            // margin-right: 20px;
+
             margin: 20px 0px;
-            width: 100%;
+            width: 90%;
             color: #000;
             border: 1px solid $colorPrimary;
             border-radius: 20px;
