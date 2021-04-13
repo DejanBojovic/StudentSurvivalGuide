@@ -43,86 +43,90 @@
         // }
     }
 
-    .searchbar {
-        // padding: 10px;
-        // border: 1px solid $colorSecondary;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
+    .search {
+        width: 100%;
 
-        .searchbar-main {
-            // background-color: $colorPrimary;
+        .searchbar {
+            // padding: 10px;
+            // border: 1px solid $colorSecondary;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-
-            i {
-                font-size: 14px;
-                padding: 12px;
-                height: 40px;
-                color: $gray;
-                border-radius: 10px 0px 0px 10px;
-                background-color: $colorPrimary;
-
+            margin-bottom: 30px;
+    
+            .searchbar-main {
+                // background-color: $colorPrimary;
+                display: flex;
+                align-items: center;
+    
+                i {
+                    font-size: 14px;
+                    padding: 12px;
+                    height: 40px;
+                    color: $gray;
+                    border-radius: 10px 0px 0px 10px;
+                    background-color: $colorPrimary;
+    
+                    &:hover,
+                    &:active {
+                        cursor: pointer;
+                    }
+                }
+            
+                input {
+                    width: 80%;
+                    font-size: 18px;
+                    background-color: $colorPrimary;
+                    color: $colorSecondary;
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    height: 40px;
+    
+                    // ne radi
+                    border-radius: 0 10px 10px 0;
+    
+    
+                    ::placeholder {
+                        color: $gray;
+                    }
+                }
+            }
+    
+            .search-toggle {
+                width: 40px;
+                height: 30px;
+                padding: 2px;
+                border-radius: 20px;
+                background-color: $colorButton;
+                // transition: .3s;
+    
+                display: flex;
+                align-items: center;
+    
+                -webkit-tap-highlight-color: transparent;
+    
+    
                 &:hover,
                 &:active {
                     cursor: pointer;
                 }
-            }
-        
-            input {
-                width: 80%;
-                font-size: 18px;
-                background-color: $colorPrimary;
-                color: $colorSecondary;
-                border: none;
-                outline: none;
-                padding: 10px;
-                height: 40px;
-
-                // ne radi
-                border-radius: 0 10px 10px 0;
-
-
-                ::placeholder {
-                    color: $gray;
+    
+                .toggle-thumb {
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    position: relative;
+                    left: 1px;
+                    transition: $time;
+    
                 }
+    
             }
+    
+    
         }
-
-        .search-toggle {
-            width: 40px;
-            height: 30px;
-            padding: 2px;
-            border-radius: 20px;
-            background-color: $colorButton;
-            // transition: .3s;
-
-            display: flex;
-            align-items: center;
-
-            -webkit-tap-highlight-color: transparent;
-
-
-            &:hover,
-            &:active {
-                cursor: pointer;
-            }
-
-            .toggle-thumb {
-                height: 20px;
-                width: 20px;
-                border-radius: 50%;
-                background-color: #fff;
-                position: relative;
-                left: 1px;
-                transition: $time;
-
-            }
-
-        }
-
-
     }
 
     .meal-sections {

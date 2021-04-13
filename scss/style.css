@@ -240,7 +240,11 @@
   color: #686868;
 }
 
-#homepage .searchbar {
+#homepage .search {
+  width: 100%;
+}
+
+#homepage .search .searchbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -253,7 +257,7 @@
   margin-bottom: 30px;
 }
 
-#homepage .searchbar .searchbar-main {
+#homepage .search .searchbar .searchbar-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,7 +266,7 @@
           align-items: center;
 }
 
-#homepage .searchbar .searchbar-main i {
+#homepage .search .searchbar .searchbar-main i {
   font-size: 14px;
   padding: 12px;
   height: 40px;
@@ -271,11 +275,11 @@
   background-color: #fcd06a;
 }
 
-#homepage .searchbar .searchbar-main i:hover, #homepage .searchbar .searchbar-main i:active {
+#homepage .search .searchbar .searchbar-main i:hover, #homepage .search .searchbar .searchbar-main i:active {
   cursor: pointer;
 }
 
-#homepage .searchbar .searchbar-main input {
+#homepage .search .searchbar .searchbar-main input {
   width: 80%;
   font-size: 18px;
   background-color: #fcd06a;
@@ -287,23 +291,23 @@
   border-radius: 0 10px 10px 0;
 }
 
-#homepage .searchbar .searchbar-main input ::-webkit-input-placeholder {
+#homepage .search .searchbar .searchbar-main input ::-webkit-input-placeholder {
   color: #686868;
 }
 
-#homepage .searchbar .searchbar-main input :-ms-input-placeholder {
+#homepage .search .searchbar .searchbar-main input :-ms-input-placeholder {
   color: #686868;
 }
 
-#homepage .searchbar .searchbar-main input ::-ms-input-placeholder {
+#homepage .search .searchbar .searchbar-main input ::-ms-input-placeholder {
   color: #686868;
 }
 
-#homepage .searchbar .searchbar-main input ::placeholder {
+#homepage .search .searchbar .searchbar-main input ::placeholder {
   color: #686868;
 }
 
-#homepage .searchbar .search-toggle {
+#homepage .search .searchbar .search-toggle {
   width: 40px;
   height: 30px;
   padding: 2px;
@@ -318,11 +322,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-#homepage .searchbar .search-toggle:hover, #homepage .searchbar .search-toggle:active {
+#homepage .search .searchbar .search-toggle:hover, #homepage .search .searchbar .search-toggle:active {
   cursor: pointer;
 }
 
-#homepage .searchbar .search-toggle .toggle-thumb {
+#homepage .search .searchbar .search-toggle .toggle-thumb {
   height: 20px;
   width: 20px;
   border-radius: 50%;
