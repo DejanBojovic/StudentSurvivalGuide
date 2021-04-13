@@ -1,7 +1,6 @@
 #homepage {
-    // height: 100vh;
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     padding: 20px;
     background-color: $colorBg;
 
@@ -11,14 +10,14 @@
 
     // border: 1px solid #f00 !important;
 
-    // overflow-x: hidden !important;
+    overflow-x: hidden !important;
 
 
     .header {
-        width: 100vw;
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
+        // width: 100vw;
+        // padding: 0 20px;
+        // display: flex;
+        // justify-content: center;
         margin: 0 0 30px 0;
         // overflow-x: hidden !important;
 
@@ -43,91 +42,90 @@
         // }
     }
 
-    .search {
-        width: 100%;
 
-        .searchbar {
-            // padding: 10px;
-            // border: 1px solid $colorSecondary;
+
+    .searchbar {
+        // padding: 10px;
+        // border: 1px solid $colorSecondary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .searchbar-main {
+            // background-color: $colorPrimary;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-    
-            .searchbar-main {
-                // background-color: $colorPrimary;
-                display: flex;
-                align-items: center;
-    
-                i {
-                    font-size: 14px;
-                    padding: 12px;
-                    height: 40px;
-                    color: $gray;
-                    border-radius: 10px 0px 0px 10px;
-                    background-color: $colorPrimary;
-    
-                    &:hover,
-                    &:active {
-                        cursor: pointer;
-                    }
-                }
-            
-                input {
-                    width: 80%;
-                    font-size: 18px;
-                    background-color: $colorPrimary;
-                    color: $colorSecondary;
-                    border: none;
-                    outline: none;
-                    padding: 10px;
-                    height: 40px;
-    
-                    // ne radi
-                    border-radius: 0 10px 10px 0;
-    
-    
-                    ::placeholder {
-                        color: $gray;
-                    }
-                }
-            }
-    
-            .search-toggle {
-                width: 40px;
-                height: 30px;
-                padding: 2px;
-                border-radius: 20px;
-                background-color: $colorButton;
-                // transition: .3s;
-    
-                display: flex;
-                align-items: center;
-    
-                -webkit-tap-highlight-color: transparent;
-    
-    
+
+            i {
+                font-size: 14px;
+                padding: 12px;
+                height: 40px;
+                color: $gray;
+                border-radius: 10px 0px 0px 10px;
+                background-color: $colorPrimary;
+
                 &:hover,
                 &:active {
                     cursor: pointer;
                 }
-    
-                .toggle-thumb {
-                    height: 20px;
-                    width: 20px;
-                    border-radius: 50%;
-                    background-color: #fff;
-                    position: relative;
-                    left: 1px;
-                    transition: $time;
-    
-                }
-    
             }
-    
-    
+        
+            input {
+                width: 80%;
+                font-size: 18px;
+                background-color: $colorPrimary;
+                color: $colorSecondary;
+                border: none;
+                outline: none;
+                padding: 10px;
+                height: 40px;
+
+                // ne radi
+                border-radius: 0 10px 10px 0;
+
+
+                ::placeholder {
+                    color: $gray;
+                }
+            }
         }
+
+        .search-toggle {
+            width: 40px;
+            height: 30px;
+            padding: 2px;
+            border-radius: 20px;
+            background-color: $colorButton;
+            // transition: .3s;
+
+            display: flex;
+            align-items: center;
+
+            -webkit-tap-highlight-color: transparent;
+
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+
+            .toggle-thumb {
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: #fff;
+                position: relative;
+                left: 1px;
+                transition: $time;
+
+            }
+
+        }
+
+
     }
+    
 
     .meal-sections {
         width: 100%;
@@ -144,7 +142,7 @@
     }
 
     .results {
-        padding-bottom: 10px;
+        // padding-bottom: 10px;
         overflow: auto;
         white-space: nowrap;
         // ovo je skrolovanje za mobilne - sredi to posle
@@ -195,15 +193,15 @@
             background-color: #fff;
 
             // TODO - FIX TEXT-WRAP option for H2 !!!
-            word-wrap: break-word;
+            // word-wrap: break-word;
 
-            text-align: left;
+            // text-align: left;
             overflow: hidden;
             // display: inline-block;
 
             .meal-inner {
                 padding: 10px 20px 20px 15px;
-                word-wrap: break-word;
+                // word-wrap: break-word;
                 // text-align: left;
                 display: flex;
                 flex-direction: column;
@@ -239,7 +237,7 @@
                 h2 {
                     // font-family: 'Londrina Solid', 'Roboto', sans-serif;
                     text-align: left;
-                    word-wrap: break-word;
+                    // word-wrap: break-word;
                     font-size: 20px;
                     margin-bottom: 10px;
                 }
@@ -272,7 +270,7 @@
 
         // background-color: $colorButton;
         padding: 25px;
-        width: 150px;
+        width: 200px;
         height: 60px;
 
         display: flex;
