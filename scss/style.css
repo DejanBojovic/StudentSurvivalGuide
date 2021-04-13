@@ -203,6 +203,7 @@
 
 #homepage {
   width: 100vw;
+  height: 100vh;
   padding: 20px;
   background-color: #f3f7fc;
   display: -webkit-box;
@@ -223,28 +224,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 20px 0 40px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 30px 0;
 }
 
 #homepage .header h1 {
+  font-size: 28px;
   color: #212121;
+  font-family: 'Londrina Solid', 'Roboto', sans-serif;
 }
 
 #homepage .header h1 span {
   color: #686868;
-}
-
-#homepage .header .header-img {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  background-image: url("/images/frontpage/meal.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #homepage .searchbar {
@@ -340,53 +333,94 @@
   transition: 0.2s;
 }
 
-#homepage .results {
-  width: 100vw;
+#homepage .meal-sections {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #686868;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#homepage .meal-sections div {
+  padding: 5px 8px;
+  border: 1px solid #d34338;
+  border-radius: 10px;
+}
+
+#homepage .results {
+  padding-bottom: 10px;
+  overflow: auto;
+  white-space: nowrap;
+  width: 88vw;
+  scrollbar-width: none;
+}
+
+#homepage .results::-webkit-scrollbar {
+  display: none;
 }
 
 #homepage .results .meal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
-  margin: 20px 0px;
-  width: 90%;
+  display: inline-block;
+  margin: 0px 10px 10px 0;
+  width: 70%;
+  height: 330px;
   color: #000;
   border: 1px solid #fcd06a;
   border-radius: 20px;
   background-color: #fff;
+  word-wrap: break-word;
+  text-align: left;
+  overflow: hidden;
 }
 
-#homepage .results .meal img {
-  height: 200px;
-  width: 200px;
+#homepage .results .meal .meal-inner {
+  padding: 10px 20px 20px 15px;
+  word-wrap: break-word;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+}
+
+#homepage .results .meal .meal-inner img {
+  height: 180px;
+  width: 180px;
   border-radius: 50%;
-  margin: 20px 0 40px 0;
+  margin: 0 0 0 0;
+  position: relative;
+  top: -20px;
+  left: -65px;
 }
 
-#homepage .results .meal h2 {
+#homepage .results .meal .meal-inner .favorite-meal {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fcd06a;
+  z-index: 3 !important;
+}
+
+#homepage .results .meal .meal-inner h2 {
+  text-align: left;
+  word-wrap: break-word;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-#homepage .results .meal .learn-more {
+#homepage .results .meal .meal-inner .learn-more {
   padding: 10px 15px;
   margin: 10px 0;
   background-color: #d34338;
@@ -399,9 +433,8 @@
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 20px;
-  padding: 15px;
-  border-radius: 20px;
+  bottom: 10px;
+  padding: 25px;
   width: 150px;
   height: 60px;
   display: -webkit-box;
@@ -451,5 +484,12 @@
   right: 5px;
   top: 5px;
   display: none;
+}
+
+#homepage .menu .meal-planner {
+  padding: 15px;
+  font-size: 25px;
+  color: #686868;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */

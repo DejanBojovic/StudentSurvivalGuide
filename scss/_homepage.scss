@@ -1,6 +1,7 @@
 #homepage {
     // height: 100vh;
     width: 100vw;
+    height: 100vh;
     padding: 20px;
     background-color: $colorBg;
 
@@ -17,27 +18,29 @@
         width: 100vw;
         padding: 0 20px;
         display: flex;
-        justify-content: space-between;
-        margin: 20px 0 40px 0;
+        justify-content: center;
+        margin: 0 0 30px 0;
         // overflow-x: hidden !important;
 
         h1 {
+            font-size: 28px;
             color: $colorSecondary;
+            font-family: 'Londrina Solid', 'Roboto', sans-serif;
 
             span {
                 color: $gray;
             }
         }
 
-        .header-img {
-            height: 80px;
-            width: 80px;
-            border-radius: 50%;
-            background-image: url("/images/frontpage/meal.jpg");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+        // .header-img {
+        //     height: 80px;
+        //     width: 80px;
+        //     border-radius: 50%;
+        //     background-image: url("/images/frontpage/meal.jpg");
+        //     background-position: center center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        // }
     }
 
     .searchbar {
@@ -122,68 +125,136 @@
 
     }
 
+    .meal-sections {
+        width: 100%;
+        margin-bottom: 20px;
+        color: $gray;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            padding: 5px 8px;
+            border: 1px solid $colorButton;
+            border-radius: 10px;
+        }
+    }
+
     .results {
-        // overflow: auto;
-        // white-space: nowrap;
+        padding-bottom: 10px;
+        overflow: auto;
+        white-space: nowrap;
         // ovo je skrolovanje za mobilne - sredi to posle
         // -webkit-overflow-scrolling: touch;
-        width: 100vw;
+        width: 88vw;
         // height: 300px;
         // background-color: red;
         // display: flex;
 
         // overflow-x: auto;
         // overflow-y: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
 
+        // za chrome
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
+        // za firefox
+        scrollbar-width: none;
+
+        // &::-webkit-scrollbar-track {
+        //     width: 2px;
+        //     background-color: $gray;
+        // }
+
+        // &::-webkit-scrollbar-thumb {
+        //     background-color: $colorButton;
+        //     border-radius: 5px;
+        // }
 
         
 
         .meal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            // display: inline-block;
+            // padding: 10px 20px 20px 20px;
+            display: inline-block;
             // margin-right: 20px;
 
-            margin: 20px 0px;
-            width: 90%;
+            margin: 0px 10px 10px 0;
+            width: 70%;
+            // height is important so that every meal is in the same line if one has more text than the other
+            height: 330px;
             color: #000;
             border: 1px solid $colorPrimary;
             border-radius: 20px;
             background-color: #fff;
 
+            // TODO - FIX TEXT-WRAP option for H2 !!!
+            word-wrap: break-word;
+
+            text-align: left;
+            overflow: hidden;
             // display: inline-block;
 
-            img {
-                // display: block;
-                height: 200px;
-                width: 200px;
-                border-radius: 50%;
-                margin: 20px 0 40px 0;
+            .meal-inner {
+                padding: 10px 20px 20px 15px;
+                word-wrap: break-word;
+                // text-align: left;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                position: relative;
+                // overflow: hidden;
+
+                img {
+                    // display: block;
+                    height: 180px;
+                    width: 180px;
+                    border-radius: 50%;
+                    margin: 0 0 0 0;
+    
+                    position: relative;
+                    top: -20px;
+                    left: -65px;
+                }
+
+                .favorite-meal {
+                    position: absolute;
+                    right: 10px;
+                    top: 12px;
+
+                    border-radius: 50%;
+                    font-size: 30px;
+                    color: $colorPrimary;
+
+                    z-index: 3 !important;
+                }
+    
+                h2 {
+                    // font-family: 'Londrina Solid', 'Roboto', sans-serif;
+                    text-align: left;
+                    word-wrap: break-word;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+    
+                .learn-more {
+                    padding: 10px 15px;
+                    margin: 10px 0;
+                    background-color: $colorButton;
+                    color: #fff;
+                    border-radius: 10px;
+    
+                    // &:hover,
+                    // &:active {
+    
+                    // }
+                }
             }
 
-            h2 {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .learn-more {
-                padding: 10px 15px;
-                margin: 10px 0;
-                background-color: $colorButton;
-                color: #fff;
-                border-radius: 10px;
-
-                // &:hover,
-                // &:active {
-
-                // }
-            }
+            
         }
 
     }
@@ -193,11 +264,10 @@
         position: fixed;
         left: 0;
         right: 0;
-        bottom: 20px;
+        bottom: 10px;
 
         // background-color: $colorButton;
-        padding: 15px;
-        border-radius: 20px;
+        padding: 25px;
         width: 150px;
         height: 60px;
 
@@ -245,6 +315,13 @@
 
                 display: none;
             }
+        }
+
+        .meal-planner {
+            padding: 15px;
+            font-size: 25px;
+            color: $gray;
+            border-radius: 10px;
         }
     }
 

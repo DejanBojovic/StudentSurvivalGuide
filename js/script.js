@@ -44,11 +44,16 @@ toggle.addEventListener('click', () => {
 
 const mealCreation = (url, title) => {
     return `
-        <div class="meal">
+    <div class="meal">
+        <div class="meal-inner">
             <img src="${url}" alt="">
             <h2>${title}</h2>
+            <p>Ingredients: </p>
+            <div class="learn-more">Learn More</div>
         </div>
+    </div>
     `
+
 }
 
 // api call for meal
@@ -62,7 +67,7 @@ searchButton.addEventListener('click', () => {
     const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
 
     if(searchInput.placeholder === 'Main ingredient') {
-        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&apiKey=${apiKey}`)
+        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=30&apiKey=${apiKey}`)
         .then(response => response.json())
         .then(data => {
             // for(let i = 0; i < data.length; i++) {
@@ -79,7 +84,7 @@ searchButton.addEventListener('click', () => {
             const allMeals = document.querySelectorAll('.meal')
             allMeals.forEach(el => {
                 el.addEventListener('click', () => {
-                    document.querySelector('.favorites-dot').style.display = "block"
+                    // document.querySelector('.favorites-dot').style.display = "block"
                     // setTimeout(() => {
                     //     document.querySelector('.favorites-dot').style.display = "none"
                     // }, 2000)
@@ -119,4 +124,24 @@ favoritesButton.addEventListener('click', () => {
 
     homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
+})
+
+// TODO - sredi da ostane crvena tackica sve dok ne postoji nijedna puna zuta zvezda kliknuta !!!
+const favoriteStars = document.querySelectorAll('.favorite-meal')
+
+favoriteStars.forEach(el => {
+    el.addEventListener('click', (e) => {
+        console.log(e.target.classList)
+        if(e.target.classList.contains('far')) {
+            e.target.classList.remove('far')
+            e.target.classList.add('fas')
+    
+            document.querySelector('.favorites-dot').style.display = "block"
+        } else {
+            e.target.classList.remove('fas')
+            e.target.classList.add('far')
+    
+            document.querySelector('.favorites-dot').style.display = "none"
+        }  
+    })
 })
