@@ -266,7 +266,7 @@
   width: 80%;
   font-size: 18px;
   background-color: #fcd06a;
-  color: #212121;
+  color: #686868;
   border: none;
   outline: none;
   padding: 10px;
@@ -334,8 +334,14 @@
 
 #homepage .meal-sections div {
   padding: 5px 8px;
-  border: 1px solid #d34338;
+  border: 1px solid #686868;
   border-radius: 10px;
+}
+
+#homepage .meal-sections div:first-child {
+  border: 1px solid #d34338;
+  background-color: #d34338;
+  color: #fff;
 }
 
 #homepage .results {
@@ -374,6 +380,7 @@
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
+  white-space: normal;
 }
 
 #homepage .results .meal .meal-inner img {
@@ -410,6 +417,24 @@
   border-radius: 10px;
 }
 
+#homepage .results .end-div {
+  display: inline-block;
+  position: relative;
+  bottom: 40%;
+}
+
+#homepage .results .end-div .back {
+  margin-bottom: 10px;
+}
+
+#homepage .results .end-div .back,
+#homepage .results .end-div .more {
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px 12px;
+  background-color: #d34338;
+}
+
 #homepage .menu {
   margin: 0 auto;
   position: fixed;
@@ -417,7 +442,7 @@
   right: 0;
   bottom: 10px;
   padding: 25px;
-  width: 200px;
+  width: 250px;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,7 +455,7 @@
 }
 
 #homepage .menu .home {
-  padding: 15px;
+  padding: 15px 18px;
   font-size: 25px;
   color: #000;
   background-color: #fcd06a;
@@ -469,7 +494,7 @@
 }
 
 #homepage .menu .meal-planner {
-  padding: 15px;
+  padding: 15px 18px;
   font-size: 25px;
   color: #686868;
   border-radius: 10px;

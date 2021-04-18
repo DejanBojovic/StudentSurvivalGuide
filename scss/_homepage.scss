@@ -75,7 +75,7 @@
                 width: 80%;
                 font-size: 18px;
                 background-color: $colorPrimary;
-                color: $colorSecondary;
+                color: $gray;
                 border: none;
                 outline: none;
                 padding: 10px;
@@ -136,9 +136,16 @@
 
         div {
             padding: 5px 8px;
-            border: 1px solid $colorButton;
+            border: 1px solid $gray;
             border-radius: 10px;
+
+            &:first-child {
+                border: 1px solid $colorButton;
+                background-color: $colorButton;
+                color: #fff;
+            }
         }
+
     }
 
     .results {
@@ -157,6 +164,8 @@
         // display: flex;
         // flex-direction: column;
         // align-items: center;
+
+        // margin: 0 auto;
 
         // za chrome
         &::-webkit-scrollbar {
@@ -210,6 +219,8 @@
                 position: relative;
                 // overflow: hidden;
 
+                white-space: normal;
+
                 img {
                     // display: block;
                     height: 180px;
@@ -259,6 +270,25 @@
             
         }
 
+        .end-div {
+            display: inline-block;
+            
+            position: relative;
+            bottom: 40%;
+
+            .back {
+                margin-bottom: 10px;
+            }
+
+            .back,
+            .more {
+                border-radius: 50%;
+                color: #fff;
+                padding: 10px 12px;
+                background-color: $colorButton;
+            }
+        }
+
     }
 
     .menu {
@@ -270,7 +300,7 @@
 
         // background-color: $colorButton;
         padding: 25px;
-        width: 200px;
+        width: 250px;
         height: 60px;
 
         display: flex;
@@ -278,7 +308,7 @@
         align-items: center;
 
         .home {
-            padding: 15px;
+            padding: 15px 18px;
             font-size: 25px;
             color: #000;
             background-color: $colorPrimary;
@@ -320,7 +350,7 @@
         }
 
         .meal-planner {
-            padding: 15px;
+            padding: 15px 18px;
             font-size: 25px;
             color: $gray;
             border-radius: 10px;
