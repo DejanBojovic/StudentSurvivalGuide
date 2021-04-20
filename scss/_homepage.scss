@@ -14,10 +14,11 @@
 
 
     .header {
-        // width: 100vw;
+        // width: 100%;
         // padding: 0 20px;
-        // display: flex;
-        // justify-content: center;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
         margin: 0 0 30px 0;
         // overflow-x: hidden !important;
 
@@ -32,10 +33,10 @@
         }
 
         // .header-img {
-        //     height: 80px;
-        //     width: 80px;
-        //     border-radius: 50%;
-        //     background-image: url("/images/frontpage/meal.jpg");
+        //     height: 60px;
+        //     width: 60px;
+        //     border-radius: 10px;
+        //     background-image: url("/images/homepage/chef.jpg");
         //     background-position: center center;
         //     background-repeat: no-repeat;
         //     background-size: cover;

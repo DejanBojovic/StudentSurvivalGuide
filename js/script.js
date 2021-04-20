@@ -1,24 +1,3 @@
-const btn = document.querySelector(".fpi-main-btn")
-const frontpage = document.querySelector("#frontpage")
-const homepage = document.querySelector('#homepage')
-
-// homepage.style.display = 'none'
-frontpage.style.display = 'none'
-
-// sessionStorage.setItem('frontpage', 'false')
-
-// btn.addEventListener('click', () => {
-
-//     sessionStorage.setItem('frontpage', 'true')
-
-//     setTimeout(() => {
-//         frontpage.style.display = "none"
-//         homepage.style.display = ''
-//     }, 100)
-
-//     console.log(sessionStorage.getItem('frontpage'))
-// })
-
 // toggle and search section
 const searchInput = document.querySelector("input[type='search']")
 console.log(searchInput)
@@ -135,12 +114,43 @@ searchButton.addEventListener('click', () => {
 
 
 
-// menu
+// MENU AND PAGES( SECTIONS ) TOGGLE -----------------------------------------------------------------
+
+// pages
+const frontpage = document.querySelector("#frontpage")
+const homepage = document.querySelector('#homepage')
+const favorites = document.querySelector('#favorites')
+const mealPlanner = document.querySelector('#meal-planner')
+
+favorites.style.display='none'
+mealPlanner.style.display='none'
+
+// frontpage
+const frontpageBtn = document.querySelector(".fpi-main-btn")
+
+// homepage.style.display = 'none'
+frontpage.style.display = 'none'
+
+// sessionStorage.setItem('frontpage', 'false')
+
+frontpageBtn.addEventListener('click', () => {
+
+    // sessionStorage.setItem('frontpage', 'true')
+
+    setTimeout(() => {
+        frontpage.style.display = "none"
+        homepage.style.display = ''
+    }, 100)
+
+    // console.log(sessionStorage.getItem('frontpage'))
+})
+
+
+// homepage
 const homeButton = document.querySelector('.home')
-const favoritesButton = document.querySelector('.favorites')
-const mealplannerButton = document.querySelector('.meal-planner')
 
 homeButton.addEventListener('click', () => {
+    // menu styling
     homeButton.style.color = '#000'
     homeButton.style.backgroundColor = '#fcd06a'
 
@@ -149,24 +159,42 @@ homeButton.addEventListener('click', () => {
 
     mealplannerButton.style.color = '#686868'
     mealplannerButton.style.backgroundColor = 'transparent'
+
+    // page toggle
+    homepage.style.display = 'block'
+    favorites.style.display = ''
+    mealPlanner.style.display = ''
 })
+
+// favorties
+const favoritesButton = document.querySelector('.favorites')
 
 favoritesButton.addEventListener('click', () => {
     // removing the red dot
     document.querySelector('.favorites-dot').style.display = "none"
 
+    // menu styling
     favoritesButton.style.color = '#000'
     favoritesButton.style.backgroundColor = '#fcd06a'
-    favoritesButton.style.borderRadius = '10px'
+    // favoritesButton.style.borderRadius = '10px'
 
     homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
 
     mealplannerButton.style.color = '#686868'
     mealplannerButton.style.backgroundColor = 'transparent'
+
+    // page toggle
+    favorites.style.display = 'block'
+    homepage.style.display = ''
+    mealPlanner.style.display = ''
 })
 
+// meal planner
+const mealplannerButton = document.querySelector('.meal-planner')
+
 mealplannerButton.addEventListener('click', () => {
+    // menu styling
     mealplannerButton.style.color = '#000'
     mealplannerButton.style.backgroundColor = '#fcd06a'
 
@@ -175,7 +203,14 @@ mealplannerButton.addEventListener('click', () => {
 
     homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
+
+    // page toggle
+    mealPlanner.style.display = 'block'
+    favorites.style.display = ''
+    homepage.style.display = ''
 })
+
+// MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------
 
 // TODO - sredi da ostane crvena tackica sve dok ne postoji nijedna puna zuta zvezda kliknuta !!!
 const favoriteStars = document.querySelectorAll('.favorite-meal')
