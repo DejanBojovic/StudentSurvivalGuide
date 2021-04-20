@@ -1,3 +1,6 @@
+// API key
+const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
+
 // toggle and search section
 const searchInput = document.querySelector("input[type='search']")
 console.log(searchInput)
@@ -8,9 +11,14 @@ const mealCreation = (url, title) => {
     return `
     <div class="meal">
         <div class="meal-inner">
-            <img src="${url}" alt="">
-            <h4>${title}</h4>
+            <img src=${url} alt="">
+
+            <i class="favorite-meal far fa-star"></i>
+
+            <h2>${title}</h2>
+
             <p>Ingredients: </p>
+            
             <div class="learn-more">Learn More</div>
         </div>
     </div>
@@ -18,31 +26,84 @@ const mealCreation = (url, title) => {
 
 }
 
-// API key
-const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
-
-
+// SECTIONS random/meat/vegeterian/fruit ----------------------------------------------------------
 // random fetch for main page
-fetch(`https://api.spoonacular.com/recipes/random?number=5&apiKey=${apiKey}`)
-.then(response => response.json())
-.then(data => {
-    data.recipes.map(el => {
-        resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+
+// proveri kako funkcionise default argument kad se ova funckija poziva 
+const fetchingMeals = (tag='') => {
+    fetch(`https://api.spoonacular.com/recipes/random?number=5&tags=${tag}apiKey=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+        data.recipes.map(el => {
+            resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+        })
+
+        console.log(searchedMeals)
+
+        // adding a red dot so user knows what happens when he likes a meal
+        const allMeals = document.querySelectorAll('.meal')
+        allMeals.forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelector('.favorites-dot').style.display = "block"
+                setTimeout(() => {
+                    document.querySelector('.favorites-dot').style.display = "none"
+                }, 2000)
+            })
+        })
     })
+}
 
-    console.log(searchedMeals)
+fetchingMeals()
 
-    // adding a red dot so user knows what happens when he likes a meal
-    const allMeals = document.querySelectorAll('.meal')
-    allMeals.forEach(el => {
-        el.addEventListener('click', () => {
-            // document.querySelector('.favorites-dot').style.display = "block"
-            // setTimeout(() => {
-            //     document.querySelector('.favorites-dot').style.display = "none"
-            // }, 2000)
+// TODO - sredi da se primaju razliciti tagovi kada se zove za razlicite sekcije - meat/veg/fruit
+
+
+// fetch(`https://api.spoonacular.com/recipes/random?number=5&apiKey=${apiKey}`)
+// .then(response => response.json())
+// .then(data => {
+//     data.recipes.map(el => {
+//         resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+//     })
+
+//     console.log(searchedMeals)
+
+//     // adding a red dot so user knows what happens when he likes a meal
+//     const allMeals = document.querySelectorAll('.meal')
+//     allMeals.forEach(el => {
+//         el.addEventListener('click', () => {
+//             document.querySelector('.favorites-dot').style.display = "block"
+//             setTimeout(() => {
+//                 document.querySelector('.favorites-dot').style.display = "none"
+//             }, 2000)
+//         })
+//     })
+// })
+
+document.querySelector('.random').addEventListener('click', () => {
+    fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+        data.recipes.map(el => {
+            resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+        })
+
+        console.log(searchedMeals)
+
+        // adding a red dot so user knows what happens when he likes a meal
+        const allMeals = document.querySelectorAll('.meal')
+        allMeals.forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelector('.favorites-dot').style.display = "block"
+                setTimeout(() => {
+                    document.querySelector('.favorites-dot').style.display = "none"
+                }, 2000)
+            })
         })
     })
 })
+
+
+// --------------------------------------------------------------------------------------------------
 
 // api call for meal
 const searchButton = document.querySelector('.search-btn')
