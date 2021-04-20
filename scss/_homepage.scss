@@ -44,88 +44,97 @@
     }
 
 
+    // ako zajebe overflow skloni ovo za search
+    .search {
+        width: 100%;
 
-    .searchbar {
-        // padding: 10px;
-        // border: 1px solid $colorSecondary;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-
-        .searchbar-main {
-            // background-color: $colorPrimary;
+        .searchbar {
+            // padding: 10px;
+            // border: 1px solid $colorSecondary;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-
-            i {
-                font-size: 14px;
-                padding: 12px;
+            margin-bottom: 30px;
+    
+            .searchbar-main {
+                // background-color: $colorPrimary;
+                display: flex;
+                align-items: center;
+    
+                i {
+                    font-size: 14px;
+                    padding: 12px;
+                    height: 40px;
+                    color: $gray;
+                    border-radius: 10px 0px 0px 10px;
+                    background-color: $colorPrimary;
+    
+                    &:hover,
+                    &:active {
+                        cursor: pointer;
+                    }
+                }
+            
+                input {
+                    width: 80%;
+                    font-size: 18px;
+                    background-color: $colorPrimary;
+                    color: $gray;
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    height: 40px;
+    
+                    // ne radi
+                    border-radius: 0 10px 10px 0;
+    
+    
+                    ::placeholder {
+                        color: $gray;
+                    }
+                }
+            }
+    
+            .search-settings {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
                 height: 40px;
-                color: $gray;
-                border-radius: 10px 0px 0px 10px;
-                background-color: $colorPrimary;
-
+                border-radius: 8px;
+                // padding: 10px;
+                color: #fff;
+                background-color: $colorButton;
+                // transition: .3s;
+    
+                display: flex;
+                align-items: center;
+    
+                // -webkit-tap-highlight-color: transparent;
+    
+    
                 &:hover,
                 &:active {
                     cursor: pointer;
                 }
+    
+                // .toggle-thumb {
+                //     height: 20px;
+                //     width: 20px;
+                //     border-radius: 50%;
+                //     background-color: #fff;
+                //     position: relative;
+                //     left: 1px;
+                //     transition: $time;
+    
+                // }
+    
             }
-        
-            input {
-                width: 80%;
-                font-size: 18px;
-                background-color: $colorPrimary;
-                color: $gray;
-                border: none;
-                outline: none;
-                padding: 10px;
-                height: 40px;
-
-                // ne radi
-                border-radius: 0 10px 10px 0;
-
-
-                ::placeholder {
-                    color: $gray;
-                }
-            }
+    
+    
         }
-
-        .search-toggle {
-            width: 40px;
-            height: 30px;
-            padding: 2px;
-            border-radius: 20px;
-            background-color: $colorButton;
-            // transition: .3s;
-
-            display: flex;
-            align-items: center;
-
-            -webkit-tap-highlight-color: transparent;
-
-
-            &:hover,
-            &:active {
-                cursor: pointer;
-            }
-
-            .toggle-thumb {
-                height: 20px;
-                width: 20px;
-                border-radius: 50%;
-                background-color: #fff;
-                position: relative;
-                left: 1px;
-                transition: $time;
-
-            }
-
-        }
-
-
     }
+    
     
 
     .meal-sections {
@@ -275,14 +284,9 @@
             display: inline-block;
             
             position: relative;
-            bottom: 40%;
+            bottom: 50%;
 
             .back {
-                margin-bottom: 10px;
-            }
-
-            .back,
-            .more {
                 border-radius: 50%;
                 color: #fff;
                 padding: 10px 12px;
@@ -290,72 +294,6 @@
             }
         }
 
-    }
-
-    .menu {
-        margin: 0 auto;
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 10px;
-
-        // background-color: $colorButton;
-        padding: 25px;
-        width: 250px;
-        height: 60px;
-
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        .home {
-            padding: 15px 18px;
-            font-size: 25px;
-            color: #000;
-            background-color: $colorPrimary;
-            border-radius: 10px;
-
-            transition: $time;
-
-            &:hover,
-            &:active {
-                cursor: pointer;
-            }
-        }
-
-        .favorites {
-            padding: 15px;
-            font-size: 25px;
-            color: $gray;
-            border-radius: 10px;
-            position: relative;
-            
-            transition: $time;
-
-            &:hover,
-            &:active {
-                cursor: pointer;
-            }
-
-            .favorites-dot {
-                height: 10px;
-                width: 10px;
-                border-radius: 50%;
-                background-color: #ff0000;
-                position: absolute;
-                right: 5px;
-                top: 5px;
-
-                display: none;
-            }
-        }
-
-        .meal-planner {
-            padding: 15px 18px;
-            font-size: 25px;
-            color: $gray;
-            border-radius: 10px;
-        }
     }
 
 }

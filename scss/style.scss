@@ -60,8 +60,67 @@ $time: .2s;
     //     background-color: red;
     //     margin: 0 !important;
     // }
+        
+    .menu {
+        margin: 0 auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 10px;
 
-    
+        // background-color: $colorButton;
+        padding: 25px;
+        width: 250px;
+        height: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .home {
+            padding: 15px 18px;
+            margin-right: 10px;
+            font-size: 25px;
+            color: #000;
+            background-color: $colorPrimary;
+            border-radius: 10px;
+
+            transition: $time;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+        }
+
+        .user {
+            padding: 17px;
+            font-size: 25px;
+            color: $gray;
+            border-radius: 10px;
+            position: relative;
+            
+            transition: $time;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+
+            .favorites-dot {
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: #ff0000;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+
+                display: none;
+            }
+        }
+
+    }
 
 }
 

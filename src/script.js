@@ -4,23 +4,6 @@ console.log(searchInput)
 const toggle = document.querySelector('.search-toggle')
 const toggleThumb = document.querySelector('.toggle-thumb')
 
-toggle.addEventListener('click', () => {
-    if(toggleThumb.style.left === "15px") {
-        toggleThumb.style.left = "1px"
-
-        setTimeout(() => {
-            searchInput.placeholder = 'Dish name'
-        }, 200)
-
-    } else {
-        toggleThumb.style.left = "15px"
-
-        setTimeout(() => {
-            searchInput.placeholder = 'Main ingredient'
-        }, 200)
-    }
-})
-
 const mealCreation = (url, title) => {
     return `
     <div class="meal">
@@ -73,20 +56,18 @@ searchButton.addEventListener('click', () => {
     const searchStr = searchInput.value
     console.log(searchStr)
 
-    resultContainer.innerHTML = ''
+    // resultContainer.innerHTML = ''
+    // removing all previous searched meals with this so "back" button can stay on page
+    const currentMeals = document.querySelectorAll('.meal')
+    currentMeals.forEach(el => {
+        el.remove()
+    })
 
     if(searchInput.placeholder === 'Main ingredient') {
         fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=10&apiKey=${apiKey}`)
         .then(response => response.json())
         .then(data => {
             data.map(el => {
-                //searchedMeals.push(el)
-                // dodaje sve id-jeve koji su na stranici da bi se posle izvrsila pretraga koja ne dopusta fetchovanje dupllikata
-                // mealIDs.push(el.id)
-
-                // console.log(el.title)
-                // console.log(el)
-
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
 
             })
@@ -119,10 +100,10 @@ searchButton.addEventListener('click', () => {
 // pages
 const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
-const favorites = document.querySelector('#favorites')
+const user = document.querySelector('#user')
 const mealPlanner = document.querySelector('#meal-planner')
 
-favorites.style.display='none'
+user.style.display='none'
 mealPlanner.style.display='none'
 
 // frontpage
@@ -157,17 +138,14 @@ homeButton.addEventListener('click', () => {
     favoritesButton.style.color = '#686868'
     favoritesButton.style.backgroundColor = 'transparent'
 
-    mealplannerButton.style.color = '#686868'
-    mealplannerButton.style.backgroundColor = 'transparent'
-
     // page toggle
     homepage.style.display = 'block'
-    favorites.style.display = ''
-    mealPlanner.style.display = ''
+    user.style.display = 'none'
+    mealPlanner.style.display = 'none'
 })
 
 // favorties
-const favoritesButton = document.querySelector('.favorites')
+const favoritesButton = document.querySelector('.user')
 
 favoritesButton.addEventListener('click', () => {
     // removing the red dot
@@ -181,33 +159,10 @@ favoritesButton.addEventListener('click', () => {
     homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
 
-    mealplannerButton.style.color = '#686868'
-    mealplannerButton.style.backgroundColor = 'transparent'
-
     // page toggle
-    favorites.style.display = 'block'
-    homepage.style.display = ''
-    mealPlanner.style.display = ''
-})
-
-// meal planner
-const mealplannerButton = document.querySelector('.meal-planner')
-
-mealplannerButton.addEventListener('click', () => {
-    // menu styling
-    mealplannerButton.style.color = '#000'
-    mealplannerButton.style.backgroundColor = '#fcd06a'
-
-    favoritesButton.style.color = '#686868'
-    favoritesButton.style.backgroundColor = 'transparent'
-
-    homeButton.style.color = '#686868'
-    homeButton.style.backgroundColor = 'transparent'
-
-    // page toggle
-    mealPlanner.style.display = 'block'
-    favorites.style.display = ''
-    homepage.style.display = ''
+    user.style.display = 'block'
+    homepage.style.display = 'none'
+    mealPlanner.style.display = 'none'
 })
 
 // MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------
@@ -239,48 +194,4 @@ backButton.addEventListener('click', () => {
     document.querySelector('.results').scrollLeft = 0
 })
 
-// more button for another api call
-// TODO - FIGURE OUT IF YOU WANT USER TO SLECT HOW MANY ITEMS TO SHOW BEFORE HE COMMITS THE SEARCH OR TO LET HIM VIEW 5 AT A TIME WITH MORE BUTTON !!!
-const moreButton = document.querySelector('.more')
-moreButton.addEventListener('click', () => {
-    const searchStr = searchInput.value
 
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=5&apiKey=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            // for(let i = 0; i < data.length; i++) {
-            //     let mrs = mealCreation(data[i].image, data[i].title)
-            //     resultContainer.insertAdjacentHTML('afterbegin', mrs)
-            // }
-
-            console.log('jaja')
-
-            data.map(el => {
-                // if(!mealIDs.includes(el.id)) {
-                //     resultContainer.insertAdjacentHTML('afterend', mealCreation(el.image, el.title))
-
-                //     console.log('dodat je neki koji nije duplikat')
-                // }
-
-                // resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
-
-                // for(let i = 0; i < 5; i++) {
-                //     resultContainer.insertAdjacentHTML('afterbegin', mealCreation(searchedMeals[i].image, searchedMeals[i].title))
-    
-                //     counter = i
-                // }
-
-            });
-
-            // adding a red dot so user knows what happens when he likes a meal
-            const allMeals = document.querySelectorAll('.meal')
-            allMeals.forEach(el => {
-                el.addEventListener('click', () => {
-                    // document.querySelector('.favorites-dot').style.display = "block"
-                    // setTimeout(() => {
-                    //     document.querySelector('.favorites-dot').style.display = "none"
-                    // }, 2000)
-                })
-            })
-        })
-})
