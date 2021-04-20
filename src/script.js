@@ -53,7 +53,7 @@ const fetchingMeals = (tag='') => {
     })
 }
 
-fetchingMeals()
+// fetchingMeals()
 
 // TODO - sredi da se primaju razliciti tagovi kada se zove za razlicite sekcije - meat/veg/fruit
 
@@ -161,16 +161,14 @@ searchButton.addEventListener('click', () => {
 // pages
 const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
-const user = document.querySelector('#user')
-const mealPlanner = document.querySelector('#meal-planner')
+const userpage = document.querySelector('#userpage')
 
-user.style.display='none'
-mealPlanner.style.display='none'
+userpage.style.display='block'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-// homepage.style.display = 'none'
+homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -201,7 +199,7 @@ homeButton.addEventListener('click', () => {
 
     // page toggle
     homepage.style.display = 'block'
-    user.style.display = 'none'
+    userpage.style.display = 'none'
     mealPlanner.style.display = 'none'
 })
 
@@ -221,9 +219,8 @@ favoritesButton.addEventListener('click', () => {
     homeButton.style.backgroundColor = 'transparent'
 
     // page toggle
-    user.style.display = 'block'
+    userpage.style.display = 'block'
     homepage.style.display = 'none'
-    mealPlanner.style.display = 'none'
 })
 
 // MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------
@@ -254,5 +251,6 @@ const backButton = document.querySelector('.back')
 backButton.addEventListener('click', () => {
     document.querySelector('.results').scrollLeft = 0
 })
+
 
 
