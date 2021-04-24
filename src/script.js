@@ -24,6 +24,66 @@ const mealCreation = (url, title) => {
 
 }
 
+// back button for meals
+const backButton = document.querySelector('.back')
+backButton.addEventListener('click', () => {
+    document.querySelector('.results').scrollLeft = 0
+})
+
+// SEARCH OPTIONS
+const searchOptionsBtn = document.querySelector('.search-settings')
+searchOptionsBtn.addEventListener('click', () => {
+    const searchSettingsMenu = document.querySelector('.search-settings-menu')
+
+    if(searchSettingsMenu.style.height === '50%') {
+        searchSettingsMenu.style.height = '0%'
+    } else {
+        searchSettingsMenu.style.height = '50%'
+    }
+
+})
+
+const closeButton = document.querySelector('.close')
+closeButton.addEventListener('click', () => {
+    document.querySelector('.search-settings-menu').style.height = '0%'
+
+})
+
+// THIS IS WHERE WE DETERMINE WHAT IS THE OBJECT OF SEARCH
+const searchIngredients = document.querySelector('.search-ingredients')
+const searchDiet = document.querySelector('.search-diet')
+const searchCuisine = document.querySelector('.search-cuisine')
+
+searchIngredients.addEventListener('click', () => {
+    // button styles
+    searchIngredients.style.backgroundColor = "#fff"
+    searchDiet.style.backgroundColor = "transparent"
+    searchCuisine.style.backgroundColor = "transparent"
+
+    // placeholder change
+    searchInput.placeholder = "Egg, bacon.."
+})
+
+searchDiet.addEventListener('click', () => {
+    // button styles
+    searchDiet.style.backgroundColor = "#fff"
+    searchIngredients.style.backgroundColor = "transparent"
+    searchCuisine.style.backgroundColor = "transparent"
+
+    // placeholder change
+    searchInput.placeholder = "Vegeterian, gluten free.."
+})
+
+searchCuisine.addEventListener('click', () => {
+    // button styles
+    searchCuisine.style.backgroundColor = "#fff"
+    searchDiet.style.backgroundColor = "transparent"
+    searchIngredients.style.backgroundColor = "transparent"
+
+    // placeholder change
+    searchInput.placeholder = "Italian, indian.."
+})
+
 // SECTIONS random/meat/vegeterian/fruit ----------------------------------------------------------
 // random fetch for main page
 
@@ -126,14 +186,18 @@ searchButton.addEventListener('click', () => {
         el.remove()
     })
 
+    // https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=10&apiKey=${apiKey}
+
     if(searchInput.placeholder === 'Main ingredient') {
-        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=10&apiKey=${apiKey}`)
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${searchStr}&number=10&apiKey=${apiKey}`)
         .then(response => response.json())
         .then(data => {
-            data.map(el => {
+            data.results.map(el => {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
 
             })
+
+            // console.log(data)
 
             // adding a red dot so user knows what happens when he likes a meal
             const allMeals = document.querySelectorAll('.meal')
@@ -194,7 +258,7 @@ const homeButton = document.querySelector('.home')
 homeButton.addEventListener('click', () => {
     // menu styling
     homeButton.style.color = '#000'
-    homeButton.style.backgroundColor = '#fcd06a'
+    homeButton.style.backgroundColor = '#fdc33b'
 
     favoritesButton.style.color = '#686868'
     favoritesButton.style.backgroundColor = 'transparent'
@@ -213,7 +277,7 @@ favoritesButton.addEventListener('click', () => {
 
     // menu styling
     favoritesButton.style.color = '#000'
-    favoritesButton.style.backgroundColor = '#fcd06a'
+    favoritesButton.style.backgroundColor = '#fdc33b'
     // favoritesButton.style.borderRadius = '10px'
 
     homeButton.style.color = '#686868'
@@ -244,24 +308,4 @@ favoriteStars.forEach(el => {
             document.querySelector('.favorites-dot').style.display = "none"
         }  
     })
-})
-
-
-// back button for meals
-const backButton = document.querySelector('.back')
-backButton.addEventListener('click', () => {
-    document.querySelector('.results').scrollLeft = 0
-})
-
-// SEARCH OPTIONS
-const searchOptionsBtn = document.querySelector('.search-settings')
-searchOptionsBtn.addEventListener('click', () => {
-    document.querySelector('.search-settings-menu').style.height = '50%'
-
-})
-
-const closeButton = document.querySelector('.close')
-closeButton.addEventListener('click', () => {
-    document.querySelector('.search-settings-menu').style.height = '0%'
-
 })

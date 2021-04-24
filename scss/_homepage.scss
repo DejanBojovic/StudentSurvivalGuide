@@ -101,7 +101,7 @@
         }
 
         .search-settings-menu {
-            height: 0%;
+            height: 50%;
             width: 100%;
             position: fixed;
             z-index: 10;
@@ -141,6 +141,32 @@
                     border-radius: 14px;
                     border: 2px solid $colorSP;
                     margin-bottom: 5px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                    transition: .3s;
+
+                    h3 {
+                        text-transform: uppercase;
+                        color: $colorSP;
+                    }
+
+                    input {
+                        width: 60px;
+                    }
+
+                    select {
+                        border: 2px solid $colorSP;
+                        width: 60px;
+                        padding: 5px;
+                        font-size: 18px;
+                        
+                    }
+                }
+
+                .search-ingredients {
+                    background-color: #fff;
                 }
             }
         }
