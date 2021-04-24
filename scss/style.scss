@@ -1,5 +1,6 @@
 // variables
-$colorPrimary: #fcd06a;
+$colorPrimary: #fdc33b;
+$colorSP: #df8723;
 $colorSecondary: #212121;
 $colorButton: #d34338;
 $colorBg: #f3f7fc;
@@ -33,6 +34,8 @@ $time: .2s;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        
         // overflow-x: hidden !important;
         // max-width: 260px;
         // margin: 0;
@@ -67,16 +70,25 @@ $time: .2s;
         position: fixed;
         left: 0;
         right: 0;
-        bottom: 10px;
+        bottom: 0;
+
+        // width: 100vw;
+        // background-color: #fff;
 
         // background-color: $colorButton;
-        padding: 25px;
-        width: 250px;
+        padding: 40px;
+        // width: 250px;
         height: 60px;
 
         display: flex;
         justify-content: center;
         align-items: center;
+
+        // border-top-left-radius: 18px;
+        // border-top-right-radius: 18px;
+
+        // width: 100%;
+        // background-color: $colorButton;
 
         .home {
             padding: 15px 18px;

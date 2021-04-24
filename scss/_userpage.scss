@@ -85,17 +85,56 @@
 
 
 
-        .favorites,
-        .notes {
-            display: none;
-        }
-
-        .favorites {
+        // .favorites,
+        // .notes {
+        //     display: none;
+        // }
         
-        }
+        .main-inner {
+            height: 80%;
+            padding: 20px;
+            .favorites {
+                // width: 100%;
+                // height: 100%;
+                background-color: red;
 
-        .notes {
+                // overflow: auto;
+                // white-space: nowrap;
 
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+
+
+                div {
+                    // display: inline-block;
+                    margin: 0 auto;
+                    height: 120px;
+                    width: 100%;
+                    background-color: white;
+                    margin: 20px;
+
+
+                    display: flex;
+
+                    .fav-img {
+                        margin: 0;
+                        flex: 1;
+                        background-color: blue;
+                    }
+
+                    h4 {
+                        flex: 1;
+                    }
+                }
+            }
+    
+            .notes {
+                background-color: blue;
+    
+            }
         }
 
     }

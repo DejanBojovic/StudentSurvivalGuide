@@ -16,8 +16,6 @@ const mealCreation = (url, title) => {
             <i class="favorite-meal far fa-star"></i>
 
             <h2>${title}</h2>
-
-            <p>Ingredients: </p>
             
             <div class="learn-more">Learn More</div>
         </div>
@@ -117,6 +115,10 @@ searchButton.addEventListener('click', () => {
     const searchStr = searchInput.value
     console.log(searchStr)
 
+    if(searchStr === "") {
+        return
+    }
+
     // resultContainer.innerHTML = ''
     // removing all previous searched meals with this so "back" button can stay on page
     const currentMeals = document.querySelectorAll('.meal')
@@ -163,12 +165,12 @@ const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
 const userpage = document.querySelector('#userpage')
 
-userpage.style.display='block'
+userpage.style.display='none'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-homepage.style.display = 'none'
+homepage.style.display = 'block'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -200,7 +202,6 @@ homeButton.addEventListener('click', () => {
     // page toggle
     homepage.style.display = 'block'
     userpage.style.display = 'none'
-    mealPlanner.style.display = 'none'
 })
 
 // favorties
@@ -252,5 +253,15 @@ backButton.addEventListener('click', () => {
     document.querySelector('.results').scrollLeft = 0
 })
 
+// SEARCH OPTIONS
+const searchOptionsBtn = document.querySelector('.search-settings')
+searchOptionsBtn.addEventListener('click', () => {
+    document.querySelector('.search-settings-menu').style.height = '50%'
 
+})
 
+const closeButton = document.querySelector('.close')
+closeButton.addEventListener('click', () => {
+    document.querySelector('.search-settings-menu').style.height = '0%'
+
+})
