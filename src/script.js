@@ -88,15 +88,56 @@ searchCuisine.addEventListener('click', () => {
 // random fetch for main page
 
 // proveri kako funkcionise default argument kad se ova funckija poziva 
-const fetchingMeals = (tag='') => {
-    fetch(`https://api.spoonacular.com/recipes/random?number=5&tags=${tag}apiKey=${apiKey}`)
+const fetchingMeals = (searchItem, type) => {
+
+    // random
+    // `https://api.spoonacular.com/recipes/random?number=5&tags=${tag}apiKey=${apiKey}`
+    
+    // https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=50&apiKey=${apiKey}
+    // `https://api.spoonacular.com/recipes/complexSearch?cuisine=${searchStr}&number=50&apiKey=${apiKey}`
+    // `https://api.spoonacular.com/recipes/complexSearch?diet=${searchStr}&number=50&apiKey=${apiKey}`
+
+    // types
+    // complexSearch?cuisine
+    // complexSearch?diet
+    // findByIngredients?ingredients
+    // random
+
+    console.log(type)
+
+    // SREDI FETCH STriNGS TAKO DA BUDE UNIVERZALAN !!
+
+    let fetchString = null
+
+    // separating fetch string into part where i fetch random meals
+    if(type === 'random' || type === 'meat' || type === 'dessert' || type === 'fruit') {
+        fetchString = `https://api.spoonacular.com/recipes/random?tags=${searchItem}&number=50&apiKey=${apiKey}`
+        console.log('prvi')
+    } else {
+        // and part where i search by ingredients, cuisine or diet
+        fetchString = `https://api.spoonacular.com/recipes/${type}=${searchItem}&number=50&apiKey=${apiKey}`
+    }
+
+    fetch(fetchString)
     .then(response => response.json())
     .then(data => {
-        data.recipes.map(el => {
-            resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
-        })
-
-        console.log(searchedMeals)
+        console.log(data)
+        if(data.results) {
+            data.results.map(el => {
+                resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+            })
+        } else if (data.recipes) {
+            data.recipes.map(el => {
+                resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+            })
+        }
+         else {
+            data.map(el => {
+                resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
+            })
+        }
+        console.log(data)
+        console.log(type)
 
         // adding a red dot so user knows what happens when he likes a meal
         const allMeals = document.querySelectorAll('.meal')
@@ -111,55 +152,68 @@ const fetchingMeals = (tag='') => {
     })
 }
 
-// fetchingMeals()
-
-// TODO - sredi da se primaju razliciti tagovi kada se zove za razlicite sekcije - meat/veg/fruit
-
-
-// fetch(`https://api.spoonacular.com/recipes/random?number=5&apiKey=${apiKey}`)
-// .then(response => response.json())
-// .then(data => {
-//     data.recipes.map(el => {
-//         resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
-//     })
-
-//     console.log(searchedMeals)
-
-//     // adding a red dot so user knows what happens when he likes a meal
-//     const allMeals = document.querySelectorAll('.meal')
-//     allMeals.forEach(el => {
-//         el.addEventListener('click', () => {
-//             document.querySelector('.favorites-dot').style.display = "block"
-//             setTimeout(() => {
-//                 document.querySelector('.favorites-dot').style.display = "none"
-//             }, 2000)
-//         })
-//     })
-// })
-
-document.querySelector('.random').addEventListener('click', () => {
-    fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-        data.recipes.map(el => {
-            resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
-        })
-
-        console.log(searchedMeals)
-
-        // adding a red dot so user knows what happens when he likes a meal
-        const allMeals = document.querySelectorAll('.meal')
-        allMeals.forEach(el => {
-            el.addEventListener('click', () => {
-                document.querySelector('.favorites-dot').style.display = "block"
-                setTimeout(() => {
-                    document.querySelector('.favorites-dot').style.display = "none"
-                }, 2000)
-            })
-        })
+const removingPreviousMeals = () => {
+    const currentMeals = document.querySelectorAll('.meal')
+    currentMeals.forEach(el => {
+        el.remove()
     })
+}
+
+// settings event listeners for meal sections = random/meat/vegetables/fruit
+const randomButton = document.querySelector('.random')
+const meatButton = document.querySelector('.meat')
+const dessertButton = document.querySelector('.dessert')
+const fruitButton = document.querySelector('.fruit')
+
+randomButton.addEventListener('click', () => {
+    // displaying meals
+    removingPreviousMeals()
+    fetchingMeals('', 'random')
+
+    // styling button
+    randomButton.style.border = '1px solid #d34338'
+    meatButton.style.border = '1px solid #686868'
+    dessertButton.style.border = '1px solid #686868'
+    fruitButton.style.border = '1px solid #686868'
 })
 
+meatButton.addEventListener('click', () => {
+    // displaying meals
+    removingPreviousMeals()
+    fetchingMeals('meat', 'meat')
+
+    // styling button
+    meatButton.style.border = '1px solid #d34338'
+    randomButton.style.border = '1px solid #686868'
+    dessertButton.style.border = '1px solid #686868'
+    fruitButton.style.border = '1px solid #686868'
+})
+
+dessertButton.addEventListener('click', () => {
+    // displaying meals
+    removingPreviousMeals()
+    fetchingMeals('dessert', 'dessert')
+
+    // styling button
+    dessertButton.style.border = '1px solid #d34338'
+    randomButton.style.border = '1px solid #686868'
+    meatButton.style.border = '1px solid #686868'
+    fruitButton.style.border = '1px solid #686868'
+})
+
+// FRUIT PRETRAGA JE SRANJE - STAVNI DA BUDE NESTO DRUGO !!!!
+// mozda da vratim vegetables !!!
+fruitButton.addEventListener('click', () => {
+    // displaying meals
+    removingPreviousMeals()
+    fetchingMeals('fruit', 'fruit')
+
+    // styling button
+    fruitButton.style.border = '1px solid #d34338'
+    randomButton.style.border = '1px solid #686868'
+    meatButton.style.border = '1px solid #686868'
+    dessertButton.style.border = '1px solid #686868'
+})
 
 // --------------------------------------------------------------------------------------------------
 
@@ -179,44 +233,23 @@ searchButton.addEventListener('click', () => {
         return
     }
 
-    // resultContainer.innerHTML = ''
-    // removing all previous searched meals with this so "back" button can stay on page
-    const currentMeals = document.querySelectorAll('.meal')
-    currentMeals.forEach(el => {
-        el.remove()
-    })
+    removingPreviousMeals()
 
-    // https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=10&apiKey=${apiKey}
+    const inputPlaceholder = document.querySelector("input[type='search']").placeholder
 
-    if(searchInput.placeholder === 'Main ingredient') {
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${searchStr}&number=10&apiKey=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            data.results.map(el => {
-                resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title))
-
-            })
-
-            // console.log(data)
-
-            // adding a red dot so user knows what happens when he likes a meal
-            const allMeals = document.querySelectorAll('.meal')
-            allMeals.forEach(el => {
-                el.addEventListener('click', () => {
-                    // document.querySelector('.favorites-dot').style.display = "block"
-                    // setTimeout(() => {
-                    //     document.querySelector('.favorites-dot').style.display = "none"
-                    // }, 2000)
-                })
-            })
-        })
-    } else if(searchInput.placeholder === 'Dish name') {
-        fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=eggplant&apiKey=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        })
+    let type = null
+    if(inputPlaceholder === 'Egg, bacon..') {
+        type = 'findByIngredients?ingredients'
+    } else if (inputPlaceholder === 'Italian, indian..') {
+        type = 'complexSearch?cuisine'
+    } else {
+        type = 'complexSearch?diet'
     }
+
+
+    fetchingMeals(searchStr, type)
+    
+    
 
 })
 
@@ -229,12 +262,12 @@ const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
 const userpage = document.querySelector('#userpage')
 
-userpage.style.display='none'
+userpage.style.display='block'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-homepage.style.display = 'block'
+homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -260,24 +293,24 @@ homeButton.addEventListener('click', () => {
     homeButton.style.color = '#000'
     homeButton.style.backgroundColor = '#fdc33b'
 
-    favoritesButton.style.color = '#686868'
-    favoritesButton.style.backgroundColor = 'transparent'
+    userButton.style.color = '#686868'
+    userButton.style.backgroundColor = 'transparent'
 
     // page toggle
     homepage.style.display = 'block'
     userpage.style.display = 'none'
 })
 
-// favorties
-const favoritesButton = document.querySelector('.user')
+// userpage
+const userButton = document.querySelector('.user')
 
-favoritesButton.addEventListener('click', () => {
+userButton.addEventListener('click', () => {
     // removing the red dot
     document.querySelector('.favorites-dot').style.display = "none"
 
     // menu styling
-    favoritesButton.style.color = '#000'
-    favoritesButton.style.backgroundColor = '#fdc33b'
+    userButton.style.color = '#000'
+    userButton.style.backgroundColor = '#fdc33b'
     // favoritesButton.style.borderRadius = '10px'
 
     homeButton.style.color = '#686868'

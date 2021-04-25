@@ -87,7 +87,11 @@
                 // border: 1px solid #fff;
                 color: #fff;
                 font-size: 25px;
-    
+                user-select: none;
+                outline: none;
+
+                // fixes blue overlay box when clicked
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
     
                 &:hover,
                 &:active {
@@ -101,7 +105,7 @@
         }
 
         .search-settings-menu {
-            height: 50%;
+            height: 0%;
             width: 100%;
             position: fixed;
             z-index: 10;
@@ -145,7 +149,13 @@
                     justify-content: space-evenly;
                     align-items: center;
 
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
                     transition: .3s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
 
                     h3 {
                         text-transform: uppercase;
@@ -188,8 +198,8 @@
 
             &:first-child {
                 border: 1px solid $colorButton;
-                background-color: $colorButton;
-                color: #fff;
+                // background-color: $colorPrimary;
+                color: $gray;
             }
         }
 
