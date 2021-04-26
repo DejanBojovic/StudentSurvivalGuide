@@ -51,6 +51,37 @@ const addingNote = (text, id) => {
         </div>
     `
 }
+
+const deleteNoteBtn = () => {
+    // note delete button
+    const noteDeleteButtons = document.querySelectorAll('.note-delete')
+    noteDeleteButtons.forEach(el => {
+        el.addEventListener('click', (e) => {
+            // removing note from the localStorage
+            const notes = JSON.parse(localStorage.getItem('notes'))
+
+            // getting the id of the element
+            const noteID = parseInt(e.target.parentNode.getAttribute('data-id'))
+            // console.log(noteID)
+
+            // removing note from localStorage
+            for(let i = 0; i < notes.length; i++) {
+                if (notes[i].id === noteID) {
+                    notes.splice(i, 1)
+                    break
+                }
+            }
+
+            // updating the localStorage array
+            localStorage.setItem('notes', JSON.stringify(notes))
+
+            // removing note from the page
+            // console.log(e.target.parentNode)
+            e.target.parentNode.remove()
+
+        })
+    })
+}
 // STILIZUJ HEADLINE !!!
 
 userpageNotes.addEventListener('click', () => {
@@ -79,6 +110,7 @@ userpageNotes.addEventListener('click', () => {
     if(notesInner.children.length === 0) {
         notes.forEach(el => {
             notesInner.insertAdjacentHTML('beforeend', addingNote(el.value, el.id))
+            deleteNoteBtn()
         })
     }
 })
@@ -119,33 +151,7 @@ noteSubmit.addEventListener('click', () => {
     // reseting input field to none
     noteInput.value = ''
 
-    // note delete button
-    const noteDeleteButtons = document.querySelectorAll('.note-delete')
-    noteDeleteButtons.forEach(el => {
-        el.addEventListener('click', (e) => {
-            // removing note from the localStorage
-            const notes = JSON.parse(localStorage.getItem('notes'))
-
-            // getting the id of the element
-            const noteID = parseInt(e.target.parentNode.getAttribute('data-id'))
-            // console.log(noteID)
-
-            // removing note from localStorage
-            for(let i = 0; i < notes.length; i++) {
-                if (notes[i].id === noteID) {
-                    notes.splice(i, 1)
-                    break
-                }
-            }
-
-            // updating the localStorage array
-            localStorage.setItem('notes', JSON.stringify(notes))
-
-            // removing note from the page
-            // console.log(e.target.parentNode)
-            e.target.parentNode.remove()
-
-        })
-    })
+    deleteNoteBtn()
+    
 })
 
