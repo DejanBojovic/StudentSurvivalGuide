@@ -1,6 +1,16 @@
 // API key
 const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
 
+// initializing the localStorage - storing favorite meals and user notes
+if(localStorage.getItem('favorites') === null) {
+    // creating array to store favorite meals
+    localStorage.setItem('favorites', JSON.stringify([]))
+
+    // creating array to store user notes
+    localStorage.setItem('notes', JSON.stringify([]))
+}
+
+
 // toggle and search section
 const searchInput = document.querySelector("input[type='search']")
 console.log(searchInput)
@@ -21,7 +31,6 @@ const mealCreation = (url, title) => {
         </div>
     </div>
     `
-
 }
 
 // back button for meals
@@ -257,10 +266,17 @@ searchButton.addEventListener('click', () => {
 
 // MENU AND PAGES( SECTIONS ) TOGGLE -----------------------------------------------------------------
 
+
 // pages
 const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
 const userpage = document.querySelector('#userpage')
+
+// removing bottom nav when frontpage is shown -- UNCOMMENT THIS LATER !!!
+// const menu = document.querySelector('.menu')
+// if (frontpage.style.display = 'block') {
+//     menu.style.display = 'none'
+// }
 
 userpage.style.display='block'
 
@@ -279,6 +295,9 @@ frontpageBtn.addEventListener('click', () => {
     setTimeout(() => {
         frontpage.style.display = "none"
         homepage.style.display = ''
+
+        // displlaying menu only when homepage is shown - UNCOMMENT THIS LATER !!!
+        // menu.style.display = 'flex'
     }, 100)
 
     // console.log(sessionStorage.getItem('frontpage'))
@@ -324,21 +343,66 @@ userButton.addEventListener('click', () => {
 // MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------
 
 // TODO - sredi da ostane crvena tackica sve dok ne postoji nijedna puna zuta zvezda kliknuta !!!
-const favoriteStars = document.querySelectorAll('.favorite-meal')
+// or adding that meal to favorites - sending that data-id to localStorage
+const favoriteHearts = document.querySelectorAll('.favorite-meal')
 
-favoriteStars.forEach(el => {
+favoriteHearts.forEach(el => {
     el.addEventListener('click', (e) => {
-        console.log(e.target.classList)
+        // console.log(e.target.classList)
         if(e.target.classList.contains('far')) {
+            // adding full heart icon to clicked meal
             e.target.classList.remove('far')
             e.target.classList.add('fas')
-    
+            
+            // adding red dot to user icon
             document.querySelector('.favorites-dot').style.display = "block"
+
+            // adding meal id to localStorage soo i can be displayed on favorites page
+            const mealID = e.target.parentNode.parentNode.getAttribute('data-id')
+            
+            // getting favorites array from localStorage and adding mealID to it
+            const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
+
+            // check if that ID is already in the array
+            const index = favoriteMeals.indexOf(mealID)
+            if (index === -1) {
+                // if it isn't then add it 
+                favoriteMeals.push(mealID)
+            }
+            
+            // setting updated array back to localStorage
+            localStorage.setItem('favorites', JSON.stringify(favoriteMeals))
+
+
         } else {
+            // removing full heart icon to already favorite item
             e.target.classList.remove('fas')
             e.target.classList.add('far')
     
+            // removing red dot from user icon
             document.querySelector('.favorites-dot').style.display = "none"
+
+            // getting mealID for removing
+            const mealID = e.target.parentNode.parentNode.getAttribute('data-id')
+
+            // removing meal from localStorage and favorites page
+            const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
+            const index = favoriteMeals.indexOf(mealID)
+            if (index !== -1) {
+                favoriteMeals.splice(index, 1)
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(favoriteMeals))
         }  
+    })
+})
+
+// EVENT LISTENERS FOR MEALS - getting data-id and fetching for that specific meal
+// LEARN MORE BUTTON ON EVERY MEAL
+const learnMoreBtns = document.querySelectorAll('.learn-more')
+console.log(learnMoreBtns)
+learnMoreBtns.forEach(el => {
+    el.addEventListener('click', (e) => {
+        console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
     })
 })

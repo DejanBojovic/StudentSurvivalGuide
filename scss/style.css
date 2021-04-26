@@ -786,7 +786,7 @@
   margin: 0px 10px 10px 0;
 }
 
-#userpage .main .main-inner .favorites .meal {
+#userpage .main .main-inner .favorites .meal-f {
   display: inline-block;
   margin: 0px 10px 10px 0;
   color: #000;
@@ -797,7 +797,7 @@
   overflow: hidden;
 }
 
-#userpage .main .main-inner .favorites .meal .meal-inner {
+#userpage .main .main-inner .favorites .meal-f .meal-inner-f {
   padding: 10px 20px 20px 15px;
   display: block;
   width: 100%;
@@ -816,7 +816,7 @@
   white-space: normal;
 }
 
-#userpage .main .main-inner .favorites .meal .meal-inner img {
+#userpage .main .main-inner .favorites .meal-f .meal-inner-f img {
   height: 250px;
   width: 250px;
   border-radius: 50%;
@@ -826,7 +826,7 @@
   left: -75px;
 }
 
-#userpage .main .main-inner .favorites .meal .meal-inner .favorite-meal {
+#userpage .main .main-inner .favorites .meal-f .meal-inner-f .favorite-meal {
   position: absolute;
   right: 12px;
   top: 12px;
@@ -836,7 +836,7 @@
   z-index: 3 !important;
 }
 
-#userpage .main .main-inner .favorites .meal .meal-inner h2 {
+#userpage .main .main-inner .favorites .meal-f .meal-inner-f h2 {
   text-align: left;
   font-size: 20px;
   margin-bottom: 10px;
@@ -844,7 +844,7 @@
   bottom: 10px;
 }
 
-#userpage .main .main-inner .favorites .meal .meal-inner .learn-more {
+#userpage .main .main-inner .favorites .meal-f .meal-inner-f .learn-more {
   padding: 12px 18px;
   background-color: #d34338;
   color: #fff;
@@ -854,7 +854,90 @@
   bottom: 20px;
 }
 
+#userpage .main .main-inner .favorites .end-div {
+  display: inline-block;
+  position: relative;
+  bottom: 200px;
+}
+
+#userpage .main .main-inner .favorites .end-div .userpage-back {
+  color: #d34338;
+  font-size: 50px;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #userpage .main .main-inner .notes {
-  background-color: blue;
+  height: 100%;
+  width: 100%;
+}
+
+#userpage .main .main-inner .notes .notes-input {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#userpage .main .main-inner .notes .notes-input input {
+  width: 70%;
+  height: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  color: #686868;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #fdc33b;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#userpage .main .main-inner .notes .notes-input input:focus {
+  outline: none;
+  border-bottom: 2px solid #df8723;
+}
+
+#userpage .main .main-inner .notes .notes-input i {
+  font-size: 40px;
+  color: #686868;
+}
+
+#userpage .main .main-inner .notes .notes-inner {
+  border-radius: 30px;
+  padding: 30px 20px;
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#userpage .main .main-inner .notes .notes-inner .note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#userpage .main .main-inner .notes .notes-inner .note i {
+  font-size: 18px;
 }
 /*# sourceMappingURL=style.css.map */

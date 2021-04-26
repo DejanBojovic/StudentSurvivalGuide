@@ -148,6 +148,7 @@
         .main-inner {
             height: 440px;
             padding: 20px;
+
             .favorites {
                 width: 100%;
                 height: 100%;
@@ -185,7 +186,7 @@
                     
                 }
 
-                .meal {
+                .meal-f {
                     display: inline-block;
                     margin: 0px 10px 10px 0;
                     color: #000;
@@ -201,7 +202,7 @@
                     overflow: hidden;
                     // display: inline-block;
         
-                    .meal-inner {
+                    .meal-inner-f {
                         padding: 10px 20px 20px 15px;
                         display: block;
                         width: 100%;
@@ -277,11 +278,93 @@
         
                     
                 }
+
+                .end-div {
+                    display: inline-block;
+                    
+                    position: relative;
+                    bottom: 200px;
+        
+                    .userpage-back {
+                        color: $colorButton;
+                        font-size: 50px;
+                        height: 40px;
+                        width: 40px;
+        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
             }
     
             .notes {
-                background-color: blue;
-    
+                // uncomment this when you are done with styling
+                // display: none;
+                // background-color: #fff;
+                height: 100%;
+                width: 100%;
+                // margin: 0 auto;
+
+                .notes-input {
+                    width: 100%;
+                    height: 100px;
+                    // background-color: red;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    input {
+                        width: 70%;
+                        height: 40px;
+                        font-size: 20px;
+                        background-color: transparent;
+                        color: $gray;
+                        padding: 10px;
+                        border: none;
+                        border-bottom: 2px solid $colorPrimary;
+
+                        transition: .3s;
+
+                        &:focus {
+                            outline: none;
+                            border-bottom: 2px solid $colorSP;
+                        }
+
+                        // &::placeholder {
+                        //     color: $gray;
+                        // }
+                    }
+
+                    i {
+                        font-size: 40px;
+                        color: $gray;
+                    }
+                }
+
+                .notes-inner {
+                    border-radius: 30px;
+                    padding: 30px 20px;
+                    width: 100%;
+                    height: 300px;
+                    background-color: #fff;
+
+                    overflow: auto;
+                    white-space: nowrap;
+
+                    .note {
+                        display: flex;
+                        justify-content: space-between;
+
+                        margin-bottom: 10px;
+
+                        i {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                
             }
         }
 
