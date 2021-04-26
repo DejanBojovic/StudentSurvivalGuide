@@ -77,22 +77,6 @@ export default function fetchingMeals(searchItem, type) {
 }
 
 
-export function mealCreation(url, title, id) {
-    return `
-    <div class="meal" data-id=${id}>
-        <div class="meal-inner">
-            <img src=${url} alt="">
-
-            <i class="favorite-meal far fa-heart"></i>
-
-            <h2>${title}</h2>
-            
-            <div class="learn-more">Learn More</div>
-        </div>
-    </div>
-    `
-}
-
 export function addingFavorites() {
     const favoriteHearts = document.querySelectorAll('.favorite-meal')
     console.log(favoriteHearts)
@@ -149,25 +133,68 @@ export function addingFavorites() {
     })
 }
 
+// create one function from these two
+export function mealCreation(url, title, id) {
+    return `
+    <div class="meal" data-id=${id}>
+        <div class="meal-inner">
+            <img src=${url} alt="">
+
+            <i class="favorite-meal far fa-heart"></i>
+
+            <h2>${title}</h2>
+            
+            <div class="learn-more">Learn More</div>
+        </div>
+    </div>
+    `
+}
+
+export function mealCreationFavorites(url, title, id) {
+    return `
+    <div class="meal-f" data-id=${id}>
+        <div class="meal-inner-f">
+            <img src=${url} alt="">
+
+            <i class="favorite-meal far fa-heart"></i>
+
+            <h2>${title}</h2>
+            
+            <div class="learn-more">Learn More</div>
+        </div>
+    </div>
+    `
+}
+
 
 // USED IN USER.JS !!!
-export function fetchingFavorites(id) {
-    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
+export function fetchingFavorites() {
+    const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
+    const favDiv = document.querySelector('.favorites')
 
-        // adding a red dot so user knows what happens when he likes a meal
-        // const allMeals = document.querySelectorAll('.meal')
-        // allMeals.forEach(el => {
-        //     el.addEventListener('click', () => {
-        //         document.querySelector('.favorites-dot').style.display = "block"
-        //         setTimeout(() => {
-        //             document.querySelector('.favorites-dot').style.display = "none"
-        //         }, 2000)
-        //     })
-        // })
+    favoriteMeals.forEach(el => {
+        fetch(`https://api.spoonacular.com/recipes/${el}/information?apiKey=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            // console.log(id)
+            console.log(data)
+
+            favDiv.insertAdjacentHTML('afterbegin', mealCreationFavorites(data.image, data.title, data.id))
+
+            // adding a red dot so user knows what happens when he likes a meal
+            // const allMeals = document.querySelectorAll('.meal')
+            // allMeals.forEach(el => {
+            //     el.addEventListener('click', () => {
+            //         document.querySelector('.favorites-dot').style.display = "block"
+            //         setTimeout(() => {
+            //             document.querySelector('.favorites-dot').style.display = "none"
+            //         }, 2000)
+            //     })
+            // })
     })
+    })
+
+    
     
 }
 

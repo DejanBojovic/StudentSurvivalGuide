@@ -1,4 +1,4 @@
-import { addingNote, deleteNoteBtn } from './func.js'
+import { addingNote, deleteNoteBtn, fetchingFavorites } from './func.js'
 
 const favDiv = document.querySelector('.favorites')
 const notesDiv = document.querySelector('.notes')
@@ -72,6 +72,16 @@ if(notesInner.children.length === 0) {
     })
 }
 
+// DISPLAYING ALL THE FAVORITE MEALS FROM LOCALSTORAGE --------------- 
+// const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
+
+// favoriteMeals.forEach(el => {
+//     console.log('ulazi u foreach')
+//     favDiv.insertAdjacentHTML('afterbegin', fetchingFavorites(el))
+    
+// })
+
+fetchingFavorites()
 
 // back button for meals
 const backButtonUserpage = document.querySelector('.userpage-back')
