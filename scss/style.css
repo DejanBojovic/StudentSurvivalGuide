@@ -569,6 +569,7 @@
 
 #homepage .results .meal .meal-inner h2 {
   text-align: left;
+  color: #686868;
   font-size: 20px;
   margin-bottom: 10px;
   position: relative;
@@ -838,6 +839,7 @@
 
 #userpage .main .main-inner .favorites .meal-f .meal-inner-f h2 {
   text-align: left;
+  color: #686868;
   font-size: 20px;
   margin-bottom: 10px;
   position: relative;

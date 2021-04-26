@@ -76,6 +76,16 @@ export default function fetchingMeals(searchItem, type) {
     })
 }
 
+const allMeals = document.querySelectorAll('.favorite-meal')
+allMeals.forEach(el => {
+    el.addEventListener('click', () => {
+        document.querySelector('.favorites-dot').style.display = "block"
+        setTimeout(() => {
+            document.querySelector('.favorites-dot').style.display = "none"
+        }, 2000)
+    })
+})
+
 
 export function addingFavorites() {
     const favoriteHearts = document.querySelectorAll('.favorite-meal')
@@ -91,8 +101,11 @@ export function addingFavorites() {
                 
                 // adding red dot to user icon
                 document.querySelector('.favorites-dot').style.display = "block"
+                setTimeout(() => {
+                    document.querySelector('.favorites-dot').style.display = "none"
+                }, 2000)
 
-                // adding meal id to localStorage soo i can be displayed on favorites page
+                // adding meal id to localStorage soo it can be displayed on favorites page
                 const mealID = e.target.parentNode.parentNode.getAttribute('data-id')
                 
                 // getting favorites array from localStorage and adding mealID to it
@@ -134,10 +147,11 @@ export function addingFavorites() {
 }
 
 // create one function from these two
-export function mealCreation(url, title, id) {
+// proveri da li ovo radi kad proradi api call !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+export function mealCreation(url, title, id, cl='') {
     return `
-    <div class="meal" data-id=${id}>
-        <div class="meal-inner">
+    <div class="meal${cl}" data-id=${id}>
+        <div class="meal-inner${cl}">
             <img src=${url} alt="">
 
             <i class="favorite-meal far fa-heart"></i>
@@ -150,21 +164,21 @@ export function mealCreation(url, title, id) {
     `
 }
 
-export function mealCreationFavorites(url, title, id) {
-    return `
-    <div class="meal-f" data-id=${id}>
-        <div class="meal-inner-f">
-            <img src=${url} alt="">
+// export function mealCreationFavorites(url, title, id) {
+//     return `
+//     <div class="meal-f" data-id=${id}>
+//         <div class="meal-inner-f">
+//             <img src=${url} alt="">
 
-            <i class="favorite-meal far fa-heart"></i>
+//             <i class="favorite-meal far fa-heart"></i>
 
-            <h2>${title}</h2>
+//             <h2>${title}</h2>
             
-            <div class="learn-more">Learn More</div>
-        </div>
-    </div>
-    `
-}
+//             <div class="learn-more">Learn More</div>
+//         </div>
+//     </div>
+//     `
+// }
 
 
 // USED IN USER.JS !!!
@@ -181,7 +195,7 @@ export function fetchingFavorites() {
             // console.log(id)
             console.log(data)
 
-            favDiv.insertAdjacentHTML('afterbegin', mealCreationFavorites(data.image, data.title, data.id))
+            favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f'))
 
             // adding a red dot so user knows what happens when he likes a meal
             // const allMeals = document.querySelectorAll('.meal')

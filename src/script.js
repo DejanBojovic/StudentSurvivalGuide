@@ -175,10 +175,12 @@ searchButton.addEventListener('click', () => {
     fetchingMeals(searchStr, type)
     
     // waiting a second for fetch to happen and then establishing favorites option for every meal
-    setTimeout(addingFavorites, 1000) 
+    setTimeout(addingFavorites, 2000) 
     
     // OVDE URADI ASYNC/AWAIT !!!!!!!
 })
+
+addingFavorites()
 
 
 
@@ -258,7 +260,7 @@ userButton.addEventListener('click', () => {
     homepage.style.display = 'none'
 
     // getting all the things from localStorage to userpage
-    fetchingFavorites()
+    // fetchingFavorites()
     // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
