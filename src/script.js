@@ -1,5 +1,5 @@
 // import fetchingFavorites from "./func"
-import fetchingMeals, { addingFavorites, removingPreviousMeals } from './func.js'
+import fetchingMeals, { addingFavorites, removingPreviousMeals, fetchingFavorites } from './func.js'
 
 
 // // API key
@@ -97,7 +97,7 @@ const fruitButton = document.querySelector('.fruit')
 // ZA OVE STVARI MOZE JEDNA FUNKCIJA DA SE NAPRAVI !!!!
 randomButton.addEventListener('click', () => {
     // displaying meals
-    removingPreviousMeals()
+    removingPreviousMeals('.meal')
     fetchingMeals('', 'random')
 
     // styling button
@@ -109,7 +109,7 @@ randomButton.addEventListener('click', () => {
 
 meatButton.addEventListener('click', () => {
     // displaying meals
-    removingPreviousMeals()
+    removingPreviousMeals('.meal')
     fetchingMeals('meat', 'meat')
 
     // styling button
@@ -121,7 +121,7 @@ meatButton.addEventListener('click', () => {
 
 dessertButton.addEventListener('click', () => {
     // displaying meals
-    removingPreviousMeals()
+    removingPreviousMeals('.meal')
     fetchingMeals('dessert', 'dessert')
 
     // styling button
@@ -135,7 +135,7 @@ dessertButton.addEventListener('click', () => {
 // mozda da vratim vegetables !!!
 fruitButton.addEventListener('click', () => {
     // displaying meals
-    removingPreviousMeals()
+    removingPreviousMeals('.meal')
     fetchingMeals('fruit', 'fruit')
 
     // styling button
@@ -158,7 +158,7 @@ searchButton.addEventListener('click', () => {
         return
     }
 
-    removingPreviousMeals()
+    removingPreviousMeals('.meal')
 
     const inputPlaceholder = document.querySelector("input[type='search']").placeholder
 
@@ -256,6 +256,10 @@ userButton.addEventListener('click', () => {
     // page toggle
     userpage.style.display = 'block'
     homepage.style.display = 'none'
+
+    // getting all the things from localStorage to userpage
+    fetchingFavorites()
+    // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
 // MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------

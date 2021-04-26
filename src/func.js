@@ -2,8 +2,8 @@ const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
 
 
 // USED IN SCRIPT.JS
-export function removingPreviousMeals() {
-    const currentMeals = document.querySelectorAll('.meal')
+export function removingPreviousMeals(cl) {
+    const currentMeals = document.querySelectorAll(cl)
     currentMeals.forEach(el => {
         el.remove()
     })
@@ -171,6 +171,8 @@ export function mealCreationFavorites(url, title, id) {
 export function fetchingFavorites() {
     const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
     const favDiv = document.querySelector('.favorites')
+
+    removingPreviousMeals('.meal-f')
 
     favoriteMeals.forEach(el => {
         fetch(`https://api.spoonacular.com/recipes/${el}/information?apiKey=${apiKey}`)

@@ -73,14 +73,6 @@ if(notesInner.children.length === 0) {
 }
 
 // DISPLAYING ALL THE FAVORITE MEALS FROM LOCALSTORAGE --------------- 
-// const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
-
-// favoriteMeals.forEach(el => {
-//     console.log('ulazi u foreach')
-//     favDiv.insertAdjacentHTML('afterbegin', fetchingFavorites(el))
-    
-// })
-
 fetchingFavorites()
 
 // back button for meals
