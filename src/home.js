@@ -203,7 +203,8 @@ userpage.style.display='none'
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-homepage.style.display = 'block'
+document.querySelector('#mealpage').style.display = 'block'
+homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')

@@ -357,12 +357,19 @@
                     .note {
                         display: flex;
                         justify-content: space-between;
+                        align-items: center;
                         font-size: 18px;
 
                         margin-bottom: 12px;
 
                         i {
+                            margin-left: 20px;
                             font-size: 20px;
+                        }
+
+                        p {
+                            word-break: break-all;
+                            white-space: normal;
                         }
                     }
                 }
