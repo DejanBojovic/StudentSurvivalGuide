@@ -934,10 +934,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 12px;
 }
 
 #userpage .main .main-inner .notes .notes-inner .note i {
-  font-size: 18px;
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */
