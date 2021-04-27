@@ -66,6 +66,12 @@
   }
 }
 
+@media (min-height: 800px) and (min-width: 1280px) {
+  * .menu {
+    bottom: 10px;
+  }
+}
+
 * .menu .home {
   padding: 15px 18px;
   margin-right: 10px;
@@ -91,6 +97,12 @@
     font-size: 50px;
     padding: 20px 25px;
     border-radius: 15px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  * .menu .home {
+    font-size: 40px;
   }
 }
 
@@ -122,6 +134,12 @@
     font-size: 50px;
     padding: 20px 25px;
     border-radius: 15px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  * .menu .user {
+    font-size: 40px;
   }
 }
 
@@ -419,6 +437,12 @@
   }
 }
 
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .searchbar .searchbar-main .search-icon i {
+    font-size: 25px;
+  }
+}
+
 #homepage .search .searchbar .searchbar-main .search-icon i:hover, #homepage .search .searchbar .searchbar-main .search-icon i:active {
   cursor: pointer;
 }
@@ -446,6 +470,12 @@
 @media (min-height: 1024px) and (min-width: 768px) {
   #homepage .search .searchbar .searchbar-main input {
     font-size: 25px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .searchbar .searchbar-main input {
+    font-size: 28px;
   }
 }
 
@@ -491,6 +521,12 @@
   }
 }
 
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .searchbar .search-settings i {
+    font-size: 40px;
+  }
+}
+
 @media (min-width: 500px) {
   #homepage .search .searchbar .search-settings {
     font-size: 30px;
@@ -529,12 +565,27 @@
           align-items: center;
 }
 
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
 #homepage .search .search-settings-menu .close {
   color: #df8723;
   font-size: 50px;
 }
 
 @media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .search .search-settings-menu .close {
+    font-size: 80px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
   #homepage .search .search-settings-menu .close {
     font-size: 80px;
   }
@@ -582,6 +633,15 @@
     width: 600px;
     font-size: 30px;
     margin-bottom: 10px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .ssm-inner div {
+    width: 500px;
+    height: 180px;
+    font-size: 30px;
+    margin-bottom: 15px;
   }
 }
 
@@ -641,6 +701,14 @@
   }
 }
 
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .meal-sections {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 #homepage .meal-sections div {
   padding: 5px 8px;
   border: 1px solid #686868;
@@ -664,6 +732,12 @@
   #homepage .meal-sections div {
     font-size: 20px;
     padding: 10px 15px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .meal-sections div {
+    margin-right: 20px;
   }
 }
 
@@ -720,6 +794,12 @@
 @media (min-height: 1024px) and (min-width: 768px) {
   #homepage .results {
     height: 65vh;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .results {
+    height: 62vh;
   }
 }
 

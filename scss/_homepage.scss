@@ -89,6 +89,10 @@
                             font-size: 20px;
                             width: 100%;
                         }
+
+                        @include for-both(800px, 1280px) {
+                            font-size: 25px;
+                        }
         
                         &:hover,
                         &:active {
@@ -117,6 +121,10 @@
                     @include for-both(1024px, 768px) {
                         font-size: 25px;
                     }
+
+                    @include for-both(800px, 1280px) {
+                        font-size: 28px;
+                    }
     
     
     
@@ -141,6 +149,10 @@
 
                 i {
                     @include for-both(1024px, 768px) {
+                        font-size: 40px;
+                    }
+
+                    @include for-both(800px, 1280px) {
                         font-size: 40px;
                     }
                 }
@@ -186,6 +198,13 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+
+            @include for-both(800px, 1280px) {
+                width: 0%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
             
 
             .close {
@@ -193,6 +212,10 @@
                 font-size: 50px;
 
                 @include for-both(1024px, 768px) {
+                    font-size: 80px;
+                }
+
+                @include for-both(800px, 1280px) {
                     font-size: 80px;
                 }
             }
@@ -223,6 +246,13 @@
                         width: 600px;
                         font-size: 30px;
                         margin-bottom: 10px;
+                    }
+
+                    @include for-both(800px, 1280px) {
+                        width: 500px;
+                        height: 180px;
+                        font-size: 30px;
+                        margin-bottom: 15px;
                     }
 
                     &:hover {
@@ -276,10 +306,15 @@
             justify-content: space-evenly;
         }
 
+        @include for-both(800px, 1280px) {
+            justify-content: flex-start;
+        }
+
         div {
             padding: 5px 8px;
             border: 1px solid $gray;
             border-radius: 10px;
+
             @include for-width(400px) {
                 padding: 5px 10px;
                 border-radius: 12px;
@@ -292,6 +327,10 @@
             @include for-width(500px) {
                 font-size: 20px;
                 padding: 10px 15px;
+            }
+
+            @include for-both(800px, 1280px) {
+                margin-right: 20px;
             }
 
             &:first-child {
@@ -337,6 +376,10 @@
 
         @include for-both(1024px, 768px) {
             height: 65vh;
+        }           
+        
+        @include for-both(800px, 1280px) {
+            height: 62vh;
         }
 
         // za chrome

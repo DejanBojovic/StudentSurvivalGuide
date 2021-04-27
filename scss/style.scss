@@ -128,6 +128,10 @@ $time: .2s;
             justify-content: space-evenly;
         }
 
+        @include for-both(800px, 1280px) {
+            bottom: 10px;
+        }
+
         // border-top-left-radius: 18px;
         // border-top-right-radius: 18px;
 
@@ -154,6 +158,11 @@ $time: .2s;
                 border-radius: 15px;
             }
 
+            @include for-both(800px, 1280px) {
+                font-size: 40px;
+            }
+
+
             &:hover,
             &:active {
                 cursor: pointer;
@@ -177,6 +186,10 @@ $time: .2s;
                 font-size: 50px;
                 padding: 20px 25px;
                 border-radius: 15px;
+            }
+
+            @include for-both(800px, 1280px) {
+                font-size: 40px;
             }
 
             &:hover,

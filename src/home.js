@@ -35,17 +35,35 @@ const searchOptionsBtn = document.querySelector('.search-settings')
 searchOptionsBtn.addEventListener('click', () => {
     const searchSettingsMenu = document.querySelector('.search-settings-menu')
 
-    if(searchSettingsMenu.style.height === '50%') {
-        searchSettingsMenu.style.height = '0%'
+    if(screen.width >= 1280) {
+        if(searchSettingsMenu.style.width === '50%') {
+            searchSettingsMenu.style.width = '0%'
+        } else {
+            searchSettingsMenu.style.width = '50%'
+        }
     } else {
-        searchSettingsMenu.style.height = '50%'
+        if(searchSettingsMenu.style.height === '50%') {
+            searchSettingsMenu.style.height = '0%'
+        } else {
+            searchSettingsMenu.style.height = '50%'
+        }
     }
 
 })
 
 const closeButton = document.querySelector('.close')
+if(screen.width >= 1280) {
+    closeButton.classList.remove('fa-angle-down')
+    closeButton.classList.add('fa-angle-left')    
+}
+
 closeButton.addEventListener('click', () => {
-    document.querySelector('.search-settings-menu').style.height = '0%'
+    console.log(closeButton.classList)
+    if(screen.width >= 1280) {
+        document.querySelector('.search-settings-menu').style.width = '0%'
+    } else {
+        document.querySelector('.search-settings-menu').style.height = '0%'
+    }
 
 })
 
