@@ -203,8 +203,8 @@ userpage.style.display='none'
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-document.querySelector('#mealpage').style.display = 'block'
-homepage.style.display = 'none'
+document.querySelector('#mealpage').style.display = 'none'
+homepage.style.display = 'block'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -261,6 +261,7 @@ userButton.addEventListener('click', () => {
     homepage.style.display = 'none'
 
     // getting all the things from localStorage to userpage
+    // UNCOMMENTUJ OVO POSLE !!!!!
     // fetchingFavorites()
     // FIX THIS SO THAT IT DOESNT DOUBLE
 })

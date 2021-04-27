@@ -12,6 +12,10 @@
 
     overflow-x: hidden !important;
 
+    @include for-width(400px) {
+        
+    }
+
     // ako zajebe overflow skloni ovo za search
     .search {
         width: 100%;
@@ -37,23 +41,59 @@
             // margin-bottom: 30px;
 
             // flex-direction: column;
+
+
+            
     
             .searchbar-main {
                 // background-color: $colorPrimary;
                 display: flex;
                 align-items: center;
-    
-                i {
-                    font-size: 14px;
-                    padding: 12px;
+
+                @include for-width(450px) {
+                    width: 80%;
+                }
+                
+                .search-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     height: 40px;
-                    color: $gray;
-                    border-radius: 18px 0px 0px 18px;
-                    background-color: #fff;
+
+                    @include for-width(500px) {
+                        height: 50px;
+                    }
+
+                    @include for-both(1024px, 768px) {
+                        width: 60px;
+                    }
+
+                    i {
+                        font-size: 14px;
+                        padding: 12px;
+                        height: 100%;
+                        color: $gray;
+                        border-radius: 18px 0px 0px 18px;
+                        background-color: #fff;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
     
-                    &:hover,
-                    &:active {
-                        cursor: pointer;
+                        @include for-width(500px) {
+                            font-size: 16px;
+                            border-radius: 20px 0px 0px 20px;
+                        }
+
+                        @include for-both(1024px, 768px) {
+                            font-size: 20px;
+                            width: 100%;
+                        }
+        
+                        &:hover,
+                        &:active {
+                            cursor: pointer;
+                        }
                     }
                 }
             
@@ -66,9 +106,18 @@
                     outline: none;
                     padding: 10px;
                     height: 40px;
-    
-                    // ne radi
                     border-radius: 0 18px 18px 0;
+
+                    @include for-width(500px) {
+                        height: 50px;
+                        font-size: 20px;
+                        border-radius: 0 20px 20px 0;
+                    }
+
+                    @include for-both(1024px, 768px) {
+                        font-size: 25px;
+                    }
+    
     
     
                     ::placeholder {
@@ -89,6 +138,17 @@
                 font-size: 25px;
                 user-select: none;
                 outline: none;
+
+                i {
+                    @include for-both(1024px, 768px) {
+                        font-size: 40px;
+                    }
+                }
+                
+
+                @include for-width(500px) {
+                    font-size: 30px;
+                }
 
                 // fixes blue overlay box when clicked
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -126,10 +186,15 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+            
 
             .close {
                 color: $colorSP;
                 font-size: 50px;
+
+                @include for-both(1024px, 768px) {
+                    font-size: 80px;
+                }
             }
 
             .ssm-inner {
@@ -152,6 +217,13 @@
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
                     transition: .3s;
+
+                    @include for-both(1024px, 768px) {
+                        height: 120px;
+                        width: 600px;
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                    }
 
                     &:hover {
                         cursor: pointer;
@@ -191,15 +263,49 @@
         display: flex;
         justify-content: space-between;
 
+        @include for-width(400px) {
+            font-size: 18px;
+            // padding: 2px 4px;
+        }
+
+        @include for-width(600px) {
+            margin-bottom: 20px;
+        }
+
+        @include for-both(1024px, 768px) {
+            justify-content: space-evenly;
+        }
+
         div {
             padding: 5px 8px;
             border: 1px solid $gray;
             border-radius: 10px;
+            @include for-width(400px) {
+                padding: 5px 10px;
+                border-radius: 12px;
+            }
+
+            @include for-width(450px) {
+                padding: 10px 15px;
+            }
+
+            @include for-width(500px) {
+                font-size: 20px;
+                padding: 10px 15px;
+            }
 
             &:first-child {
                 border: 1px solid $colorButton;
                 // background-color: $colorPrimary;
                 color: $gray;
+            }
+        }
+
+        .vegetables {
+            display: none;
+
+            @include for-width(600px) {
+                display: flex;
             }
         }
 
@@ -215,6 +321,24 @@
         // -webkit-overflow-scrolling: touch;
         width: 100vw;
 
+        @include for-width(600px) {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 70vh;
+            overflow: none;
+            white-space: normal;
+        }
+
+        @include for-height-mobile(680px) {
+            margin-top: 10px;
+        }
+
+        @include for-both(1024px, 768px) {
+            height: 65vh;
+        }
+
         // za chrome
         &::-webkit-scrollbar {
             display: none;
@@ -227,11 +351,87 @@
             display: inline-block;
             margin: 0px 10px 10px 0;
             color: #000;
-            border: 1px solid $colorPrimary;
             border-radius: 20px;
+            // border: 1px solid $colorPrimary;
             background-color: #fff;
             width: 80%;
             height: 380px;
+            overflow: hidden;
+
+            @include for-width(600px) {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+
+            @include for-width(1000px) {
+                width: 30%;
+            }
+
+            @include for-height-mobile(680px) {
+                height: 410px;
+            }
+
+            @include for-height-mobile(720px) {
+                height: 450px;
+            }
+
+            @include for-height-mobile(780px) {
+                height: 500px;
+            }
+            .meal-n-inner {
+                height: 100%;
+                // overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: space-evenly;
+
+                position: relative;
+
+                img {
+                    background-position: center center;
+                    background-size: cover;
+                    height: 70%;
+                    
+                }
+
+
+                .inner-bottom {
+                    padding: 20px;
+                    height: 30%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h3 {
+                        text-align: center;
+                        color: $gray;
+                    }
+
+                    i {
+                        color: red;
+                        padding: 20px;
+                        border: 1px solid red;
+                        border-radius: 50%;
+                        background-color: #fff;
+   
+                        font-size: 30px;
+                        // padding-left: 20px;
+                        margin-left: 10px;
+                        border-left: 1px solid $colorPrimary;
+                        border-right: 1px solid $colorPrimary;
+                        // position: absolute;
+                        // top: 10px;
+                        // right: 10px;
+
+                        @include for-both(1024px, 768px) {
+                            font-size: 35px;
+                        }
+                    }
+                }
+            }
+
         }
 
 
@@ -239,7 +439,7 @@
             display: inline-block;
             margin: 0px 10px 10px 0;
             color: #000;
-            border: 1px solid $colorPrimary;
+            // border: 1px solid $colorPrimary;
             border-radius: 20px;
             background-color: #fff;
             width: 80%;
@@ -250,6 +450,10 @@
             // text-align: left;
             overflow: hidden;
             // display: inline-block;
+
+            // @include for-height(670px) {
+            //     height: 500px;
+            // }
 
             .meal-inner {
                 padding: 10px 20px 20px 15px;
@@ -334,6 +538,14 @@
             
             position: relative;
             bottom: 200px;
+
+            @include for-height-mobile(720px) {
+                bottom: 240px;
+            }
+
+            @include for-width(600px) {
+                display: none;
+            }
 
             .back {
                 color: $colorButton;

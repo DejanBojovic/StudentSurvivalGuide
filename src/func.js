@@ -158,11 +158,28 @@ export function mealCreation(url, title, id, cl='') {
 
             <h2>${title}</h2>
             
-            <div class="learn-more">Learn More</div>
+            <div class="learn-more">Make it!</div>
         </div>
     </div>
     `
 }
+
+// export function mC(url, title, id) {
+//     return `
+//     <div class="meal-n" data-id=${}>
+//         <div class="meal-n-inner">
+//             <img src=${url} alt="">
+            
+//             <i class="favorite-meal far fa-heart"></i>
+            
+//             <div class="inner-bottom">
+//                 <h3>${title}</h3>
+//             </div>
+            
+//         </div>
+//     </div>
+//     `
+// }
 
 // export function mealCreationFavorites(url, title, id) {
 //     return `
@@ -193,7 +210,7 @@ export function fetchingFavorites() {
         .then(response => response.json())
         .then(data => {
             // console.log(id)
-            console.log(data)
+            //console.log(data)
 
             favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f'))
 

@@ -7,6 +7,44 @@ $colorBg: #f3f7fc;
 $gray: #686868;
 $time: .2s;
 
+// media queries mixins
+@mixin for-width($size) {
+    @media (min-width: $size) { @content; }
+}
+
+@mixin for-height($size) {
+    @media (min-height: $size) { @content; }
+}
+
+@mixin for-both($height, $width) {
+    @media (min-height: $height) and (min-width: $width) { @content; }
+}
+
+
+@mixin for-height-mobile($size) {
+    @media (min-height: $size) and (max-width: 599px) { @content; }
+}
+
+// @mixin phone-only {
+//     @media (max-width: 599px) { @content; }
+// }
+
+// @mixin tablet-portrait-up {
+//     @media (min-width: 600px) { @content; }
+// }
+
+// @mixin tablet-landscape-up {
+//     @media (min-width: 900px) { @content; }
+// }
+
+// @mixin desktop-up {
+//     @media (min-width: 1200px) { @content; }
+// }
+
+// @mixin big-desktop-up {
+//     @media (min-width: 1800px) { @content; }
+// }
+
 /* reset */
 * {
 
@@ -84,6 +122,12 @@ $time: .2s;
         justify-content: center;
         align-items: center;
 
+        @include for-both(1024px, 768px) {
+            bottom: 20px;
+            width: 250px;
+            justify-content: space-evenly;
+        }
+
         // border-top-left-radius: 18px;
         // border-top-right-radius: 18px;
 
@@ -100,6 +144,16 @@ $time: .2s;
 
             transition: $time;
 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include for-both(1024px, 768px) {
+                font-size: 50px;
+                padding: 20px 25px;
+                border-radius: 15px;
+            }
+
             &:hover,
             &:active {
                 cursor: pointer;
@@ -112,8 +166,18 @@ $time: .2s;
             color: $gray;
             border-radius: 10px;
             position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
             
             transition: $time;
+
+            @include for-both(1024px, 768px) {
+                font-size: 50px;
+                padding: 20px 25px;
+                border-radius: 15px;
+            }
 
             &:hover,
             &:active {
@@ -148,5 +212,5 @@ $time: .2s;
 // imports
 @import "./_frontpage";
 @import "./_homepage";
-@import "./mealpage";
-@import "./userpage";
+@import "./_mealpage";
+@import "./_userpage";
