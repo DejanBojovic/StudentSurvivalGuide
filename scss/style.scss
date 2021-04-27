@@ -121,6 +121,7 @@ $time: .2s;
         display: flex;
         justify-content: center;
         align-items: center;
+        
 
         @include for-both(1024px, 768px) {
             bottom: 20px;
@@ -131,6 +132,10 @@ $time: .2s;
         @include for-both(800px, 1280px) {
             bottom: 10px;
         }
+
+        // @include for-both(601px, 962px) {
+        //     bottom: -5px;
+        // }
 
         // border-top-left-radius: 18px;
         // border-top-right-radius: 18px;

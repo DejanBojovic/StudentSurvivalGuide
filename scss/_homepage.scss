@@ -193,6 +193,9 @@
             border-top-left-radius: 18px;
             border-top-right-radius: 18px;
 
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+
 
             display: flex;
             flex-direction: column;
@@ -202,8 +205,15 @@
             @include for-both(800px, 1280px) {
                 width: 0%;
                 height: 100%;
-                top: 0;
+                // top: 0;
+                position: fixed;
                 left: 0;
+
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                border-top-right-radius: 18px;
+                border-bottom-right-radius: 18px;
             }
             
 
@@ -306,8 +316,16 @@
             justify-content: space-evenly;
         }
 
+        @include for-both(601px, 962px) {
+            margin-bottom: 0px;
+            padding: 10px;
+            padding-left: 20px;
+            justify-content: flex-start;
+        }
+
         @include for-both(800px, 1280px) {
             justify-content: flex-start;
+            margin: 10px 0;
         }
 
         div {
@@ -329,8 +347,15 @@
                 padding: 10px 15px;
             }
 
+            @include for-both(601px, 962px) {
+                font-size: 16px;
+                padding: 5px 8px;
+                margin-right: 20px;
+            }
+
             @include for-both(800px, 1280px) {
                 margin-right: 20px;
+                font-size: 20px;
             }
 
             &:first-child {
@@ -379,7 +404,17 @@
         }           
         
         @include for-both(800px, 1280px) {
-            height: 62vh;
+            height: 65vh;
+        }
+
+        @include for-both(1200px, 800px) {
+            height: 70vh;
+        }
+
+        @include for-both(601px, 962px) {
+            // display: block;
+            // overflow: auto;
+            // white-space: nowrap;
         }
 
         // za chrome
@@ -395,11 +430,15 @@
             margin: 0px 10px 10px 0;
             color: #000;
             border-radius: 20px;
-            // border: 1px solid $colorPrimary;
+            border: 1px solid #d8d8d8;
             background-color: #fff;
             width: 80%;
             height: 380px;
             overflow: hidden;
+
+            @include for-both(601px, 962px) {
+                display: inline-block;
+            }
 
             @include for-width(600px) {
                 width: 45%;
@@ -450,11 +489,13 @@
                     h3 {
                         text-align: center;
                         color: $gray;
+                        word-break: break-all;
+                        white-space: normal;
                     }
 
                     i {
                         color: red;
-                        padding: 20px;
+                        padding: 15px;
                         border: 1px solid red;
                         border-radius: 50%;
                         background-color: #fff;
@@ -497,6 +538,8 @@
             // @include for-height(670px) {
             //     height: 500px;
             // }
+
+            
 
             .meal-inner {
                 padding: 10px 20px 20px 15px;

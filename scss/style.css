@@ -550,6 +550,8 @@
   transition: .3s;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -569,8 +571,12 @@
   #homepage .search .search-settings-menu {
     width: 0%;
     height: 100%;
-    top: 0;
+    position: fixed;
     left: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
   }
 }
 
@@ -701,11 +707,23 @@
   }
 }
 
+@media (min-height: 601px) and (min-width: 962px) {
+  #homepage .meal-sections {
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-left: 20px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .meal-sections {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    margin: 10px 0;
   }
 }
 
@@ -735,9 +753,18 @@
   }
 }
 
+@media (min-height: 601px) and (min-width: 962px) {
+  #homepage .meal-sections div {
+    font-size: 16px;
+    padding: 5px 8px;
+    margin-right: 20px;
+  }
+}
+
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .meal-sections div {
     margin-right: 20px;
+    font-size: 20px;
   }
 }
 
@@ -799,7 +826,13 @@
 
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .results {
-    height: 62vh;
+    height: 65vh;
+  }
+}
+
+@media (min-height: 1200px) and (min-width: 800px) {
+  #homepage .results {
+    height: 70vh;
   }
 }
 
@@ -812,10 +845,17 @@
   margin: 0px 10px 10px 0;
   color: #000;
   border-radius: 20px;
+  border: 1px solid #d8d8d8;
   background-color: #fff;
   width: 80%;
   height: 380px;
   overflow: hidden;
+}
+
+@media (min-height: 601px) and (min-width: 962px) {
+  #homepage .results .meal-n {
+    display: inline-block;
+  }
 }
 
 @media (min-width: 600px) {
@@ -888,11 +928,13 @@
 #homepage .results .meal-n .meal-n-inner .inner-bottom h3 {
   text-align: center;
   color: #686868;
+  word-break: break-all;
+  white-space: normal;
 }
 
 #homepage .results .meal-n .meal-n-inner .inner-bottom i {
   color: red;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid red;
   border-radius: 50%;
   background-color: #fff;
