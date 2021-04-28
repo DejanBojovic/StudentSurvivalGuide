@@ -238,13 +238,13 @@ const userpage = document.querySelector('#userpage')
 //     menu.style.display = 'none'
 // }
 
-userpage.style.display='block'
+userpage.style.display='none'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
 document.querySelector('#mealpage').style.display = 'none'
-homepage.style.display = 'none'
+homepage.style.display = 'block'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -286,11 +286,11 @@ const homeButtonD = document.querySelector('.home-desktop')
 
 homeButtonD.addEventListener('click', () => {
     // menu styling
-    homeButtonD.style.color = '#df8723'
-    homeButtonD.style.backgroundColor = '#fff'
+    // homeButtonD.style.color = '#df8723'
+    // homeButtonD.style.backgroundColor = '#fff'
 
-    userButtonD.style.color = '#df8723'
-    userButtonD.style.backgroundColor = 'transparent'
+    // userButtonD.style.color = '#df8723'
+    // userButtonD.style.backgroundColor = 'transparent'
 
     // page toggle
     homepage.style.display = 'block'
@@ -304,7 +304,7 @@ userButton.addEventListener('click', () => {
     // removing the red dot
     document.querySelector('.favorites-dot').style.display = "none"
 
-    // menu styling
+    // // menu styling
     userButton.style.color = '#000'
     userButton.style.backgroundColor = '#fdc33b'
     // favoritesButton.style.borderRadius = '10px'
@@ -327,14 +327,6 @@ const userButtonD = document.querySelector('.user-desktop')
 userButtonD.addEventListener('click', () => {
     // removing the red dot
     document.querySelector('.favorites-dot').style.display = "none"
-
-    // menu styling
-    userButtonD.style.color = '#df8723'
-    userButtonD.style.backgroundColor = '#fff'
-    // favoritesButton.style.borderRadius = '10px'
-
-    homeButtonD.style.color = '#df8723'
-    homeButtonD.style.backgroundColor = 'transparent'
 
     // page toggle
     userpage.style.display = 'block'

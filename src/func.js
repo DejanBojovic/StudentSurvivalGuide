@@ -33,11 +33,11 @@ export default function fetchingMeals(searchItem, type) {
 
     // separating fetch string into part where i fetch random meals
     if(type === 'random' || type === 'meat' || type === 'dessert' || type === 'fruit') {
-        fetchString = `https://api.spoonacular.com/recipes/random?tags=${searchItem}&number=50&apiKey=${apiKey}`
+        fetchString = `https://api.spoonacular.com/recipes/random?tags=${searchItem}&number=1&apiKey=${apiKey}`
         console.log('prvi')
     } else {
         // and part where i search by ingredients, cuisine or diet
-        fetchString = `https://api.spoonacular.com/recipes/${type}=${searchItem}&number=50&apiKey=${apiKey}`
+        fetchString = `https://api.spoonacular.com/recipes/${type}=${searchItem}&number=1&apiKey=${apiKey}`
     }
 
     const resultContainer = document.querySelector('.results')
@@ -54,8 +54,7 @@ export default function fetchingMeals(searchItem, type) {
             data.recipes.map(el => {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title, el.id))
             })
-        }
-         else {
+        } else {
             data.map(el => {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title, el.id))
             })
@@ -66,8 +65,17 @@ export default function fetchingMeals(searchItem, type) {
         // adding a red dot so user knows what happens when he likes a meal
         const allMeals = document.querySelectorAll('.meal')
         allMeals.forEach(el => {
-            el.addEventListener('click', () => {
-                document.querySelector('.favorites-dot').style.display = "block"
+            el.addEventListener('click', (e) => {
+                // document.querySelector('.favorites-dot').style.display = "block"
+
+                // event listener for mealpage showing - gets meal ID as an argument
+                // console.log(e.target.parentNode.parentNode.parentNode)
+                // console.log(e.target)
+                fetchForMealpage(e.target.getAttribute('data-id'))
+
+                const mealpage = document.querySelector('#mealpage')
+                mealpage.style.display = 'block'
+
                 setTimeout(() => {
                     document.querySelector('.favorites-dot').style.display = "none"
                 }, 2000)
@@ -76,13 +84,79 @@ export default function fetchingMeals(searchItem, type) {
     })
 }
 
-const allMeals = document.querySelectorAll('.favorite-meal')
-allMeals.forEach(el => {
+export function showMealpage(m) {
+    let ingredients = ''
+
+    m.extendedIngredients.forEach(el => {
+        ingredients += `<li>${el.name}</li>`
+    })
+
+    return `
+    <div class="meal-container">
+        <img src=${m.image} alt=${m.title}>
+
+        <div class="icons">
+            <i class="fas fa-angle-left"></i>
+            <i class="favorite-meal far fa-heart"></i>
+        </div>
+        
+
+        <div class="mealpage-main">
+            <h3>${m.title}</h3>
+            <div class="ingredients">
+                <ul>
+                    ${ingredients}
+                </ul>
+
+
+                <a href="https://www.youtube.com/results?search_query=blues" target="_blank">Something</a>
+            </div>
+        </div>
+    </div>
+    `
+}
+
+export function fetchForMealpage(id) {
+    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+        const mealContainer = document.querySelector('#mealpage')
+        mealContainer.insertAdjacentHTML('beforeend', showMealpage(data))
+
+        document.querySelector('#homepage').style.display = 'none'
+        document.querySelector('#userpage').style.display = 'none'
+
+
+        // console.log(id)
+        // console.log(data)
+
+        // favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f', 'fas'))
+
+        // adding a red dot so user knows what happens when he likes a meal
+        // const allMeals = document.querySelectorAll('.meal')
+        // allMeals.forEach(el => {
+        //     el.addEventListener('click', () => {
+        //         document.querySelector('.favorites-dot').style.display = "block"
+        //         setTimeout(() => {
+        //             document.querySelector('.favorites-dot').style.display = "none"
+        //         }, 2000)
+        //     })
+        // })
+    })
+    
+}
+
+const allMealHearts = document.querySelectorAll('.favorite-meal')
+allMealHearts.forEach(el => {
     el.addEventListener('click', () => {
-        document.querySelector('.favorites-dot').style.display = "block"
-        setTimeout(() => {
-            document.querySelector('.favorites-dot').style.display = "none"
-        }, 2000)
+        const redDots = document.querySelectorAll('.favorites-dot');
+
+        redDots.forEach(el => {
+            el.style.display = "block"
+            setTimeout(() => {
+                el.style.display = "none"
+            }, 2000)
+        })
     })
 })
 
@@ -106,7 +180,9 @@ export function addingFavorites() {
                 }, 2000)
 
                 // adding meal id to localStorage soo it can be displayed on favorites page
-                const mealID = e.target.parentNode.parentNode.getAttribute('data-id')
+                const mealID = e.target.parentNode.parentNode.parentNode.getAttribute('data-id')
+
+                console.log(mealID)
                 
                 // getting favorites array from localStorage and adding mealID to it
                 const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
@@ -131,7 +207,7 @@ export function addingFavorites() {
                 document.querySelector('.favorites-dot').style.display = "none"
 
                 // getting mealID for removing
-                const mealID = e.target.parentNode.parentNode.getAttribute('data-id')
+                const mealID = e.target.parentNode.parentNode.parentNode.getAttribute('data-id')
 
                 // removing meal from localStorage and favorites page
                 const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
@@ -146,57 +222,21 @@ export function addingFavorites() {
     })
 }
 
-// create one function from these two
-// proveri da li ovo radi kad proradi api call !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-export function mealCreation(url, title, id, cl='') {
+export function mealCreation(url, title, id, cl='', fav='far') {
     return `
     <div class="meal${cl}" data-id=${id}>
         <div class="meal-inner${cl}">
-            <img src=${url} alt="">
+            <img src=${url}>
 
-            <i class="favorite-meal far fa-heart"></i>
-
-            <h2>${title}</h2>
+            <div class="inner-bottom">
+                <h2>${title}</h2>
+                <i class="favorite-meal ${fav} fa-heart"></i>
+            </div>
             
-            <div class="learn-more">Make it!</div>
         </div>
     </div>
     `
 }
-
-// export function mC(url, title, id) {
-//     return `
-//     <div class="meal-n" data-id=${}>
-//         <div class="meal-n-inner">
-//             <img src=${url} alt="">
-            
-//             <i class="favorite-meal far fa-heart"></i>
-            
-//             <div class="inner-bottom">
-//                 <h3>${title}</h3>
-//             </div>
-            
-//         </div>
-//     </div>
-//     `
-// }
-
-// export function mealCreationFavorites(url, title, id) {
-//     return `
-//     <div class="meal-f" data-id=${id}>
-//         <div class="meal-inner-f">
-//             <img src=${url} alt="">
-
-//             <i class="favorite-meal far fa-heart"></i>
-
-//             <h2>${title}</h2>
-            
-//             <div class="learn-more">Learn More</div>
-//         </div>
-//     </div>
-//     `
-// }
-
 
 // USED IN USER.JS !!!
 export function fetchingFavorites() {
@@ -210,9 +250,9 @@ export function fetchingFavorites() {
         .then(response => response.json())
         .then(data => {
             // console.log(id)
-            //console.log(data)
+            console.log(data)
 
-            favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f'))
+            favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f', 'fas'))
 
             // adding a red dot so user knows what happens when he likes a meal
             // const allMeals = document.querySelectorAll('.meal')
@@ -224,7 +264,7 @@ export function fetchingFavorites() {
             //         }, 2000)
             //     })
             // })
-    })
+        })
     })
 
     

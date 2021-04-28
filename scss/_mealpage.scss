@@ -3,64 +3,97 @@
     width: 100vw;
     // padding: 20px;
     background-color: $colorBg;
+    z-index: 6;
 
-    .img {
-        height: 30%;
+    .meal-container {
+        height: 100%;
         width: 100%;
-        background-color: red;
 
-        background-image: url('https://img.grouponcdn.com/deal/2iTm4PtuPqk644BEdNxxNqEqf3Cw/2i-1000x600/v1/c870x524.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-
-    .icons {
-        width: 85%;
-        margin: 0 auto;
-        padding: 10px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        i {
-            font-size: 28px;
-            padding: 10px;
-            color: $colorPrimary;
-        }
-
-        .favorite-meal {
-            color: red;
-        }
-    }
-
-    .mealpage-main {
-        overflow: auto;
-        white-space: nowrap;
-        width: 90%;
-        height: 300px;
-        padding: 20px;
-        // margin: 20px;
-        margin: 0 auto;
-        border-radius: 20px;
-        background-color: #fff;
-
-        h3 {
-            text-align: left;
-            color: $gray;
-            text-transform: lowercase;
-        }
-
-        .ingredients {
-            padding: 20px;
-
-            li {
-                list-style-type: circle
+        img {
+            display: block;
+            height: 30%;
+            width: 100%;
+            // background-color: red;
+    
+            // background-image: url('https://img.grouponcdn.com/deal/2iTm4PtuPqk644BEdNxxNqEqf3Cw/2i-1000x600/v1/c870x524.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+    
+            @include for-width(750px) {
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                margin: 20px auto;
+                width: 80%;
+            }
+    
+            @include for-width(1250px) {
+                height: 35%;
             }
         }
-
+    
+        .icons {
+            width: 85%;
+            margin: 0 auto;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            @include for-width(750px) {
+                width: 80%;
+            }
+    
+            i {
+                font-size: 28px;
+                padding: 10px;
+                color: $colorPrimary;
+    
+                @include for-width(750px) {
+                    font-size: 50px;
+                }
+            }
+    
+            .favorite-meal {
+                color: red;
+            }
+        }
+    
+        .mealpage-main {
+            overflow: auto;
+            white-space: nowrap;
+            width: 90%;
+            height: 50%;
+            padding: 20px;
+            // margin: 20px;
+            margin: 0 auto;
+            border-radius: 20px;
+            background-color: #fff;
+    
+            @include for-width(750px) {
+                width: 80%;
+            }
+    
+            h3 {
+                text-align: left;
+                color: $gray;
+                text-transform: lowercase;
+                white-space: normal;
+            }
+    
+            .ingredients {
+                padding: 20px;
+    
+                li {
+                    list-style-type: circle
+                }
+            }
+    
+        }
     }
+
+    
 }

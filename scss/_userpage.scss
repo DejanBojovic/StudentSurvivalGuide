@@ -61,6 +61,10 @@
                 @include for-width(600px) {
                     font-size: 80px;
                 }
+
+                @include for-width(1200px) {
+                    font-size: 100px;
+                }
             }
 
             .userpage-inner {
@@ -83,6 +87,12 @@
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
                     transition: .3s;
+
+                    @include for-both(1080px, 1920px) {
+                        width: 400px;
+                        height: 120px;
+                        font-size: 25px;
+                    }
 
                     &:hover {
                         cursor: pointer;
@@ -329,8 +339,6 @@
                 // flex-wrap: wrap;
 
                 @include for-width(900px) {
-                    overflow: none;
-                    white-space: normal;
 
                     display: flex;
                     flex-wrap: wrap;
@@ -356,101 +364,102 @@
                     margin: 0px 10px 10px 0;
                     color: #000;
                     border-radius: 20px;
+                    border: 1px solid #d8d8d8;
                     background-color: #fff;
                     width: 80%;
-        
-                    // TODO - FIX TEXT-WRAP option for H2 !!!
-                    // word-wrap: break-word;
-        
-                    // text-align: left;
+                    height: 380px;
                     overflow: hidden;
-                    // display: inline-block;
-
-                    @include for-width(900px) {
-                        width: 40%;
+        
+                    @include for-both(601px, 962px) {
+                        display: inline-block;
+                    }
+        
+                    @include for-width(600px) {
+                        width: 45%;
                         margin-bottom: 20px;
                     }
-
-                    @include for-width(1500px) {
-                        width: 22%;
+        
+                    @include for-width(1000px) {
+                        width: 30%;
                     }
         
+                    @include for-height-mobile(680px) {
+                        height: 410px;
+                    }
+        
+                    @include for-height-mobile(720px) {
+                        height: 450px;
+                    }
+        
+                    @include for-height-mobile(780px) {
+                        height: 500px;
+                    }
+        
+                    @include for-width(1500px) {
+                        width: 24%;
+                    }
+        
+                    @include for-both(1080px, 1920px) {
+                        width: 23%;
+                    }
+                    
                     .meal-inner-f {
-                        padding: 10px 20px 20px 15px;
-                        display: block;
-                        // width: 100%;
-                        height: 380px;
-                        // word-wrap: break-word;
-                        // text-align: left;
+                        height: 100%;
+                        // overflow: hidden;
                         display: flex;
                         flex-direction: column;
-                        align-items: flex-start;
+                        align-items: center;
+                        // justify-content: space-evenly;
         
                         position: relative;
-                        // overflow: hidden;
-        
-                        white-space: normal;
-        
-        
-                        // background-color: rgb(255, 214, 152);
-        
-        
-                        // background-color: rgb(255, 160, 160);
         
                         img {
-                            // display: block;
-                            height: 250px;
-                            width: 250px;
-                            border-radius: 50%;
-                            margin: 0 0 0 0;
-            
-                            position: relative;
-                            top: -20px;
-                            left: -75px;
+                            background-position: center center;
+                            background-size: cover;
+                            height: 70%;
+                            
                         }
         
-                        .favorite-meal {
-                            position: absolute;
-                            right: 12px;
-                            top: 12px;
         
-                            border-radius: 50%;
-                            font-size: 30px;
-                            color: rgb(241, 53, 53);
+                        .inner-bottom {
+                            padding: 20px;
+                            height: 30%;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            
         
-                            z-index: 3 !important;
-                        }
-            
-                        h2 {
-                            // font-family: 'Londrina Solid', 'Roboto', sans-serif;
-                            text-align: left;
-                            // word-wrap: break-word;
-                            color: $gray;
-                            font-size: 20px;
-                            margin-bottom: 10px;
-                            position: relative;
-                            bottom: 10px;
-                        }
-            
-                        .learn-more {
-                            padding: 12px 18px;
-                            // margin: 10px 0;
-                            background-color: $colorButton;
-                            color: #fff;
-                            font-size: 20px;
-                            border-radius: 10px;
+                            h2 {
+                                text-align: left;
+                                color: $colorSecondary;
+                                // word-break: break-all;
+                                white-space: normal;
+                            }
         
-                            position: absolute;
-                            bottom: 20px;
-            
-                            // &:hover,
-                            // &:active {
-            
-                            // }
+                            i {
+                                color: red;
+                                padding: 15px;
+                                border: 1px solid red;
+                                border-radius: 50%;
+                                background-color: #fff;
+           
+                                font-size: 30px;
+                                // padding-left: 20px;
+                                margin-left: 10px;
+                                border-left: 1px solid $colorPrimary;
+                                border-right: 1px solid $colorPrimary;
+                                // position: absolute;
+                                // top: 10px;
+                                // right: 10px;
+        
+                                @include for-both(1024px, 768px) {
+                                    font-size: 35px;
+                                }
+                            }
                         }
                     }
         
-                    
                 }
 
                 .end-div {
@@ -542,7 +551,7 @@
                     border-radius: 30px;
                     padding: 30px 20px;
                     width: 100%;
-                    height: 70%;
+                    height: 60%;
                     background-color: #fff;
 
                     overflow: auto;

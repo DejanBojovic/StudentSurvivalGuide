@@ -1,4 +1,4 @@
-import { addingNote, deleteNoteBtn, fetchingFavorites } from './func.js'
+import { addingNote, deleteNoteBtn, fetchingFavorites, removingPreviousMeals } from './func.js'
 
 const favDiv = document.querySelector('.favorites')
 const notesDiv = document.querySelector('.notes')
@@ -46,6 +46,49 @@ closeUserpage.addEventListener('click', () => {
         document.querySelector('.userpage-menu').style.height = '0%'
     }
 
+})
+
+
+const homepage = document.querySelector('#homepage')
+const userpage = document.querySelector('#userpage')
+
+const homeButtonU = document.querySelector('.home-desktop-u')
+homeButtonU.addEventListener('click', () => {
+    // menu styling
+    // homeButtonU.style.color = '#df8723'
+    // homeButtonU.style.backgroundColor = '#fff'
+
+    // userButtonU.style.color = '#df8723'
+    // userButtonU.style.backgroundColor = 'transparent'
+
+    // page toggle
+    homepage.style.display = 'block'
+    userpage.style.display = 'none'
+})
+
+const userButtonU = document.querySelector('.user-desktop-u')
+
+userButtonU.addEventListener('click', () => {
+    // removing the red dot
+    document.querySelector('.favorites-dot').style.display = "none"
+
+    // menu styling
+    // userButtonU.style.color = '#df8723'
+    // userButtonU.style.backgroundColor = '#fff'
+    // // favoritesButton.style.borderRadius = '10px'
+
+    // homeButtonU.style.color = '#df8723'
+    // homeButtonU.style.backgroundColor = 'transparent'
+
+    // page toggle
+    userpage.style.display = 'block'
+    homepage.style.display = 'none'
+
+    // getting all the things from localStorage to userpage
+    // UNCOMMENTUJ OVO POSLE !!!!!
+    removingPreviousMeals()
+    fetchingFavorites()
+    // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
 const userpageFav = document.querySelector('.userpage-fav')
@@ -102,7 +145,7 @@ if(notesInner.children.length === 0) {
 }
 
 // DISPLAYING ALL THE FAVORITE MEALS FROM LOCALSTORAGE --------------- 
-// fetchingFavorites()
+fetchingFavorites()
 
 // back button for meals
 const backButtonUserpage = document.querySelector('.userpage-back')
