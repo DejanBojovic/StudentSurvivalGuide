@@ -72,6 +72,12 @@
   }
 }
 
+@media (min-height: 768px) and (min-width: 1366px) {
+  * .menu {
+    display: none;
+  }
+}
+
 * .menu .home {
   padding: 15px 18px;
   margin-right: 10px;
@@ -365,6 +371,14 @@
           align-items: center;
 }
 
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .searchbar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #homepage .search .searchbar .searchbar-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -402,6 +416,12 @@
 @media (min-height: 1024px) and (min-width: 768px) {
   #homepage .search .searchbar .searchbar-main .search-icon {
     width: 60px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .searchbar .searchbar-main .search-icon {
+    height: 60px;
   }
 }
 
@@ -443,6 +463,12 @@
   }
 }
 
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .searchbar .searchbar-main .search-icon i {
+    font-size: 28px;
+  }
+}
+
 #homepage .search .searchbar .searchbar-main .search-icon i:hover, #homepage .search .searchbar .searchbar-main .search-icon i:active {
   cursor: pointer;
 }
@@ -476,6 +502,14 @@
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .search .searchbar .searchbar-main input {
     font-size: 28px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .searchbar .searchbar-main input {
+    height: 60px;
+    padding-left: 15px;
+    font-size: 25px;
   }
 }
 
@@ -522,6 +556,12 @@
 }
 
 @media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .searchbar .search-settings i {
+    font-size: 40px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
   #homepage .search .searchbar .search-settings i {
     font-size: 40px;
   }
@@ -580,6 +620,137 @@
   }
 }
 
+#homepage .search .search-settings-menu .menu-desktop {
+  padding: 40px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 22px;
+  display: none;
+}
+
+@media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    bottom: 20px;
+    width: 250px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    bottom: 10px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px;
+  }
+}
+
+#homepage .search .search-settings-menu .menu-desktop .home-desktop {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  font-size: 35px;
+  color: #df8723;
+  border: 2px solid #df8723;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .search .search-settings-menu .menu-desktop .home-desktop {
+    font-size: 50px;
+    padding: 20px 25px;
+    border-radius: 15px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .menu-desktop .home-desktop {
+    font-size: 40px;
+  }
+}
+
+#homepage .search .search-settings-menu .menu-desktop .home-desktop:hover, #homepage .search .search-settings-menu .menu-desktop .home-desktop:active {
+  cursor: pointer;
+}
+
+#homepage .search .search-settings-menu .menu-desktop .user-desktop {
+  height: 80px;
+  width: 80px;
+  font-size: 35px;
+  color: #df8723;
+  border: 2px solid #df8723;
+  border-radius: 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+@media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .search .search-settings-menu .menu-desktop .user-desktop {
+    font-size: 50px;
+    padding: 20px 25px;
+    border-radius: 15px;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .menu-desktop .user-desktop {
+    font-size: 40px;
+  }
+}
+
+#homepage .search .search-settings-menu .menu-desktop .user-desktop:hover, #homepage .search .search-settings-menu .menu-desktop .user-desktop:active {
+  cursor: pointer;
+}
+
+#homepage .search .search-settings-menu .menu-desktop .user-desktop .favorites-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  position: absolute;
+  right: 2px;
+  top: -2px;
+  display: none;
+}
+
 #homepage .search .search-settings-menu .close {
   color: #df8723;
   font-size: 50px;
@@ -594,6 +765,12 @@
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .search .search-settings-menu .close {
     font-size: 80px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .search .search-settings-menu .close {
+    font-size: 100px;
   }
 }
 
@@ -727,6 +904,23 @@
   }
 }
 
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .meal-sections {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px 0;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .meal-sections {
+    padding: 18px 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
 #homepage .meal-sections div {
   padding: 5px 8px;
   border: 1px solid #686868;
@@ -764,6 +958,14 @@
 @media (min-height: 800px) and (min-width: 1280px) {
   #homepage .meal-sections div {
     margin-right: 20px;
+    font-size: 20px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .meal-sections div {
+    margin-right: 25px;
+    padding: 6px 15px;
     font-size: 20px;
   }
 }
@@ -833,6 +1035,12 @@
 @media (min-height: 1200px) and (min-width: 800px) {
   #homepage .results {
     height: 70vh;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
+  #homepage .results {
+    height: 77vh;
   }
 }
 
@@ -928,7 +1136,6 @@
 #homepage .results .meal-n .meal-n-inner .inner-bottom h3 {
   text-align: center;
   color: #686868;
-  word-break: break-all;
   white-space: normal;
 }
 

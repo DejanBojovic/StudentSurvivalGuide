@@ -47,16 +47,25 @@ searchOptionsBtn.addEventListener('click', () => {
     // }
 
     if(closeButton.classList.contains('fa-angle-down')) {
+        console.log('down')
+        // searchSettingsMenu.style.height = '50%'
         if(searchSettingsMenu.style.height === '50%') {
             searchSettingsMenu.style.height = '0%'
         } else {
             searchSettingsMenu.style.height = '50%'
         }
     } else {
-        if(searchSettingsMenu.style.width === '50%') {
+        console.log('left')
+        // searchSettingsMenu.style.width = '50%'
+        // searchSettingsMenu.style.height = '100%'
+        // searchSettingsMenu.style.left = '0'
+        
+        if(searchSettingsMenu.style.width === '30%') {
             searchSettingsMenu.style.width = '0%'
         } else {
-            searchSettingsMenu.style.width = '50%'
+            searchSettingsMenu.style.width = '30%'
+            searchSettingsMenu.style.height = '100%'
+            searchSettingsMenu.style.left = '0'
         }
     }
 
@@ -66,6 +75,9 @@ searchOptionsBtn.addEventListener('click', () => {
 if(screen.width >= 1280) {
     closeButton.classList.remove('fa-angle-down')
     closeButton.classList.add('fa-angle-left')    
+} else {
+    closeButton.classList.remove('fa-angle-left')
+    closeButton.classList.add('fa-angle-down')   
 }
 
 closeButton.addEventListener('click', () => {
@@ -254,15 +266,31 @@ frontpageBtn.addEventListener('click', () => {
 
 
 // homepage
+// mobile and tablet
 const homeButton = document.querySelector('.home')
 
 homeButton.addEventListener('click', () => {
     // menu styling
-    homeButton.style.color = '#000'
-    homeButton.style.backgroundColor = '#fdc33b'
+    homeButton.style.color = '#df8723'
+    homeButton.style.backgroundColor = '#fff'
 
-    userButton.style.color = '#686868'
+    userButton.style.color = '#df8723'
     userButton.style.backgroundColor = 'transparent'
+
+    // page toggle
+    homepage.style.display = 'block'
+    userpage.style.display = 'none'
+})
+
+const homeButtonD = document.querySelector('.home-desktop')
+
+homeButtonD.addEventListener('click', () => {
+    // menu styling
+    homeButtonD.style.color = '#df8723'
+    homeButtonD.style.backgroundColor = '#fff'
+
+    userButtonD.style.color = '#df8723'
+    userButtonD.style.backgroundColor = 'transparent'
 
     // page toggle
     homepage.style.display = 'block'
@@ -277,12 +305,36 @@ userButton.addEventListener('click', () => {
     document.querySelector('.favorites-dot').style.display = "none"
 
     // menu styling
-    userButton.style.color = '#000'
-    userButton.style.backgroundColor = '#fdc33b'
+    userButton.style.color = '#df8723'
+    userButton.style.backgroundColor = '#fff'
     // favoritesButton.style.borderRadius = '10px'
 
-    homeButton.style.color = '#686868'
+    homeButton.style.color = '#df8723'
     homeButton.style.backgroundColor = 'transparent'
+
+    // page toggle
+    userpage.style.display = 'block'
+    homepage.style.display = 'none'
+
+    // getting all the things from localStorage to userpage
+    // UNCOMMENTUJ OVO POSLE !!!!!
+    // fetchingFavorites()
+    // FIX THIS SO THAT IT DOESNT DOUBLE
+})
+
+const userButtonD = document.querySelector('.user-desktop')
+
+userButtonD.addEventListener('click', () => {
+    // removing the red dot
+    document.querySelector('.favorites-dot').style.display = "none"
+
+    // menu styling
+    userButtonD.style.color = '#df8723'
+    userButtonD.style.backgroundColor = '#fff'
+    // favoritesButton.style.borderRadius = '10px'
+
+    homeButtonD.style.color = '#df8723'
+    homeButtonD.style.backgroundColor = 'transparent'
 
     // page toggle
     userpage.style.display = 'block'

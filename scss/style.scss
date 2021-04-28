@@ -133,6 +133,10 @@ $time: .2s;
             bottom: 10px;
         }
 
+        @include for-both(768px, 1366px) {
+            display: none;
+        }
+
         // @include for-both(601px, 962px) {
         //     bottom: -5px;
         // }
