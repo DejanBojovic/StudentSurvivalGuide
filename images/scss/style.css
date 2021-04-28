@@ -66,12 +66,6 @@
   }
 }
 
-@media (min-width: 900px) {
-  * .menu {
-    display: none;
-  }
-}
-
 @media (min-height: 720px) and (min-width: 1280px) {
   * .menu {
     display: none;
@@ -654,11 +648,37 @@
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    bottom: 20px;
+    width: 250px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (min-height: 800px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    bottom: 10px;
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1366px) {
   #homepage .search .search-settings-menu .menu-desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 50px;
+  }
+}
+
+@media (min-height: 720px) and (min-width: 1280px) {
+  #homepage .search .search-settings-menu .menu-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px;
   }
 }
 
@@ -826,16 +846,8 @@
   }
 }
 
-@media (min-width: 990px) {
-  #homepage .search .search-settings-menu .ssm-inner div {
-    width: 300px;
-    font-size: 20px;
-  }
-}
-
 @media (min-height: 720px) and (min-width: 1280px) {
   #homepage .search .search-settings-menu .ssm-inner div {
-    width: 400px;
     font-size: 20px;
   }
 }
@@ -1391,12 +1403,6 @@
   font-size: 30px;
 }
 
-@media (min-width: 900px) {
-  #userpage .header .main-nav-inner i {
-    font-size: 40px;
-  }
-}
-
 #userpage .header .userpage-menu {
   height: 0%;
   width: 100%;
@@ -1428,12 +1434,6 @@
 #userpage .header .userpage-menu .close-userpage {
   color: #df8723;
   font-size: 50px;
-}
-
-@media (min-width: 600px) {
-  #userpage .header .userpage-menu .close-userpage {
-    font-size: 80px;
-  }
 }
 
 #userpage .header .userpage-menu .userpage-inner {
@@ -1496,120 +1496,6 @@
   background-color: #fff;
 }
 
-#userpage .header .userpage-menu .menu-desktop-u {
-  padding: 40px;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 22px;
-  display: none;
-}
-
-@media (min-width: 900px) {
-  #userpage .header .userpage-menu .menu-desktop-u {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-#userpage .header .userpage-menu .menu-desktop-u .home-desktop-u {
-  height: 80px;
-  width: 80px;
-  margin-right: 10px;
-  font-size: 35px;
-  color: #df8723;
-  border: 2px solid #df8723;
-  border-radius: 10px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (min-height: 1024px) and (min-width: 768px) {
-  #userpage .header .userpage-menu .menu-desktop-u .home-desktop-u {
-    font-size: 50px;
-    padding: 20px 25px;
-    border-radius: 15px;
-  }
-}
-
-@media (min-height: 800px) and (min-width: 1280px) {
-  #userpage .header .userpage-menu .menu-desktop-u .home-desktop-u {
-    font-size: 40px;
-  }
-}
-
-#userpage .header .userpage-menu .menu-desktop-u .home-desktop-u:hover, #userpage .header .userpage-menu .menu-desktop-u .home-desktop-u:active {
-  cursor: pointer;
-}
-
-#userpage .header .userpage-menu .menu-desktop-u .user-desktop-u {
-  height: 80px;
-  width: 80px;
-  font-size: 35px;
-  color: #df8723;
-  background-color: #fff;
-  border: 2px solid #df8723;
-  border-radius: 10px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-@media (min-height: 1024px) and (min-width: 768px) {
-  #userpage .header .userpage-menu .menu-desktop-u .user-desktop-u {
-    font-size: 50px;
-    padding: 20px 25px;
-    border-radius: 15px;
-  }
-}
-
-@media (min-height: 800px) and (min-width: 1280px) {
-  #userpage .header .userpage-menu .menu-desktop-u .user-desktop-u {
-    font-size: 40px;
-  }
-}
-
-#userpage .header .userpage-menu .menu-desktop-u .user-desktop-u:hover, #userpage .header .userpage-menu .menu-desktop-u .user-desktop-u:active {
-  cursor: pointer;
-}
-
-#userpage .header .userpage-menu .menu-desktop-u .user-desktop-u .favorites-dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #ff0000;
-  position: absolute;
-  right: 2px;
-  top: -2px;
-  display: none;
-}
-
 #userpage .main {
   z-index: 2;
   width: 100%;
@@ -1638,22 +1524,9 @@
   color: #686868;
 }
 
-@media (min-width: 900px) {
-  #userpage .main .main-nav .headline {
-    margin-bottom: 20px;
-    font-size: 35px;
-  }
-}
-
 #userpage .main .main-inner {
-  height: 80vh;
+  height: 440px;
   padding: 20px;
-}
-
-@media (min-width: 900px) {
-  #userpage .main .main-inner {
-    height: 74vh;
-  }
 }
 
 #userpage .main .main-inner .favorites {
@@ -1664,28 +1537,17 @@
   scrollbar-width: none;
 }
 
-@media (min-width: 900px) {
-  #userpage .main .main-inner .favorites {
-    overflow: none;
-    white-space: normal;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    overflow: none;
-    white-space: normal;
-  }
-}
-
 #userpage .main .main-inner .favorites::-webkit-scrollbar {
   display: none;
+}
+
+#userpage .main .main-inner .favorites .f-meal {
+  display: inline-block;
+  margin: 0 auto;
+  height: 100%;
+  width: 80%;
+  background-color: red;
+  margin: 0px 10px 10px 0;
 }
 
 #userpage .main .main-inner .favorites .meal-f {
@@ -1698,22 +1560,10 @@
   overflow: hidden;
 }
 
-@media (min-width: 900px) {
-  #userpage .main .main-inner .favorites .meal-f {
-    width: 40%;
-    margin-bottom: 20px;
-  }
-}
-
-@media (min-width: 1500px) {
-  #userpage .main .main-inner .favorites .meal-f {
-    width: 22%;
-  }
-}
-
 #userpage .main .main-inner .favorites .meal-f .meal-inner-f {
   padding: 10px 20px 20px 15px;
   display: block;
+  width: 100%;
   height: 380px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1774,12 +1624,6 @@
   bottom: 200px;
 }
 
-@media (min-width: 900px) {
-  #userpage .main .main-inner .favorites .end-div {
-    display: none;
-  }
-}
-
 #userpage .main .main-inner .favorites .end-div .userpage-back {
   color: #d34338;
   font-size: 50px;
@@ -1799,19 +1643,6 @@
 #userpage .main .main-inner .notes {
   height: 100%;
   width: 100%;
-}
-
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1400px) {
-  #userpage .main .main-inner .notes {
-    width: 60%;
-  }
 }
 
 #userpage .main .main-inner .notes .notes-input {
@@ -1840,12 +1671,6 @@
   transition: .3s;
 }
 
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes .notes-input input {
-    font-size: 25px;
-  }
-}
-
 #userpage .main .main-inner .notes .notes-input input:focus {
   outline: none;
   border-bottom: 2px solid #df8723;
@@ -1856,27 +1681,14 @@
   color: #686868;
 }
 
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes .notes-input i {
-    font-size: 50px;
-  }
-}
-
 #userpage .main .main-inner .notes .notes-inner {
   border-radius: 30px;
   padding: 30px 20px;
   width: 100%;
-  height: 70%;
+  height: 300px;
   background-color: #fff;
   overflow: auto;
   white-space: nowrap;
-}
-
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes .notes-inner {
-    font-size: 25px;
-    padding: 30px 40px;
-  }
 }
 
 #userpage .main .main-inner .notes .notes-inner .note {
@@ -1898,20 +1710,8 @@
   font-size: 20px;
 }
 
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes .notes-inner .note i {
-    font-size: 25px;
-  }
-}
-
 #userpage .main .main-inner .notes .notes-inner .note p {
   word-break: break-all;
   white-space: normal;
-}
-
-@media (min-width: 950px) {
-  #userpage .main .main-inner .notes .notes-inner .note p {
-    font-size: 25px;
-  }
 }
 /*# sourceMappingURL=style.css.map */

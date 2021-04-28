@@ -22,12 +22,7 @@
 
             i {
                 font-size: 30px;
-
-                @include for-width(900px) {
-                    font-size: 40px;
-                }
             }
-
         }
 
         // .search-settings-menu
@@ -57,10 +52,6 @@
             .close-userpage {
                 color: $colorSP;
                 font-size: 50px;
-
-                @include for-width(600px) {
-                    font-size: 80px;
-                }
             }
 
             .userpage-inner {
@@ -110,143 +101,6 @@
                     background-color: #fff;
                 }
             }
-
-            .menu-desktop-u {
-                // z-index: 5;
-                // margin: 0 auto;
-                // position: fixed;
-                // left: 0;
-                // right: 0;
-                // bottom: 0;
-        
-                // width: 100vw;
-                // background-color: #fff;
-        
-                // background-color: $colorButton;
-                padding: 40px;
-                // width: 250px;
-                height: 60px;
-        
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                // border: 2px solid $colorSP;
-                border-radius: 22px;
-                
-                display: none;
-
-                @include for-width(900px) {
-                    display: flex;
-                }
-        
-                // @include for-both(1024px, 768px) {
-                //     bottom: 20px;
-                //     width: 250px;
-                //     justify-content: space-evenly;
-                // }
-        
-                // @include for-both(800px, 1280px) {
-                //     bottom: 10px;
-                // }
-        
-                // @include for-both(768px, 1366px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
-
-                // @include for-both(720px, 1280px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
-        
-                // @include for-both(601px, 962px) {
-                //     bottom: -5px;
-                // }
-        
-                // border-top-left-radius: 18px;
-                // border-top-right-radius: 18px;
-        
-                // width: 100%;
-                // background-color: $colorButton;
-        
-                .home-desktop-u {
-                    height: 80px;
-                    width: 80px;
-                    margin-right: 10px;
-                    font-size: 35px;
-                    color: $colorSP;
-                    border: 2px solid $colorSP;
-                    border-radius: 10px;
-        
-                    transition: $time;
-        
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-        
-                    @include for-both(1024px, 768px) {
-                        font-size: 50px;
-                        padding: 20px 25px;
-                        border-radius: 15px;
-                    }
-        
-                    @include for-both(800px, 1280px) {
-                        font-size: 40px;
-                    }
-        
-        
-                    &:hover,
-                    &:active {
-                        cursor: pointer;
-                    }
-                }
-        
-                .user-desktop-u {
-                    height: 80px;
-                    width: 80px;
-                    font-size: 35px;
-                    color: $colorSP;
-                    background-color: #fff;
-                    border: 2px solid $colorSP;
-                    border-radius: 10px;
-                    position: relative;
-        
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    
-                    transition: $time;
-        
-                    @include for-both(1024px, 768px) {
-                        font-size: 50px;
-                        padding: 20px 25px;
-                        border-radius: 15px;
-                    }
-        
-                    @include for-both(800px, 1280px) {
-                        font-size: 40px;
-                    }
-        
-                    &:hover,
-                    &:active {
-                        cursor: pointer;
-                    }
-        
-                    .favorites-dot {
-                        height: 10px;
-                        width: 10px;
-                        border-radius: 50%;
-                        background-color: #ff0000;
-                        position: absolute;
-                        right: 2px;
-                        top: -2px;
-        
-                        display: none;
-                    }
-                }
-        
-            }
         }
     }
 
@@ -278,18 +132,9 @@
             justify-content: center;
             align-items: center;
 
-            // @include for-width(1000px) {
-            //     margin-bottom: 20px;
-            // }
-
             .headline {
                 text-transform: lowercase;
                 color: $gray;
-
-                @include for-width(900px) {
-                    margin-bottom: 20px;
-                    font-size: 35px;
-                }
             }
         }
 
@@ -301,14 +146,8 @@
         // }
         
         .main-inner {
-            height: 80vh;
+            height: 440px;
             padding: 20px;
-
-            @include for-width(900px) {
-                height: 74vh;
-            }
-
-            // display: block;
 
             .favorites {
                 width: 100%;
@@ -318,30 +157,11 @@
                 overflow: auto;
                 white-space: nowrap;
 
-                // display: flex !important;
-                // flex-wrap: wrap !important;
-                // justify-content: space-evenly !important;
-                // align-items: center !important;
 
                 // display: flex;
                 // justify-content: center;
                 // align-items: center;
                 // flex-wrap: wrap;
-
-                @include for-width(900px) {
-                    overflow: none;
-                    white-space: normal;
-
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
-                    align-items: center;
-
-                    overflow: none;
-                    white-space: normal;
-
-                    // height: 70vh;
-                }
 
                 // za chrome
                 &::-webkit-scrollbar {
@@ -350,6 +170,21 @@
 
                 // za firefox
                 scrollbar-width: none;
+
+
+                .f-meal {
+                    display: inline-block;
+                    margin: 0 auto;
+                    height: 100%;
+                    width: 80%;
+                    background-color: red;
+                    margin: 0px 10px 10px 0;
+
+
+                    // display: flex;
+
+                    
+                }
 
                 .meal-f {
                     display: inline-block;
@@ -365,20 +200,11 @@
                     // text-align: left;
                     overflow: hidden;
                     // display: inline-block;
-
-                    @include for-width(900px) {
-                        width: 40%;
-                        margin-bottom: 20px;
-                    }
-
-                    @include for-width(1500px) {
-                        width: 22%;
-                    }
         
                     .meal-inner-f {
                         padding: 10px 20px 20px 15px;
                         display: block;
-                        // width: 100%;
+                        width: 100%;
                         height: 380px;
                         // word-wrap: break-word;
                         // text-align: left;
@@ -458,10 +284,6 @@
                     
                     position: relative;
                     bottom: 200px;
-
-                    @include for-width(900px) {
-                        display: none;
-                    }
         
                     .userpage-back {
                         color: $colorButton;
@@ -484,15 +306,6 @@
                 width: 100%;
                 // margin: 0 auto;
 
-                @include for-width(950px) {
-                    width: 80%;
-                    margin: 0 auto;
-                }
-
-                @include for-width(1400px) {
-                    width: 60%;
-                }
-
                 .notes-input {
                     width: 100%;
                     height: 100px;
@@ -514,10 +327,6 @@
 
                         transition: .3s;
 
-                        @include for-width(950px) {
-                            font-size: 25px;
-                        }
-
                         &:focus {
                             outline: none;
                             border-bottom: 2px solid $colorSP;
@@ -531,10 +340,6 @@
                     i {
                         font-size: 40px;
                         color: $gray;
-
-                        @include for-width(950px) {
-                            font-size: 50px;
-                        }
                     }
                 }
 
@@ -542,16 +347,11 @@
                     border-radius: 30px;
                     padding: 30px 20px;
                     width: 100%;
-                    height: 70%;
+                    height: 300px;
                     background-color: #fff;
 
                     overflow: auto;
                     white-space: nowrap;
-
-                    @include for-width(950px) {
-                        font-size: 25px;
-                        padding: 30px 40px;
-                    }
 
                     .note {
                         display: flex;
@@ -564,19 +364,11 @@
                         i {
                             margin-left: 20px;
                             font-size: 20px;
-
-                            @include for-width(950px) {
-                                font-size: 25px;
-                            }
                         }
 
                         p {
                             word-break: break-all;
                             white-space: normal;
-
-                            @include for-width(950px) {
-                                font-size: 25px;
-                            }
                         }
                     }
                 }

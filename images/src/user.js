@@ -3,48 +3,27 @@ import { addingNote, deleteNoteBtn, fetchingFavorites } from './func.js'
 const favDiv = document.querySelector('.favorites')
 const notesDiv = document.querySelector('.notes')
 
-// favDiv.style.display = 'block'
-notesDiv.style.display = 'none'
+favDiv.style.display = 'block'
+notesDiv.style.display = 'block'
 
 // bottom menu for inner sections change
 const mainNavInner = document.querySelector('.main-nav-inner')
 mainNavInner.addEventListener('click', () => {
     const userpageMenu = document.querySelector('.userpage-menu')
 
-    if(screen.width >= 900) {
-        if(userpageMenu.style.width === '40%') {
-            userpageMenu.style.width = '0%'
-        } else {
-            userpageMenu.style.width = '40%'
-            userpageMenu.style.height = '100%'
-            userpageMenu.style.left = '0'
-        }
+    if(userpageMenu.style.height === '40%') {
+        userpageMenu.style.height = '0%'
     } else {
-        if(userpageMenu.style.height === '40%') {
-            userpageMenu.style.height = '0%'
-        } else {
-            userpageMenu.style.height = '40%'
-        }
+        userpageMenu.style.height = '40%'
     }
 
 })
 
-
+// closeButton defined in script.js
 const closeUserpage = document.querySelector('.close-userpage')
 
-if (screen.width >= 900) {
-    closeUserpage.classList.remove('fa-angle-down')
-    closeUserpage.classList.add('fa-angle-left')
-}
-
-// closeButton defined in script.js
-
 closeUserpage.addEventListener('click', () => {
-    if (screen.width >= 900) {
-        document.querySelector('.userpage-menu').style.width = '0%'
-    } else {
-        document.querySelector('.userpage-menu').style.height = '0%'
-    }
+    document.querySelector('.userpage-menu').style.height = '0%'
 
 })
 
@@ -61,15 +40,8 @@ userpageFav.addEventListener('click', () => {
     userpageHeadline.innerHTML = 'Favorites'
 
     // changing the sections
-    if(screen.width >= 900) {
-        favDiv.style.display = 'flex'
-        notesDiv.style.display = 'none'
-    } else {
-        favDiv.style.display = 'block'
-        notesDiv.style.display = 'none'
-    }
-    // favDiv.style.display = 'block'
-    // notesDiv.style.display = 'none'
+    favDiv.style.display = 'block'
+    notesDiv.style.display = 'none'
 })
 
 // STILIZUJ HEADLINE !!!
@@ -83,7 +55,6 @@ userpageNotes.addEventListener('click', () => {
     userpageHeadline.innerHTML = 'Notes'
 
     // changing the sections
-    
     notesDiv.style.display = 'block'
     favDiv.style.display = 'none'
 })

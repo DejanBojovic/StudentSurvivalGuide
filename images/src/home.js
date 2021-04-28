@@ -49,10 +49,10 @@ searchOptionsBtn.addEventListener('click', () => {
     if(closeButton.classList.contains('fa-angle-down')) {
         console.log('down')
         // searchSettingsMenu.style.height = '50%'
-        if(searchSettingsMenu.style.height === '60%') {
+        if(searchSettingsMenu.style.height === '50%') {
             searchSettingsMenu.style.height = '0%'
         } else {
-            searchSettingsMenu.style.height = '60%'
+            searchSettingsMenu.style.height = '50%'
         }
     } else {
         console.log('left')
@@ -60,10 +60,10 @@ searchOptionsBtn.addEventListener('click', () => {
         // searchSettingsMenu.style.height = '100%'
         // searchSettingsMenu.style.left = '0'
         
-        if(searchSettingsMenu.style.width === '40%') {
+        if(searchSettingsMenu.style.width === '30%') {
             searchSettingsMenu.style.width = '0%'
         } else {
-            searchSettingsMenu.style.width = '40%'
+            searchSettingsMenu.style.width = '30%'
             searchSettingsMenu.style.height = '100%'
             searchSettingsMenu.style.left = '0'
         }
@@ -72,7 +72,7 @@ searchOptionsBtn.addEventListener('click', () => {
 })
 
 // const closeButton = document.querySelector('.close')
-if(screen.width >= 980) {
+if(screen.width >= 1280) {
     closeButton.classList.remove('fa-angle-down')
     closeButton.classList.add('fa-angle-left')    
 } else {
@@ -81,7 +81,7 @@ if(screen.width >= 980) {
 }
 
 closeButton.addEventListener('click', () => {
-    if(screen.width >= 980) {
+    if(screen.width >= 1280) {
         document.querySelector('.search-settings-menu').style.width = '0%'
     } else {
         document.querySelector('.search-settings-menu').style.height = '0%'

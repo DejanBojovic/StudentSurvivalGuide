@@ -272,30 +272,26 @@
                 border-radius: 22px;
                 
                 display: none;
-
-                @include for-width(900px) {
-                    display: flex;
+        
+                @include for-both(1024px, 768px) {
+                    bottom: 20px;
+                    width: 250px;
+                    justify-content: space-evenly;
                 }
         
-                // @include for-both(1024px, 768px) {
-                //     bottom: 20px;
-                //     width: 250px;
-                //     justify-content: space-evenly;
-                // }
+                @include for-both(800px, 1280px) {
+                    bottom: 10px;
+                }
         
-                // @include for-both(800px, 1280px) {
-                //     bottom: 10px;
-                // }
-        
-                // @include for-both(768px, 1366px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
+                @include for-both(768px, 1366px) {
+                    display: flex;
+                    padding: 50px;
+                }
 
-                // @include for-both(720px, 1280px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
+                @include for-both(720px, 1280px) {
+                    display: flex;
+                    padding: 50px;
+                }
         
                 // @include for-both(601px, 962px) {
                 //     bottom: -5px;
@@ -435,14 +431,8 @@
                         margin-bottom: 10px;
                     }
 
-                    @include for-width(990px) {
-                        width: 300px;
-                        font-size: 20px;
-                    }
-
                     @include for-both(720px, 1280px) {
                         // margin-right: 30px;
-                        width: 400px;
                         font-size: 20px;
                     }
 

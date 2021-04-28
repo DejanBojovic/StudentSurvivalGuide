@@ -129,10 +129,6 @@ $time: .2s;
             justify-content: space-evenly;
         }
 
-        @include for-width(900px) {
-            display: none;
-        }
-
         @include for-both(720px, 1280px) {
             display: none;
         }
