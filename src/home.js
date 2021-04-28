@@ -238,13 +238,13 @@ const userpage = document.querySelector('#userpage')
 //     menu.style.display = 'none'
 // }
 
-userpage.style.display='none'
+userpage.style.display='block'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
 document.querySelector('#mealpage').style.display = 'none'
-homepage.style.display = 'block'
+homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
 // sessionStorage.setItem('frontpage', 'false')
@@ -271,10 +271,10 @@ const homeButton = document.querySelector('.home')
 
 homeButton.addEventListener('click', () => {
     // menu styling
-    homeButton.style.color = '#df8723'
-    homeButton.style.backgroundColor = '#fff'
+    homeButton.style.color = '#000'
+    homeButton.style.backgroundColor = '#fdc33b'
 
-    userButton.style.color = '#df8723'
+    userButton.style.color = '#686868'
     userButton.style.backgroundColor = 'transparent'
 
     // page toggle
@@ -305,11 +305,11 @@ userButton.addEventListener('click', () => {
     document.querySelector('.favorites-dot').style.display = "none"
 
     // menu styling
-    userButton.style.color = '#df8723'
-    userButton.style.backgroundColor = '#fff'
+    userButton.style.color = '#000'
+    userButton.style.backgroundColor = '#fdc33b'
     // favoritesButton.style.borderRadius = '10px'
 
-    homeButton.style.color = '#df8723'
+    homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
 
     // page toggle

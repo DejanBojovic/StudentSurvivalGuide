@@ -129,6 +129,10 @@ $time: .2s;
             justify-content: space-evenly;
         }
 
+        @include for-both(720px, 1280px) {
+            display: none;
+        }
+
         @include for-both(800px, 1280px) {
             bottom: 10px;
         }
@@ -136,6 +140,7 @@ $time: .2s;
         @include for-both(768px, 1366px) {
             display: none;
         }
+
 
         // @include for-both(601px, 962px) {
         //     bottom: -5px;

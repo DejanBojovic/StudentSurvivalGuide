@@ -4,7 +4,7 @@ const favDiv = document.querySelector('.favorites')
 const notesDiv = document.querySelector('.notes')
 
 favDiv.style.display = 'block'
-notesDiv.style.display = 'none'
+notesDiv.style.display = 'block'
 
 // bottom menu for inner sections change
 const mainNavInner = document.querySelector('.main-nav-inner')
