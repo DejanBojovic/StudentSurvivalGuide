@@ -1239,6 +1239,13 @@
   width: 100vw;
   background-color: #f3f7fc;
   z-index: 6;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  #mealpage {
+    padding-right: 60px;
+  }
 }
 
 #mealpage .meal-container {
@@ -1246,7 +1253,33 @@
   width: 100%;
 }
 
-#mealpage .meal-container img {
+@media (min-width: 900px) {
+  #mealpage .meal-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    height: 90%;
+    width: 50%;
+    margin-top: 20px;
+  }
+}
+
+#mealpage .meal-container .mealpage-header img {
   display: block;
   height: 30%;
   width: 100%;
@@ -1258,7 +1291,7 @@
 }
 
 @media (min-width: 750px) {
-  #mealpage .meal-container img {
+  #mealpage .meal-container .mealpage-header img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin: 20px auto;
@@ -1266,13 +1299,13 @@
   }
 }
 
-@media (min-width: 1250px) {
-  #mealpage .meal-container img {
-    height: 35%;
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-header img {
+    height: 50%;
   }
 }
 
-#mealpage .meal-container .icons {
+#mealpage .meal-container .mealpage-header .icons {
   width: 85%;
   margin: 15px auto;
   padding: 5px 0;
@@ -1288,12 +1321,12 @@
 }
 
 @media (min-width: 750px) {
-  #mealpage .meal-container .icons {
+  #mealpage .meal-container .mealpage-header .icons {
     width: 80%;
   }
 }
 
-#mealpage .meal-container .icons i {
+#mealpage .meal-container .mealpage-header .icons i {
   font-size: 25px;
   padding: 15px;
   font-size: 28px;
@@ -1301,24 +1334,33 @@
 }
 
 @media (min-width: 750px) {
-  #mealpage .meal-container .icons i {
+  #mealpage .meal-container .mealpage-header .icons i {
     font-size: 50px;
   }
 }
 
-#mealpage .meal-container .icons .prep-time {
+#mealpage .meal-container .mealpage-header .icons .prep-time {
   position: relative;
   padding: 10px;
   background-color: #fdc33b;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#mealpage .meal-container .icons .prep-time p {
+#mealpage .meal-container .mealpage-header .icons .prep-time p {
   font-weight: 500;
   color: #212121;
 }
 
-#mealpage .meal-container .icons .prep-time i {
+#mealpage .meal-container .mealpage-header .icons .prep-time i {
   padding: 0;
   font-size: 15px;
   color: #686868;
@@ -1327,7 +1369,7 @@
   right: -20px;
 }
 
-#mealpage .meal-container .icons .favorite-meal {
+#mealpage .meal-container .mealpage-header .icons .favorite-meal {
   color: red;
 }
 
@@ -1335,11 +1377,16 @@
   overflow: auto;
   white-space: nowrap;
   width: 90%;
-  height: 50%;
+  height: 48%;
   padding: 20px;
   margin: 0 auto;
   border-radius: 20px;
   background-color: #fff;
+  color: #686868;
+}
+
+#mealpage .meal-container .mealpage-main::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 750px) {
@@ -1348,30 +1395,114 @@
   }
 }
 
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main {
+    height: 90%;
+    width: 50%;
+    margin-top: 40px;
+    padding: 40px;
+  }
+}
+
 #mealpage .meal-container .mealpage-main h3 {
-  text-align: left;
+  text-align: center;
   color: #686868;
   text-transform: lowercase;
   white-space: normal;
   margin-bottom: 30px;
 }
 
-#mealpage .meal-container .mealpage-main .ingredients li {
-  width: 200px;
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main h3 {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+#mealpage .meal-container .mealpage-main .ingredients {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main .ingredients {
+    margin-bottom: 40px;
+  }
+}
+
+#mealpage .meal-container .mealpage-main .ingredients ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-bottom: 5px;
 }
 
-#mealpage .meal-container .mealpage-main .ingredients li p {
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main .ingredients ul li {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main .ingredients ul li {
+    font-size: 20px;
+  }
+}
+
+#mealpage .meal-container .mealpage-main .ingredients ul li i {
+  margin-right: 15px;
+}
+
+#mealpage .meal-container .mealpage-main .ingredients ul li p {
   width: 100px;
   text-align: left;
+}
+
+#mealpage .meal-container .mealpage-main .steps {
+  white-space: normal;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main .steps {
+    font-size: 20px;
+  }
+}
+
+#mealpage .meal-container .mealpage-main a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+#mealpage .meal-container .mealpage-main a p {
+  color: #212121;
+  margin-right: 10px;
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main a p {
+    font-size: 20px;
+  }
+}
+
+#mealpage .meal-container .mealpage-main a i {
+  color: #ff0000;
+  font-size: 25px;
+}
+
+@media (min-width: 900px) {
+  #mealpage .meal-container .mealpage-main a i {
+    font-size: 40px;
+  }
 }
 
 #userpage {

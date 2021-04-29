@@ -98,11 +98,15 @@ export function showMealpage(m) {
     return `
     <div class="meal-container" data-id=${m.id}>
         <img src=${m.image} alt=${m.title}>
-
+        
         <div class="icons">
             <i class="fas fa-angle-left"></i>
+            <div class="prep-time">
+                <p>${m.readyInMinutes}</p>
+                <i class="far fa-clock"></i>
+            </div>
             <i class="favorite-meal far fa-heart"></i>
-        </div>    
+        </div>
 
         <div class="mealpage-main">
             <h3>${m.title}</h3>
@@ -110,10 +114,15 @@ export function showMealpage(m) {
                 <ul>
                     ${ingredients}
                 </ul>
-
-
-                <a href="https://www.youtube.com/results?search_query=blues" target="_blank">Something</a>
             </div>
+
+            <p>instrukcije</p>
+
+            <a href="https://www.youtube.com/results?search_query=${m.title}" target="_blank">
+                <p>Find a video</p>
+                <i class="fab fa-youtube"></i>
+            </a>
+
         </div>
     </div>
     `

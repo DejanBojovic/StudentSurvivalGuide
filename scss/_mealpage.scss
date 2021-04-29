@@ -4,122 +4,226 @@
     // padding: 20px;
     background-color: $colorBg;
     z-index: 6;
+    overflow: hidden;
+
+    @include for-width(900px) {
+        padding-right: 60px;
+    }
+
 
     .meal-container {
         height: 100%;
         width: 100%;
 
-        img {
-            display: block;
-            height: 30%;
-            width: 100%;
-            // background-color: red;
-    
-            // background-image: url('https://img.grouponcdn.com/deal/2iTm4PtuPqk644BEdNxxNqEqf3Cw/2i-1000x600/v1/c870x524.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-    
-            @include for-width(750px) {
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                margin: 20px auto;
-                width: 80%;
-            }
-    
-            @include for-width(1250px) {
-                height: 35%;
-            }
-        }
-    
-        .icons {
-            width: 85%;
-            margin: 15px auto;
-            padding: 5px 0;
+        @include for-width(900px) {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-    
-            @include for-width(750px) {
-                width: 80%;
+        }
+
+        .mealpage-header {
+            @include for-width(900px) {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+
+                height: 90%;
+                width: 50%;
+                margin-top: 20px;
             }
 
-            i {
-                font-size: 25px;
-                padding: 15px;
-                font-size: 28px;
-                color: $colorSecondary;
-    
+            img {
+                display: block;
+                height: 30%;
+                width: 100%;
+                // background-color: red;
+        
+                // background-image: url('https://img.grouponcdn.com/deal/2iTm4PtuPqk644BEdNxxNqEqf3Cw/2i-1000x600/v1/c870x524.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+        
                 @include for-width(750px) {
-                    font-size: 50px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    margin: 20px auto;
+                    width: 80%;
                 }
+
+                @include for-width(900px) {
+                    height: 50%;
+                }
+        
+                // @include for-width(1250px) {
+                //     height: 35%;
+                // }
             }
-
-            .prep-time {
-                position: relative;
-                padding: 10px;
-                background-color: $colorPrimary;
-                border-radius: 10px;
-
-                p {
-                    font-weight: 500;
-                    color: $colorSecondary;
+        
+            .icons {
+                width: 85%;
+                margin: 15px auto;
+                padding: 5px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        
+                @include for-width(750px) {
+                    width: 80%;
                 }
-
-                i {
-                    padding: 0;
-                    font-size: 15px;
-                    color: $gray;
-                    position: absolute;
-                    top: -15px;
-                    right: -20px;
-                }
-            }
     
-            .favorite-meal {
-                color: red;
+                i {
+                    font-size: 25px;
+                    padding: 15px;
+                    font-size: 28px;
+                    color: $colorSecondary;
+        
+                    @include for-width(750px) {
+                        font-size: 50px;
+                    }
+                }
+    
+                .prep-time {
+                    position: relative;
+                    padding: 10px;
+                    background-color: $colorPrimary;
+                    border-radius: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    p {
+                        font-weight: 500;
+                        color: $colorSecondary;
+                    }
+    
+                    i {
+                        padding: 0;
+                        font-size: 15px;
+                        color: $gray;
+                        position: absolute;
+                        top: -15px;
+                        right: -20px;
+                    }
+                }
+        
+                .favorite-meal {
+                    color: red;
+                }
             }
         }
+        
     
         .mealpage-main {
             overflow: auto;
             white-space: nowrap;
             width: 90%;
-            height: 50%;
+            height: 48%;
             padding: 20px;
             // margin: 20px;
             margin: 0 auto;
             border-radius: 20px;
             background-color: #fff;
+            color: $gray;
+
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
     
             @include for-width(750px) {
                 width: 80%;
             }
+
+            @include for-width(900px) {
+                height: 90%;
+                width: 50%;
+                margin-top: 40px;
+                padding: 40px;
+            }
     
             h3 {
-                text-align: left;
+                text-align: center;
                 color: $gray;
                 text-transform: lowercase;
                 white-space: normal;
 
                 margin-bottom: 30px;
+
+                @include for-width(900px) {
+                    font-size: 40px;
+                    margin-bottom: 50px;
+                }
             }
     
             .ingredients {
                 // padding: 20px;
-    
-                li {
-                    width: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                margin-bottom: 20px;
 
-                    p {
-                        width: 100px;
-                        text-align: left;
+                @include for-width(900px) {
+                    margin-bottom: 40px;
+                }
+    
+                ul {
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5px;
+
+                        
+                        @include for-width(900px) {
+                            margin-bottom: 15px;
+                        }
+
+                        
+                        @include for-width(900px) {
+                            font-size: 20px;
+                        }
+    
+                        i {
+                            margin-right: 15px;
+                        }
+    
+                        p {
+                            width: 100px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            .steps {
+                white-space: normal;
+                margin-bottom: 20px;
+                line-height: 1.5;
+
+                @include for-width(900px) {
+                    font-size: 20px;
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                margin-top: 40px;
+
+                p {
+                    color: $colorSecondary;
+                    margin-right: 10px;
+
+                    @include for-width(900px) {
+                        font-size: 20px;
+                    }
+                }
+
+                i {
+                    color: #ff0000;
+                    font-size: 25px;
+
+                    @include for-width(900px) {
+                        font-size: 40px;
                     }
                 }
             }
