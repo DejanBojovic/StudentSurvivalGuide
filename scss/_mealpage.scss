@@ -20,14 +20,17 @@
         }
 
         .mealpage-header {
+
             @include for-width(900px) {
                 display: flex;
-                flex-direction: column-reverse;
-                justify-content: flex-end;
+                flex-direction: column;
+                justify-content: flex-start;
 
                 height: 90%;
                 width: 50%;
-                margin-top: 20px;
+                margin-top: 30px;
+
+                
             }
 
             img {
@@ -139,7 +142,7 @@
             @include for-width(900px) {
                 height: 90%;
                 width: 50%;
-                margin-top: 40px;
+                margin-top: 48px;
                 padding: 40px;
             }
     

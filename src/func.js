@@ -73,6 +73,9 @@ export default function fetchingMeals(searchItem, type) {
                 // console.log(e.target)
                 fetchForMealpage(e.target.getAttribute('data-id'))
 
+                // to determine which page to show after user closes mealpage
+                localStorage.setItem('previousPage', 'homepage')
+
                 const mealpage = document.querySelector('#mealpage')
                 mealpage.style.display = 'block'
 
@@ -100,7 +103,7 @@ export function showMealpage(m) {
         <img src=${m.image} alt=${m.title}>
         
         <div class="icons">
-            <i class="fas fa-angle-left"></i>
+            <i class="mealpage-back fas fa-angle-left"></i>
             <div class="prep-time">
                 <p>${m.readyInMinutes}</p>
                 <i class="far fa-clock"></i>
@@ -128,6 +131,32 @@ export function showMealpage(m) {
     `
 }
 
+export function mealpageEvents() {
+    console.log('back to jaja')
+    const backButton = document.querySelector('.mealpage-back')
+
+    // pages
+    const mealpage = document.querySelector('#mealpage')
+    const userpage = document.querySelector('#userpage')
+    const homepage = document.querySelector('#homepage')
+
+    backButton.addEventListener('click', () => {
+        const previousPage = localStorage.getItem('previousPage')
+        
+        if(previousPage === 'homepage') {
+            mealpage.style.display = 'none'
+            homepage.style.display = 'block'
+        } else if (previousPage === 'userpage') {
+            mealpage.style.display = 'none'
+            userpage.style.display = 'block'
+        }
+
+        localStorage.setItem('previousPage', '')
+    })
+}
+
+mealpageEvents()
+
 export function fetchForMealpage(id) {
     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`)
     .then(response => response.json())
@@ -137,6 +166,7 @@ export function fetchForMealpage(id) {
 
         document.querySelector('#homepage').style.display = 'none'
         document.querySelector('#userpage').style.display = 'none'
+
 
 
         // console.log(id)
@@ -155,6 +185,8 @@ export function fetchForMealpage(id) {
         //     })
         // })
     })
+
+    mealpageEvents()
     
 }
 

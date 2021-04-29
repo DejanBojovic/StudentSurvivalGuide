@@ -1,2 +1,0 @@
-# StudentSurvivalGuide
-Cookbook for idiots
