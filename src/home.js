@@ -1,5 +1,5 @@
 // import fetchingFavorites from "./func"
-import fetchingMeals, { addingFavorites, removingPreviousMeals, fetchingFavorites } from './func.js'
+import fetchingMeals, { addingFavorites, removingPreviousMeals, fetchingFavorites, searchParameterButtonColor, randomFetchButtonColor } from './func.js'
 
 
 // // API key
@@ -37,7 +37,7 @@ const closeButton = document.querySelector('.close')
 searchOptionsBtn.addEventListener('click', () => {
     const searchSettingsMenu = document.querySelector('.search-settings-menu')
 
-    console.log(searchSettingsMenu.style.height)
+    //console.log(searchSettingsMenu.style.height)
 
 
     // if(searchSettingsMenu.style.height === '50%') {
@@ -55,7 +55,7 @@ searchOptionsBtn.addEventListener('click', () => {
             searchSettingsMenu.style.height = '60%'
         }
     } else {
-        console.log('left')
+        //console.log('left')
         // searchSettingsMenu.style.width = '50%'
         // searchSettingsMenu.style.height = '100%'
         // searchSettingsMenu.style.left = '0'
@@ -95,31 +95,20 @@ const searchDiet = document.querySelector('.search-diet')
 const searchCuisine = document.querySelector('.search-cuisine')
 
 searchIngredients.addEventListener('click', () => {
-    // button styles
-    searchIngredients.style.backgroundColor = "#fff"
-    searchDiet.style.backgroundColor = "transparent"
-    searchCuisine.style.backgroundColor = "transparent"
-
+    // color change
+    searchParameterButtonColor(searchIngredients, searchDiet, searchCuisine)
     // placeholder change
     searchInput.placeholder = "Egg, bacon.."
 })
 
 searchDiet.addEventListener('click', () => {
-    // button styles
-    searchDiet.style.backgroundColor = "#fff"
-    searchIngredients.style.backgroundColor = "transparent"
-    searchCuisine.style.backgroundColor = "transparent"
-
+    searchParameterButtonColor(searchDiet,searchIngredients, searchCuisine)
     // placeholder change
     searchInput.placeholder = "Vegeterian, gluten free.."
 })
 
-searchCuisine.addEventListener('click', () => {
-    // button styles
-    searchCuisine.style.backgroundColor = "#fff"
-    searchDiet.style.backgroundColor = "transparent"
-    searchIngredients.style.backgroundColor = "transparent"
-
+searchCuisine.addEventListener('click', () => { 
+    searchParameterButtonColor(searchCuisine, searchDiet,searchIngredients)
     // placeholder change
     searchInput.placeholder = "Italian, indian.."
 })
@@ -136,53 +125,66 @@ const fruitButton = document.querySelector('.fruit')
 
 // ZA OVE STVARI MOZE JEDNA FUNKCIJA DA SE NAPRAVI !!!!
 randomButton.addEventListener('click', () => {
-    // displaying meals
-    removingPreviousMeals('.meal')
+    // // displaying meals
+    // removingPreviousMeals('.meal')
+    // fetchingMeals('', 'random')
+
+    // // styling button
+    // randomButton.style.border = '1px solid #d34338'
+    // meatButton.style.border = '1px solid #686868'
+    // dessertButton.style.border = '1px solid #686868'
+    // fruitButton.style.border = '1px solid #686868'
+
+    randomFetchButtonColor(randomButton, meatButton, dessertButton, fruitButton)
     fetchingMeals('', 'random')
 
-    // styling button
-    randomButton.style.border = '1px solid #d34338'
-    meatButton.style.border = '1px solid #686868'
-    dessertButton.style.border = '1px solid #686868'
-    fruitButton.style.border = '1px solid #686868'
 })
 
 meatButton.addEventListener('click', () => {
-    // displaying meals
-    removingPreviousMeals('.meal')
-    fetchingMeals('meat', 'meat')
+    // // displaying meals
+    // removingPreviousMeals('.meal')
+    // fetchingMeals('meat', 'meat')
 
-    // styling button
-    meatButton.style.border = '1px solid #d34338'
-    randomButton.style.border = '1px solid #686868'
-    dessertButton.style.border = '1px solid #686868'
-    fruitButton.style.border = '1px solid #686868'
+    // // styling button
+    // meatButton.style.border = '1px solid #d34338'
+    // randomButton.style.border = '1px solid #686868'
+    // dessertButton.style.border = '1px solid #686868'
+    // fruitButton.style.border = '1px solid #686868'
+
+    randomFetchButtonColor(meatButton, randomButton, dessertButton, fruitButton)
+    fetchingMeals('meat', 'meat')
 })
 
 dessertButton.addEventListener('click', () => {
-    // displaying meals
-    removingPreviousMeals('.meal')
-    fetchingMeals('dessert', 'dessert')
+    // // displaying meals
+    // removingPreviousMeals('.meal')
+    // fetchingMeals('dessert', 'dessert')
 
-    // styling button
-    dessertButton.style.border = '1px solid #d34338'
-    randomButton.style.border = '1px solid #686868'
-    meatButton.style.border = '1px solid #686868'
-    fruitButton.style.border = '1px solid #686868'
+    // // styling button
+    // dessertButton.style.border = '1px solid #d34338'
+    // randomButton.style.border = '1px solid #686868'
+    // meatButton.style.border = '1px solid #686868'
+    // fruitButton.style.border = '1px solid #686868'
+
+    randomFetchButtonColor(dessertButton, meatButton, randomButton, fruitButton)
+    fetchingMeals('dessert', 'dessert')
 })
 
 // FRUIT PRETRAGA JE SRANJE - STAVNI DA BUDE NESTO DRUGO !!!!
 // mozda da vratim vegetables !!!
 fruitButton.addEventListener('click', () => {
-    // displaying meals
-    removingPreviousMeals('.meal')
-    fetchingMeals('fruit', 'fruit')
+    // // displaying meals
+    // removingPreviousMeals('.meal')
+    // fetchingMeals('fruit', 'fruit')
 
-    // styling button
-    fruitButton.style.border = '1px solid #d34338'
-    randomButton.style.border = '1px solid #686868'
-    meatButton.style.border = '1px solid #686868'
-    dessertButton.style.border = '1px solid #686868'
+    // // styling button
+    // fruitButton.style.border = '1px solid #d34338'
+    // randomButton.style.border = '1px solid #686868'
+    // meatButton.style.border = '1px solid #686868'
+    // dessertButton.style.border = '1px solid #686868'
+
+    randomFetchButtonColor(fruitButton, dessertButton, meatButton, randomButton)
+    fetchingMeals('fruit', 'fruit')
 })
 
 // --------------------------------------------------------------------------------------------------
@@ -238,12 +240,12 @@ const userpage = document.querySelector('#userpage')
 //     menu.style.display = 'none'
 // }
 
-userpage.style.display='none'
+userpage.style.display='block'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
-document.querySelector('#mealpage').style.display = 'block'
+document.querySelector('#mealpage').style.display = 'none'
 homepage.style.display = 'none'
 frontpage.style.display = 'none'
 
@@ -342,6 +344,9 @@ userButtonD.addEventListener('click', () => {
 
 // EVENT LISTENERS FOR MEALS - getting data-id and fetching for that specific meal
 // LEARN MORE BUTTON ON EVERY MEAL
+
+// this is not needed, delete later !!
+
 const learnMoreBtns = document.querySelectorAll('.learn-more')
 console.log(learnMoreBtns)
 learnMoreBtns.forEach(el => {

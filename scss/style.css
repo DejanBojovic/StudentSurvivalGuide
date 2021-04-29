@@ -1510,6 +1510,7 @@
   width: 100vw;
   background-color: #f3f7fc;
   color: #686868;
+  overflow: hidden !important;
 }
 
 #userpage .header {

@@ -5,6 +5,12 @@
     background-color: $colorBg;
     color: $gray;
 
+    // this prevented overflow
+    overflow: hidden !important;
+
+    //border: 1px solid #f00 !important;
+
+
     .header {
         width: 100%;
         height: 20%;

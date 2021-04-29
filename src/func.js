@@ -155,6 +155,7 @@ export function mealpageEvents() {
     })
 }
 
+// postavljeno samo radi probe - uklni posle !!!!!!
 mealpageEvents()
 
 export function fetchForMealpage(id) {
@@ -353,4 +354,19 @@ export function deleteNoteBtn() {
 
         })
     })
+}
+
+export function searchParameterButtonColor(searched, notF, notS) {
+    searched.style.backgroundColor = "#fff"
+    notF.style.backgroundColor = "transparent"
+    notS.style.backgroundColor = "transparent"
+}
+
+export function randomFetchButtonColor(searched, notF, notS, notT) {
+    removingPreviousMeals('.meal')
+    
+    searched.style.border = '1px solid #d34338'
+    notF.style.border = '1px solid #686868'
+    notS.style.border = '1px solid #686868'
+    notT.style.border = '1px solid #686868'
 }
