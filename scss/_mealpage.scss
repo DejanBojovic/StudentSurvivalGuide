@@ -37,8 +37,8 @@
     
         .icons {
             width: 85%;
-            margin: 0 auto;
-            padding: 10px 0;
+            margin: 15px auto;
+            padding: 5px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,14 +46,36 @@
             @include for-width(750px) {
                 width: 80%;
             }
-    
+
             i {
+                font-size: 25px;
+                padding: 15px;
                 font-size: 28px;
-                padding: 10px;
-                color: $colorPrimary;
+                color: $colorSecondary;
     
                 @include for-width(750px) {
                     font-size: 50px;
+                }
+            }
+
+            .prep-time {
+                position: relative;
+                padding: 10px;
+                background-color: $colorPrimary;
+                border-radius: 10px;
+
+                p {
+                    font-weight: 500;
+                    color: $colorSecondary;
+                }
+
+                i {
+                    padding: 0;
+                    font-size: 15px;
+                    color: $gray;
+                    position: absolute;
+                    top: -15px;
+                    right: -20px;
                 }
             }
     
@@ -82,13 +104,23 @@
                 color: $gray;
                 text-transform: lowercase;
                 white-space: normal;
+
+                margin-bottom: 30px;
             }
     
             .ingredients {
-                padding: 20px;
+                // padding: 20px;
     
                 li {
-                    list-style-type: circle
+                    width: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    p {
+                        width: 100px;
+                        text-align: left;
+                    }
                 }
             }
     

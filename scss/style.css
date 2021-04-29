@@ -1274,8 +1274,8 @@
 
 #mealpage .meal-container .icons {
   width: 85%;
-  margin: 0 auto;
-  padding: 10px 0;
+  margin: 15px auto;
+  padding: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1294,15 +1294,37 @@
 }
 
 #mealpage .meal-container .icons i {
+  font-size: 25px;
+  padding: 15px;
   font-size: 28px;
-  padding: 10px;
-  color: #fdc33b;
+  color: #212121;
 }
 
 @media (min-width: 750px) {
   #mealpage .meal-container .icons i {
     font-size: 50px;
   }
+}
+
+#mealpage .meal-container .icons .prep-time {
+  position: relative;
+  padding: 10px;
+  background-color: #fdc33b;
+  border-radius: 10px;
+}
+
+#mealpage .meal-container .icons .prep-time p {
+  font-weight: 500;
+  color: #212121;
+}
+
+#mealpage .meal-container .icons .prep-time i {
+  padding: 0;
+  font-size: 15px;
+  color: #686868;
+  position: absolute;
+  top: -15px;
+  right: -20px;
 }
 
 #mealpage .meal-container .icons .favorite-meal {
@@ -1331,14 +1353,25 @@
   color: #686868;
   text-transform: lowercase;
   white-space: normal;
-}
-
-#mealpage .meal-container .mealpage-main .ingredients {
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
 #mealpage .meal-container .mealpage-main .ingredients li {
-  list-style-type: circle;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#mealpage .meal-container .mealpage-main .ingredients li p {
+  width: 100px;
+  text-align: left;
 }
 
 #userpage {

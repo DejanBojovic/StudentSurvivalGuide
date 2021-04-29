@@ -88,18 +88,21 @@ export function showMealpage(m) {
     let ingredients = ''
 
     m.extendedIngredients.forEach(el => {
-        ingredients += `<li>${el.name}</li>`
+        ingredients += 
+        `<li>
+            <i class="fas fa-plus"></i>
+            <p>${el.name}</p>
+        </li>`
     })
 
     return `
-    <div class="meal-container">
+    <div class="meal-container" data-id=${m.id}>
         <img src=${m.image} alt=${m.title}>
 
         <div class="icons">
             <i class="fas fa-angle-left"></i>
             <i class="favorite-meal far fa-heart"></i>
-        </div>
-        
+        </div>    
 
         <div class="mealpage-main">
             <h3>${m.title}</h3>
