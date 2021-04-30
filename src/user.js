@@ -145,7 +145,7 @@ if(notesInner.children.length === 0) {
 }
 
 // DISPLAYING ALL THE FAVORITE MEALS FROM LOCALSTORAGE --------------- 
-fetchingFavorites()
+// fetchingFavorites()
 
 // back button for meals
 const backButtonUserpage = document.querySelector('.userpage-back')

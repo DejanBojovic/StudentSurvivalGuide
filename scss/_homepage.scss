@@ -398,21 +398,25 @@
                 color: $colorSP;
                 font-size: 50px;
 
-                @include for-both(1024px, 768px) {
+                @include for-width(600px) {
                     font-size: 80px;
                 }
 
-                @include for-both(720px, 1280px) {
-                    font-size: 80px;
-                }
+                // @include for-both(1024px, 768px) {
+                //     font-size: 80px;
+                // }
 
-                @include for-both(800px, 1280px) {
-                    font-size: 80px;
-                }
+                // @include for-both(720px, 1280px) {
+                //     font-size: 80px;
+                // }
 
-                @include for-both(768px, 1366px) {
-                    font-size: 100px;
-                }
+                // @include for-both(800px, 1280px) {
+                //     font-size: 80px;
+                // }
+
+                // @include for-both(768px, 1366px) {
+                //     font-size: 100px;
+                // }
             }
 
             .ssm-inner {
@@ -444,7 +448,7 @@
                     }
 
                     @include for-width(990px) {
-                        width: 300px;
+                        width: 360px;
                         font-size: 20px;
                     }
 
@@ -728,7 +732,7 @@
             }
             
             .meal-inner {
-                pointer-events: none;
+                //pointer-events: none;
                 height: 100%;
                 // overflow: hidden;
                 display: flex;
@@ -742,7 +746,11 @@
                     background-position: center center;
                     background-size: cover;
                     height: 70%;
-                    
+                    // width: 100%;
+
+                    @include for-height-mobile(700px) {
+                        height: 60%;
+                    }
                 }
 
 
@@ -753,28 +761,33 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
+                    @include for-height-mobile(700px) {
+                        height: 40%;
+                    }
                     
 
-                    h2 {
+                    p {
                         text-align: left;
-                        color: $colorSecondary;
+                        color: $gray;
                         // word-break: break-all;
                         white-space: normal;
                     }
 
-                    i {
-                        pointer-events: all;
-                        color: red;
+                    .meal-info {
+                        // z-index: 3;
+                        //pointer-events: all !important;
+                        color: $colorPrimary;
                         padding: 15px;
-                        border: 1px solid red;
+                        border: 1px solid $colorPrimary;
                         border-radius: 50%;
                         background-color: #fff;
    
                         font-size: 30px;
                         // padding-left: 20px;
                         margin-left: 10px;
-                        border-left: 1px solid $colorPrimary;
-                        border-right: 1px solid $colorPrimary;
+                        // border-left: 1px solid $colorPrimary;
+                        // border-right: 1px solid $colorPrimary;
                         // position: absolute;
                         // top: 10px;
                         // right: 10px;
@@ -814,6 +827,36 @@
                 align-items: center;
             }
         }
+
+        .no-result-found {
+            // width: 100vw;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            display: none;
+    
+    
+            p {
+                text-align: center;
+                font-weight: 500;
+                white-space: normal;
+                font-size: 20px;
+                color: $gray;
+                margin-right: 20px;
+
+                @include for-width(1400px) {
+                    font-size: 30px;
+                }
+            }
+
+            i {
+                font-size: 40px;
+                color: $colorButton;
+            }
+        }
+
 
     }
 

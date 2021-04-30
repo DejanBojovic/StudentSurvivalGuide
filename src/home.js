@@ -123,6 +123,7 @@ const meatButton = document.querySelector('.meat')
 const dessertButton = document.querySelector('.dessert')
 const fruitButton = document.querySelector('.fruit')
 
+fetchingMeals('', 'random')
 // ZA OVE STVARI MOZE JEDNA FUNKCIJA DA SE NAPRAVI !!!!
 randomButton.addEventListener('click', () => {
     // // displaying meals
@@ -217,12 +218,12 @@ searchButton.addEventListener('click', () => {
     fetchingMeals(searchStr, type)
     
     // waiting a second for fetch to happen and then establishing favorites option for every meal
-    setTimeout(addingFavorites, 2000) 
+    //setTimeout(addingFavorites, 2000) 
     
     // OVDE URADI ASYNC/AWAIT !!!!!!!
 })
 
-addingFavorites()
+//addingFavorites()
 
 
 
@@ -240,14 +241,14 @@ const userpage = document.querySelector('#userpage')
 //     menu.style.display = 'none'
 // }
 
-userpage.style.display='block'
+userpage.style.display='none'
 
 // frontpage
 const frontpageBtn = document.querySelector(".fpi-main-btn")
 
 document.querySelector('#mealpage').style.display = 'none'
 homepage.style.display = 'none'
-frontpage.style.display = 'none'
+frontpage.style.display = 'block'
 
 // sessionStorage.setItem('frontpage', 'false')
 
@@ -320,7 +321,7 @@ userButton.addEventListener('click', () => {
 
     // getting all the things from localStorage to userpage
     // UNCOMMENTUJ OVO POSLE !!!!!
-    // fetchingFavorites()
+    fetchingFavorites()
     // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
@@ -335,9 +336,7 @@ userButtonD.addEventListener('click', () => {
     homepage.style.display = 'none'
 
     // getting all the things from localStorage to userpage
-    // UNCOMMENTUJ OVO POSLE !!!!!
-    // fetchingFavorites()
-    // FIX THIS SO THAT IT DOESNT DOUBLE
+    fetchingFavorites()
 })
 
 // MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------

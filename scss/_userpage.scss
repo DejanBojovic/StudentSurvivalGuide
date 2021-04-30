@@ -436,7 +436,7 @@
                             align-items: center;
                             
         
-                            h2 {
+                            p {
                                 text-align: left;
                                 color: $colorSecondary;
                                 // word-break: break-all;
@@ -444,9 +444,9 @@
                             }
         
                             i {
-                                color: red;
+                                color: $colorPrimary;
                                 padding: 15px;
-                                border: 1px solid red;
+                                border: 1px solid $colorPrimary;
                                 border-radius: 50%;
                                 background-color: #fff;
            
@@ -500,7 +500,7 @@
                 // margin: 0 auto;
 
                 @include for-width(950px) {
-                    width: 80%;
+                    width: 70%;
                     margin: 0 auto;
                 }
 
@@ -566,6 +566,10 @@
                     @include for-width(950px) {
                         font-size: 25px;
                         padding: 30px 40px;
+                    }
+
+                    @include for-width(1200px) {
+                        height: 70%;
                     }
 
                     .note {

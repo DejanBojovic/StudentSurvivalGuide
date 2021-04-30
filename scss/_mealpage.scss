@@ -122,7 +122,7 @@
             overflow: auto;
             white-space: nowrap;
             width: 90%;
-            height: 48%;
+            height: 45%;
             padding: 20px;
             // margin: 20px;
             margin: 0 auto;
@@ -196,10 +196,17 @@
                 }
             }
 
-            .steps {
+            .instructions {
+                width: 100%;
                 white-space: normal;
                 margin-bottom: 20px;
                 line-height: 1.5;
+
+                ol {
+                    width: 100%;
+                    white-space: normal;
+                    line-height: 1.5;
+                }
 
                 @include for-width(900px) {
                     font-size: 20px;
