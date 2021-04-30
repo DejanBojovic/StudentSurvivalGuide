@@ -391,6 +391,10 @@
                     position: relative;
                     bottom: 200px;
 
+                    @include for-older-mobile-height(600px) {
+                        bottom: 150px;
+                    }
+
                     @include for-width(900px) {
                         display: none;
                     }

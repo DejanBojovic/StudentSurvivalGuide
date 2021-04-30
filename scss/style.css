@@ -2127,6 +2127,12 @@
   bottom: 200px;
 }
 
+@media (max-height: 600px) {
+  #userpage .main .main-inner .favorites .end-div {
+    bottom: 150px;
+  }
+}
+
 @media (min-width: 900px) {
   #userpage .main .main-inner .favorites .end-div {
     display: none;
