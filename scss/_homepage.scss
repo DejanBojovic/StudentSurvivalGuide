@@ -612,6 +612,7 @@
                     background-position: center center;
                     background-size: cover;
                     height: 70%;
+                    width: 100%;
 
                     @include for-height-mobile(700px) {
                         height: 60%;

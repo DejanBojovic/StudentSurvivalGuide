@@ -1144,6 +1144,7 @@
   background-position: center center;
   background-size: cover;
   height: 70%;
+  width: 100%;
 }
 
 @media (min-height: 700px) and (max-width: 599px) {
