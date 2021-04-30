@@ -114,8 +114,8 @@
                     height: 40px;
                     border-radius: 0 18px 18px 0;
 
-                    @include for-older-mobile(350px) {
-                        width: 70%;
+                    @include for-older-mobile(370px) {
+                        width: 65%;
                     }
 
                     @include for-width(500px) {
