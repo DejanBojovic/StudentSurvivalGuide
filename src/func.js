@@ -79,10 +79,32 @@ export default function fetchingMeals(searchItem, type) {
                 // to determine which page to show after user closes mealpage
                 localStorage.setItem('previousPage', 'homepage')
 
-                setTimeout(() => {
-                    const mealpage = document.querySelector('#mealpage')
-                    mealpage.style.display = 'block'
-                }, 1000);
+                // const mealpage = document.querySelector('#mealpage')
+                //     mealpage.style.display = 'block'
+
+                const menu = document.querySelector('.menu')
+                menu.style.display = 'none'
+
+                document.querySelector('#homepage').style.display = 'none'
+                document.querySelector('#userpage').style.display = 'none'
+
+                const mealpage = document.querySelector('#mealpage')
+                mealpage.style.display = 'block'
+
+                // setTimeout(() => {
+                //     const mealpage = document.querySelector('#mealpage')
+                //     mealpage.style.display = 'block'
+                // })
+                // const mealpage = document.querySelector('#mealpage')
+                // mealpage.style.display = 'block'
+
+                // setTimeout(() => {
+                //     const mealpage = document.querySelector('#mealpage')
+                //     mealpage.style.display = 'block'
+
+                //     const menu = document.querySelector('.menu')
+                //     menu.style.display = 'none'
+                // }, 500);
 
                 setTimeout(() => {
                     document.querySelector('.favorites-dot').style.display = "none"
@@ -103,11 +125,11 @@ export function showMealpage(m) {
         </li>`
     })
 
-    // let instructions = ''
+    let urlSafe = m.image
 
-    // m.instructions.forEach(el => {
-    //     instructions += el
-    // })
+    if(urlSafe === undefined) {
+        urlSafe = '../images/frontpage/meal.jpg'
+    }
 
     const favorites = JSON.parse(localStorage.getItem('favorites'))
     const index = favorites.includes(m.id.toString())
@@ -120,7 +142,7 @@ export function showMealpage(m) {
     return `
     <div class="meal-container" data-id=${m.id}>
         <div class="mealpage-header">
-            <img src=${m.image} alt=${m.title}>
+            <img src=${urlSafe} alt=${m.title}>
             
             <div class="icons">
                 <i class="mealpage-back fas fa-angle-left"></i>
@@ -169,11 +191,17 @@ export function mealpageEvents() {
         if(previousPage === 'homepage') {
             mealpage.style.display = 'none'
             homepage.style.display = 'block'
+
+            const menu = document.querySelector('.menu')
+            menu.style.display = 'flex'
         } else if (previousPage === 'userpage') {
             // fetchuje se opet za slucaj da je user izbrisao meal iz favorties
             fetchingFavorites()
             mealpage.style.display = 'none'
             userpage.style.display = 'block'
+
+            const menu = document.querySelector('.menu')
+            menu.style.display = 'flex'
         }
 
         localStorage.setItem('previousPage', '')
@@ -191,8 +219,8 @@ export function fetchForMealpage(id) {
         mealpageEvents()
         addingFavorites()
 
-        document.querySelector('#homepage').style.display = 'none'
-        document.querySelector('#userpage').style.display = 'none'
+        // document.querySelector('#homepage').style.display = 'none'
+        // document.querySelector('#userpage').style.display = 'none'
 
     })
     
@@ -318,10 +346,16 @@ export function fetchingFavorites() {
                     // to determine which page to show after user closes mealpage
                     localStorage.setItem('previousPage', 'userpage')
 
-                    setTimeout(() => {
-                        const mealpage = document.querySelector('#mealpage')
+                    document.querySelector('#homepage').style.display = 'none'
+                    document.querySelector('#userpage').style.display = 'none'
+
+                    const mealpage = document.querySelector('#mealpage')
                         mealpage.style.display = 'block'
-                    }, 1000);
+
+                    // setTimeout(() => {
+                    //     const mealpage = document.querySelector('#mealpage')
+                    //     mealpage.style.display = 'block'
+                    // }, 1000);
 
                     setTimeout(() => {
                         document.querySelector('.favorites-dot').style.display = "none"

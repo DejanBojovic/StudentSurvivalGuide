@@ -223,6 +223,18 @@
   text-align: center;
 }
 
+@media (min-width: 1400px) {
+  #frontpage .frontpage-inner .fp-inner-headline {
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-height: 1080px) {
+  #frontpage .frontpage-inner .fp-inner-headline {
+    margin-bottom: -100px;
+  }
+}
+
 #frontpage .frontpage-inner .fp-inner-headline h1 {
   font-family: 'Londrina Solid', sans-serif;
   font-weight: 400;
