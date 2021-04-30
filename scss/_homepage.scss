@@ -652,6 +652,21 @@
                             font-size: 35px;
                         }
                     }
+
+                    .meal-info-f {
+                        color: $colorPrimary;
+                        padding: 15px;
+                        border: 1px solid $colorPrimary;
+                        border-radius: 50%;
+                        background-color: #fff;
+   
+                        font-size: 30px;
+                        margin-left: 10px;
+
+                        @include for-both(1024px, 768px) {
+                            font-size: 35px;
+                        }
+                    }
                 }
             }
 

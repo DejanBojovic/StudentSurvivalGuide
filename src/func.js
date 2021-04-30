@@ -265,7 +265,7 @@ export function mealCreation(url, title, id, cl='') {
 
             <div class="inner-bottom">
                 <p>${title}</p>
-                <i class="meal-info fas fa-info-circle"></i>
+                <i class="meal-info${cl} fas fa-info-circle"></i>
             </div>
             
         </div>
@@ -295,7 +295,7 @@ export function fetchingFavorites() {
         .then(data => {
             favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f'))
 
-            const allMeals = document.querySelectorAll('.meal-info')
+            const allMeals = document.querySelectorAll('.meal-info-f')
 
             allMeals.forEach(el => {
                 el.addEventListener('click', (e) => {

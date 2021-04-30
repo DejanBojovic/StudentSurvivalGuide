@@ -1195,6 +1195,22 @@
   }
 }
 
+#homepage .results .meal .meal-inner .inner-bottom .meal-info-f {
+  color: #fdc33b;
+  padding: 15px;
+  border: 1px solid #fdc33b;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+@media (min-height: 1024px) and (min-width: 768px) {
+  #homepage .results .meal .meal-inner .inner-bottom .meal-info-f {
+    font-size: 35px;
+  }
+}
+
 #homepage .results .end-div {
   display: inline-block;
   position: relative;
