@@ -1,6 +1,5 @@
 const apiKey = '8a468c52f80948a697ca86daf1502bc3'
 
-
 // USED IN SCRIPT.JS
 export function removingPreviousMeals(cl) {
     const currentMeals = document.querySelectorAll(cl)
@@ -9,7 +8,6 @@ export function removingPreviousMeals(cl) {
     })
 }
 
-// proveri kako funkcionise default argument kad se ova funckija poziva 
 export default function fetchingMeals(searchItem, type) {
 
     // random
@@ -25,16 +23,11 @@ export default function fetchingMeals(searchItem, type) {
     // findByIngredients?ingredients
     // random
 
-    console.log(type)
-
-    // SREDI FETCH STriNGS TAKO DA BUDE UNIVERZALAN !!
-
     let fetchString = null
 
     // separating fetch string into part where i fetch random meals
     if(type === 'random' || type === 'meat' || type === 'dessert' || type === 'fruit') {
         fetchString = `https://api.spoonacular.com/recipes/random?tags=${searchItem}&number=60&apiKey=${apiKey}`
-        console.log('prvi')
     } else {
         // and part where i search by ingredients, cuisine or diet
         fetchString = `https://api.spoonacular.com/recipes/${type}=${searchItem}&number=60&apiKey=${apiKey}`
@@ -45,17 +38,23 @@ export default function fetchingMeals(searchItem, type) {
     fetch(fetchString)
     .then(response => response.json())
     .then(data => {
-        console.log('DATA JEEEEEEEEEEEEEEEE')
-        console.log(data)
         if(data.length === 0)  {
             noResultFound()
         }
 
         if(data.results) {
+            if(data.results.length === 0)  {
+                noResultFound()
+            }
+
             data.results.map(el => {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title, el.id))
             })
         } else if (data.recipes) {
+            if(data.recipes.length === 0)  {
+                noResultFound()
+            }
+
             data.recipes.map(el => {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title, el.id))
             })
@@ -64,23 +63,14 @@ export default function fetchingMeals(searchItem, type) {
                 resultContainer.insertAdjacentHTML('afterbegin', mealCreation(el.image, el.title, el.id))
             })
         }
-        console.log(data)
-        console.log(type)
-
-        // adding a red dot so user knows what happens when he likes a meal
 
         const allMeals = document.querySelectorAll('.meal-info')
-        console.log(allMeals)
         allMeals.forEach(el => {
             el.addEventListener('click', (e) => {
-                // ovde treba malo cekanja !!!!
                 fetchForMealpage(e.target.parentNode.parentNode.parentNode.getAttribute('data-id'))
 
                 // to determine which page to show after user closes mealpage
                 localStorage.setItem('previousPage', 'homepage')
-
-                // const mealpage = document.querySelector('#mealpage')
-                //     mealpage.style.display = 'block'
 
                 const menu = document.querySelector('.menu')
                 menu.style.display = 'none'
@@ -90,25 +80,6 @@ export default function fetchingMeals(searchItem, type) {
 
                 const mealpage = document.querySelector('#mealpage')
                 mealpage.style.display = 'block'
-
-                // setTimeout(() => {
-                //     const mealpage = document.querySelector('#mealpage')
-                //     mealpage.style.display = 'block'
-                // })
-                // const mealpage = document.querySelector('#mealpage')
-                // mealpage.style.display = 'block'
-
-                // setTimeout(() => {
-                //     const mealpage = document.querySelector('#mealpage')
-                //     mealpage.style.display = 'block'
-
-                //     const menu = document.querySelector('.menu')
-                //     menu.style.display = 'none'
-                // }, 500);
-
-                setTimeout(() => {
-                    document.querySelector('.favorites-dot').style.display = "none"
-                }, 2000)
             })
         })
     })
@@ -219,9 +190,6 @@ export function fetchForMealpage(id) {
         mealpageEvents()
         addingFavorites()
 
-        // document.querySelector('#homepage').style.display = 'none'
-        // document.querySelector('#userpage').style.display = 'none'
-
     })
     
 }
@@ -243,10 +211,7 @@ allMealHearts.forEach(el => {
 
 export function addingFavorites() {
     const favoriteHeart = document.querySelector('.favorite-meal')
-    //console.log(favoriteHearts)
     favoriteHeart.addEventListener('click', (e) => {
-        console.log("KLIKNUTO")
-        // console.log(e.target.classList)
         if(e.target.classList.contains('far')) {
             // adding full heart icon to clicked meal
             e.target.classList.remove('far')
@@ -320,7 +285,6 @@ export function noResultFound() {
     }, 4000)
 }
 
-// USED IN USER.JS !!!
 export function fetchingFavorites() {
     const favoriteMeals = JSON.parse(localStorage.getItem('favorites'))
     const favDiv = document.querySelector('.favorites')
@@ -331,16 +295,12 @@ export function fetchingFavorites() {
         fetch(`https://api.spoonacular.com/recipes/${el}/information?apiKey=${apiKey}`)
         .then(response => response.json())
         .then(data => {
-            // console.log(id)
-            console.log(data)
-
             favDiv.insertAdjacentHTML('afterbegin', mealCreation(data.image, data.title, data.id, '-f'))
 
             const allMeals = document.querySelectorAll('.meal-info')
-            console.log(allMeals)
+
             allMeals.forEach(el => {
                 el.addEventListener('click', (e) => {
-                    // ovde treba malo cekanja !!!!
                     fetchForMealpage(e.target.parentNode.parentNode.parentNode.getAttribute('data-id'))
 
                     // to determine which page to show after user closes mealpage
@@ -350,16 +310,8 @@ export function fetchingFavorites() {
                     document.querySelector('#userpage').style.display = 'none'
 
                     const mealpage = document.querySelector('#mealpage')
-                        mealpage.style.display = 'block'
+                    mealpage.style.display = 'block'
 
-                    // setTimeout(() => {
-                    //     const mealpage = document.querySelector('#mealpage')
-                    //     mealpage.style.display = 'block'
-                    // }, 1000);
-
-                    setTimeout(() => {
-                        document.querySelector('.favorites-dot').style.display = "none"
-                    }, 2000)
                 })
             })
 

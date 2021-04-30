@@ -1,10 +1,6 @@
 // import fetchingFavorites from "./func"
 import fetchingMeals, { addingFavorites, removingPreviousMeals, fetchingFavorites, searchParameterButtonColor, randomFetchButtonColor } from './func.js'
 
-
-// // API key
-// const apiKey = '8728ac3aa56f4c2ea352d5fe0de10fbf'
-
 // initializing the localStorage - storing favorite meals and user notes
 if(localStorage.getItem('favorites') === null) {
     // creating array to store favorite meals
@@ -17,12 +13,6 @@ if(localStorage.getItem('favorites') === null) {
 
 // toggle and search section
 const searchInput = document.querySelector("input[type='search']")
-console.log(searchInput)
-
-
-// TODO - sredi da ostane crvena tackica sve dok ne postoji nijedna puna zuta zvezda kliknuta !!!
-// or adding that meal to favorites - sending that data-id to localStorage
-
 
 // back button for meals
 const backButton = document.querySelector('.back')
@@ -37,29 +27,13 @@ const closeButton = document.querySelector('.close')
 searchOptionsBtn.addEventListener('click', () => {
     const searchSettingsMenu = document.querySelector('.search-settings-menu')
 
-    //console.log(searchSettingsMenu.style.height)
-
-
-    // if(searchSettingsMenu.style.height === '50%') {
-    //     searchSettingsMenu.style.height = '0%'
-    // } else {
-    //     searchSettingsMenu.style.height = '50%'
-    // }
-
     if(closeButton.classList.contains('fa-angle-down')) {
-        console.log('down')
-        // searchSettingsMenu.style.height = '50%'
         if(searchSettingsMenu.style.height === '60%') {
             searchSettingsMenu.style.height = '0%'
         } else {
             searchSettingsMenu.style.height = '60%'
         }
-    } else {
-        //console.log('left')
-        // searchSettingsMenu.style.width = '50%'
-        // searchSettingsMenu.style.height = '100%'
-        // searchSettingsMenu.style.left = '0'
-        
+    } else {       
         if(searchSettingsMenu.style.width === '40%') {
             searchSettingsMenu.style.width = '0%'
         } else {
@@ -71,7 +45,6 @@ searchOptionsBtn.addEventListener('click', () => {
 
 })
 
-// const closeButton = document.querySelector('.close')
 if(screen.width >= 980) {
     closeButton.classList.remove('fa-angle-down')
     closeButton.classList.add('fa-angle-left')    
@@ -126,69 +99,26 @@ const fruitButton = document.querySelector('.fruit')
 fetchingMeals('', 'random')
 // ZA OVE STVARI MOZE JEDNA FUNKCIJA DA SE NAPRAVI !!!!
 randomButton.addEventListener('click', () => {
-    // // displaying meals
-    // removingPreviousMeals('.meal')
-    // fetchingMeals('', 'random')
-
-    // // styling button
-    // randomButton.style.border = '1px solid #d34338'
-    // meatButton.style.border = '1px solid #686868'
-    // dessertButton.style.border = '1px solid #686868'
-    // fruitButton.style.border = '1px solid #686868'
-
     randomFetchButtonColor(randomButton, meatButton, dessertButton, fruitButton)
     fetchingMeals('', 'random')
 
 })
 
 meatButton.addEventListener('click', () => {
-    // // displaying meals
-    // removingPreviousMeals('.meal')
-    // fetchingMeals('meat', 'meat')
-
-    // // styling button
-    // meatButton.style.border = '1px solid #d34338'
-    // randomButton.style.border = '1px solid #686868'
-    // dessertButton.style.border = '1px solid #686868'
-    // fruitButton.style.border = '1px solid #686868'
-
     randomFetchButtonColor(meatButton, randomButton, dessertButton, fruitButton)
     fetchingMeals('meat', 'meat')
 })
 
 dessertButton.addEventListener('click', () => {
-    // // displaying meals
-    // removingPreviousMeals('.meal')
-    // fetchingMeals('dessert', 'dessert')
-
-    // // styling button
-    // dessertButton.style.border = '1px solid #d34338'
-    // randomButton.style.border = '1px solid #686868'
-    // meatButton.style.border = '1px solid #686868'
-    // fruitButton.style.border = '1px solid #686868'
-
     randomFetchButtonColor(dessertButton, meatButton, randomButton, fruitButton)
     fetchingMeals('dessert', 'dessert')
 })
 
-// FRUIT PRETRAGA JE SRANJE - STAVNI DA BUDE NESTO DRUGO !!!!
-// mozda da vratim vegetables !!!
 fruitButton.addEventListener('click', () => {
-    // // displaying meals
-    // removingPreviousMeals('.meal')
-    // fetchingMeals('fruit', 'fruit')
-
-    // // styling button
-    // fruitButton.style.border = '1px solid #d34338'
-    // randomButton.style.border = '1px solid #686868'
-    // meatButton.style.border = '1px solid #686868'
-    // dessertButton.style.border = '1px solid #686868'
-
     randomFetchButtonColor(fruitButton, dessertButton, meatButton, randomButton)
     fetchingMeals('fruit', 'fruit')
 })
 
-// --------------------------------------------------------------------------------------------------
 
 // api call for meal
 const searchButton = document.querySelector('.search-btn')
@@ -216,30 +146,14 @@ searchButton.addEventListener('click', () => {
 
     // fetching and displaying meals on the page
     fetchingMeals(searchStr, type)
-    
-    // waiting a second for fetch to happen and then establishing favorites option for every meal
-    //setTimeout(addingFavorites, 2000) 
-    
-    // OVDE URADI ASYNC/AWAIT !!!!!!!
 })
-
-//addingFavorites()
-
 
 
 // MENU AND PAGES( SECTIONS ) TOGGLE -----------------------------------------------------------------
-
-
 // pages
 const frontpage = document.querySelector("#frontpage")
 const homepage = document.querySelector('#homepage')
 const userpage = document.querySelector('#userpage')
-
-// removing bottom nav when frontpage is shown -- UNCOMMENT THIS LATER !!!
-// const menu = document.querySelector('.menu')
-// if (frontpage.style.display = 'block') {
-//     menu.style.display = 'none'
-// }
 
 userpage.style.display='none'
 
@@ -250,21 +164,11 @@ document.querySelector('#mealpage').style.display = 'none'
 homepage.style.display = 'none'
 frontpage.style.display = 'block'
 
-// sessionStorage.setItem('frontpage', 'false')
-
 frontpageBtn.addEventListener('click', () => {
-
-    // sessionStorage.setItem('frontpage', 'true')
-
     setTimeout(() => {
         frontpage.style.display = "none"
         homepage.style.display = ''
-
-        // displlaying menu only when homepage is shown - UNCOMMENT THIS LATER !!!
-        // menu.style.display = 'flex'
     }, 100)
-
-    // console.log(sessionStorage.getItem('frontpage'))
 })
 
 
@@ -288,13 +192,6 @@ homeButton.addEventListener('click', () => {
 const homeButtonD = document.querySelector('.home-desktop')
 
 homeButtonD.addEventListener('click', () => {
-    // menu styling
-    // homeButtonD.style.color = '#df8723'
-    // homeButtonD.style.backgroundColor = '#fff'
-
-    // userButtonD.style.color = '#df8723'
-    // userButtonD.style.backgroundColor = 'transparent'
-
     // page toggle
     homepage.style.display = 'block'
     userpage.style.display = 'none'
@@ -310,7 +207,6 @@ userButton.addEventListener('click', () => {
     // // menu styling
     userButton.style.color = '#000'
     userButton.style.backgroundColor = '#fdc33b'
-    // favoritesButton.style.borderRadius = '10px'
 
     homeButton.style.color = '#686868'
     homeButton.style.backgroundColor = 'transparent'
@@ -320,9 +216,7 @@ userButton.addEventListener('click', () => {
     homepage.style.display = 'none'
 
     // getting all the things from localStorage to userpage
-    // UNCOMMENTUJ OVO POSLE !!!!!
     fetchingFavorites()
-    // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
 const userButtonD = document.querySelector('.user-desktop')
@@ -337,19 +231,4 @@ userButtonD.addEventListener('click', () => {
 
     // getting all the things from localStorage to userpage
     fetchingFavorites()
-})
-
-// MENU AND PAGES( SECTIONS ) TOGGLE --------------------------------------------------------------------------------------
-
-// EVENT LISTENERS FOR MEALS - getting data-id and fetching for that specific meal
-// LEARN MORE BUTTON ON EVERY MEAL
-
-// this is not needed, delete later !!
-
-const learnMoreBtns = document.querySelectorAll('.learn-more')
-console.log(learnMoreBtns)
-learnMoreBtns.forEach(el => {
-    el.addEventListener('click', (e) => {
-        console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
-    })
 })

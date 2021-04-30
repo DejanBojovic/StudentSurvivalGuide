@@ -20,40 +20,15 @@ $time: .2s;
     @media (min-height: $height) and (min-width: $width) { @content; }
 }
 
-
 @mixin for-height-mobile($size) {
     @media (min-height: $size) and (max-width: 599px) { @content; }
 }
 
-// @mixin phone-only {
-//     @media (max-width: 599px) { @content; }
-// }
-
-// @mixin tablet-portrait-up {
-//     @media (min-width: 600px) { @content; }
-// }
-
-// @mixin tablet-landscape-up {
-//     @media (min-width: 900px) { @content; }
-// }
-
-// @mixin desktop-up {
-//     @media (min-width: 1200px) { @content; }
-// }
-
-// @mixin big-desktop-up {
-//     @media (min-width: 1800px) { @content; }
-// }
-
 /* reset */
 * {
-
-    // zezalica
-
     padding: 0;
     margin: 0;
     box-sizing: border-box !important;
-    // border: 1px solid #f00 !important;
 
     li {
         list-style: none;
@@ -72,34 +47,13 @@ $time: .2s;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        // overflow-x: hidden !important;
-        // max-width: 260px;
-        // margin: 0;
-
-        // overflow-x: hidden !important;
-
-
-        // border: 1px solid purple !important;
 
     }
-
-    // html {
-    //     width: 100vw;
-    //     height: 100vh;
-    // }
 
     html, body {
         max-width: 100vw !important;
         max-height: 100vh !important;
-        // overflow-x: hidden !important;
-        // overflow-y: hidden !important;
     }
-
-    // body {
-    //     background-color: red;
-    //     margin: 0 !important;
-    // }
         
     .menu {
         z-index: 5;
@@ -109,12 +63,7 @@ $time: .2s;
         right: 0;
         bottom: 0;
 
-        // width: 100vw;
-        // background-color: #fff;
-
-        // background-color: $colorButton;
         padding: 40px;
-        // width: 250px;
         height: 60px;
 
         display: flex;
@@ -143,16 +92,6 @@ $time: .2s;
         @include for-both(768px, 1366px) {
             display: none;
         }
-
-        // @include for-both(601px, 962px) {
-        //     bottom: -5px;
-        // }
-
-        // border-top-left-radius: 18px;
-        // border-top-right-radius: 18px;
-
-        // width: 100%;
-        // background-color: $colorButton;
 
         .home {
             padding: 15px 18px;
@@ -229,14 +168,6 @@ $time: .2s;
     }
 
 }
-
-// html {
-//     overflow: hidden !important;
-// }
-
-// body {
-//     height: 100% !important;
-// }
 
 // imports
 @import "./_frontpage";

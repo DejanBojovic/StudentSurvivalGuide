@@ -3,7 +3,6 @@ import { addingNote, deleteNoteBtn, fetchingFavorites, removingPreviousMeals } f
 const favDiv = document.querySelector('.favorites')
 const notesDiv = document.querySelector('.notes')
 
-// favDiv.style.display = 'block'
 notesDiv.style.display = 'none'
 
 // bottom menu for inner sections change
@@ -37,8 +36,6 @@ if (screen.width >= 900) {
     closeUserpage.classList.add('fa-angle-left')
 }
 
-// closeButton defined in script.js
-
 closeUserpage.addEventListener('click', () => {
     if (screen.width >= 900) {
         document.querySelector('.userpage-menu').style.width = '0%'
@@ -54,13 +51,6 @@ const userpage = document.querySelector('#userpage')
 
 const homeButtonU = document.querySelector('.home-desktop-u')
 homeButtonU.addEventListener('click', () => {
-    // menu styling
-    // homeButtonU.style.color = '#df8723'
-    // homeButtonU.style.backgroundColor = '#fff'
-
-    // userButtonU.style.color = '#df8723'
-    // userButtonU.style.backgroundColor = 'transparent'
-
     // page toggle
     homepage.style.display = 'block'
     userpage.style.display = 'none'
@@ -72,23 +62,13 @@ userButtonU.addEventListener('click', () => {
     // removing the red dot
     document.querySelector('.favorites-dot').style.display = "none"
 
-    // menu styling
-    // userButtonU.style.color = '#df8723'
-    // userButtonU.style.backgroundColor = '#fff'
-    // // favoritesButton.style.borderRadius = '10px'
-
-    // homeButtonU.style.color = '#df8723'
-    // homeButtonU.style.backgroundColor = 'transparent'
-
     // page toggle
     userpage.style.display = 'block'
     homepage.style.display = 'none'
 
     // getting all the things from localStorage to userpage
-    // UNCOMMENTUJ OVO POSLE !!!!!
     removingPreviousMeals()
     fetchingFavorites()
-    // FIX THIS SO THAT IT DOESNT DOUBLE
 })
 
 const userpageFav = document.querySelector('.userpage-fav')
@@ -111,11 +91,7 @@ userpageFav.addEventListener('click', () => {
         favDiv.style.display = 'block'
         notesDiv.style.display = 'none'
     }
-    // favDiv.style.display = 'block'
-    // notesDiv.style.display = 'none'
 })
-
-// STILIZUJ HEADLINE !!!
 
 userpageNotes.addEventListener('click', () => {
     // changing style of the buttons
@@ -135,8 +111,6 @@ userpageNotes.addEventListener('click', () => {
 const notesInner = document.querySelector('.notes-inner')
 const notes = JSON.parse(localStorage.getItem('notes'))
 
-console.log(notesInner.children.length)
-
 if(notesInner.children.length === 0) {
     notes.forEach(el => {
         notesInner.insertAdjacentHTML('beforeend', addingNote(el.value, el.id))
@@ -145,8 +119,6 @@ if(notesInner.children.length === 0) {
 }
 
 // DISPLAYING ALL THE FAVORITE MEALS FROM LOCALSTORAGE --------------- 
-// fetchingFavorites()
-
 // back button for meals
 const backButtonUserpage = document.querySelector('.userpage-back')
 backButtonUserpage.addEventListener('click', () => {
@@ -154,10 +126,6 @@ backButtonUserpage.addEventListener('click', () => {
 })
 
 // NOTES SECTION
-
-// div that contains all the notes
-// const notesInner = document.querySelector('.notes-inner')
-
 // note submit button
 const noteSubmit = document.querySelector('.note-submit')
 noteSubmit.addEventListener('click', () => {

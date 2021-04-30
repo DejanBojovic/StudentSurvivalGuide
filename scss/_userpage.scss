@@ -1,21 +1,17 @@
 #userpage {
     height: 100vh;
     width: 100vw;
-    // padding: 20px;
     background-color: $colorBg;
     color: $gray;
 
     // this prevented overflow
     overflow: hidden !important;
 
-    //border: 1px solid #f00 !important;
-
 
     .header {
         width: 100%;
         height: 20%;
         background-color: $colorPrimary;
-        // background-color: $colorPrimary;
 
         display: flex;
         align-items: center;
@@ -42,10 +38,7 @@
             width: 100%;
             position: fixed;
             z-index: 10;
-            // top: 0;
-            // right: 0;
             bottom: 0;
-            // background-color: #350707;
             background-color: $colorPrimary;
             color: #fff;
             overflow-x: hidden;
@@ -78,7 +71,6 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                // padding: 0 20px 0 20px;
 
                 div {
                     height: 80px;
@@ -128,26 +120,13 @@
             }
 
             .menu-desktop-u {
-                // z-index: 5;
-                // margin: 0 auto;
-                // position: fixed;
-                // left: 0;
-                // right: 0;
-                // bottom: 0;
-        
-                // width: 100vw;
-                // background-color: #fff;
-        
-                // background-color: $colorButton;
                 padding: 40px;
-                // width: 250px;
                 height: 60px;
         
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                // border: 2px solid $colorSP;
                 border-radius: 22px;
                 
                 display: none;
@@ -155,36 +134,6 @@
                 @include for-width(900px) {
                     display: flex;
                 }
-        
-                // @include for-both(1024px, 768px) {
-                //     bottom: 20px;
-                //     width: 250px;
-                //     justify-content: space-evenly;
-                // }
-        
-                // @include for-both(800px, 1280px) {
-                //     bottom: 10px;
-                // }
-        
-                // @include for-both(768px, 1366px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
-
-                // @include for-both(720px, 1280px) {
-                //     display: flex;
-                //     padding: 50px;
-                // }
-        
-                // @include for-both(601px, 962px) {
-                //     bottom: -5px;
-                // }
-        
-                // border-top-left-radius: 18px;
-                // border-top-right-radius: 18px;
-        
-                // width: 100%;
-                // background-color: $colorButton;
         
                 .home-desktop-u {
                     height: 80px;
@@ -268,8 +217,6 @@
 
     .main {
         z-index: 2;
-
-        // height: 100%;
         width: 100%;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
@@ -280,23 +227,10 @@
 
         padding-top: 20px;
 
-
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: flex-start;
-        // align-items: center;
-
         .main-nav {
-            // margin: 0 auto;
-            // background-color: red;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
-            // @include for-width(1000px) {
-            //     margin-bottom: 20px;
-            // }
 
             .headline {
                 text-transform: lowercase;
@@ -308,13 +242,6 @@
                 }
             }
         }
-
-
-
-        // .favorites,
-        // .notes {
-        //     display: none;
-        // }
         
         .main-inner {
             height: 80vh;
@@ -324,25 +251,12 @@
                 height: 74vh;
             }
 
-            // display: block;
-
             .favorites {
                 width: 100%;
                 height: 100%;
-                // background-color: red;
 
                 overflow: auto;
                 white-space: nowrap;
-
-                // display: flex !important;
-                // flex-wrap: wrap !important;
-                // justify-content: space-evenly !important;
-                // align-items: center !important;
-
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
-                // flex-wrap: wrap;
 
                 @include for-width(900px) {
 
@@ -353,8 +267,6 @@
 
                     overflow: none;
                     white-space: normal;
-
-                    // height: 70vh;
                 }
 
                 // za chrome
@@ -411,11 +323,9 @@
                     
                     .meal-inner-f {
                         height: 100%;
-                        // overflow: hidden;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        // justify-content: space-evenly;
         
                         position: relative;
         
@@ -439,7 +349,6 @@
                             p {
                                 text-align: left;
                                 color: $colorSecondary;
-                                // word-break: break-all;
                                 white-space: normal;
                             }
         
@@ -451,13 +360,9 @@
                                 background-color: #fff;
            
                                 font-size: 30px;
-                                // padding-left: 20px;
                                 margin-left: 10px;
                                 border-left: 1px solid $colorPrimary;
                                 border-right: 1px solid $colorPrimary;
-                                // position: absolute;
-                                // top: 10px;
-                                // right: 10px;
         
                                 @include for-both(1024px, 768px) {
                                     font-size: 35px;
@@ -492,12 +397,8 @@
             }
     
             .notes {
-                // uncomment this when you are done with styling
-                // display: none;
-                // background-color: #fff;
                 height: 100%;
                 width: 100%;
-                // margin: 0 auto;
 
                 @include for-width(950px) {
                     width: 70%;
@@ -511,7 +412,6 @@
                 .notes-input {
                     width: 100%;
                     height: 100px;
-                    // background-color: red;
 
                     display: flex;
                     align-items: center;
@@ -537,10 +437,6 @@
                             outline: none;
                             border-bottom: 2px solid $colorSP;
                         }
-
-                        // &::placeholder {
-                        //     color: $gray;
-                        // }
                     }
 
                     i {

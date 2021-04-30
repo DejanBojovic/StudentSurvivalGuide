@@ -180,8 +180,6 @@
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  /* padding: 20px; */
-  /* background-color: #fffcd5; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,11 +195,8 @@
 
 #frontpage .frontpage-inner {
   height: 100%;
-  /* background-color: #ffeded; */
   background-color: #f3f7fc;
-  /* height: 100vh; */
   padding: 40px;
-  /* margin: 20px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,7 +324,6 @@
   font-size: 20px;
   padding: 20px 30px;
   color: white;
-  /* background-color: #fd3232; */
   background-color: #d34338;
   font-weight: 400;
   border: 2px solid #d34338;
@@ -343,10 +337,7 @@
 
 #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:hover, #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:active {
   cursor: pointer;
-  /* color: #d34338; */
   background-color: #d34338;
-  /* color: #fd3232;
-                        background-color: #fff; */
 }
 
 #homepage {
