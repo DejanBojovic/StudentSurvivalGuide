@@ -20,6 +20,10 @@ $time: .2s;
     @media (min-height: $height) and (min-width: $width) { @content; }
 }
 
+@mixin for-older-mobile($width) {
+    @media (max-width: $width) { @content; }
+}
+
 @mixin for-height-mobile($size) {
     @media (min-height: $size) and (max-width: 599px) { @content; }
 }

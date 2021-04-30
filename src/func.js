@@ -86,8 +86,8 @@ export default function fetchingMeals(searchItem, type) {
 }
 
 export function showMealpage(m) {
-    let ingredients = ''
 
+    let ingredients = ''
     m.extendedIngredients.forEach(el => {
         ingredients += 
         `<li>
@@ -96,10 +96,14 @@ export function showMealpage(m) {
         </li>`
     })
 
-    let urlSafe = m.image
+    let imgFixed = `<img src=${m.image} alt=${m.title}>`
+    if(m.image === undefined) {
+        imgFixed = `<img class="height-fix" src="../images/frontpage/meal.jpg" alt=${m.title}>`
+    }
 
-    if(urlSafe === undefined) {
-        urlSafe = '../images/frontpage/meal.jpg'
+    let instructionSafe = m.instructions
+    if(m.instructions === null || m.instructions === '') {
+        instructionSafe = 'No instructions Chef. You can do it!'
     }
 
     const favorites = JSON.parse(localStorage.getItem('favorites'))
@@ -113,7 +117,7 @@ export function showMealpage(m) {
     return `
     <div class="meal-container" data-id=${m.id}>
         <div class="mealpage-header">
-            <img src=${urlSafe} alt=${m.title}>
+            ${imgFixed}
             
             <div class="icons">
                 <i class="mealpage-back fas fa-angle-left"></i>
@@ -133,7 +137,7 @@ export function showMealpage(m) {
                 </ul>
             </div>
 
-            <div class="instructions">${m.instructions}</div>
+            <div class="instructions">${instructionSafe}</div>
 
             <a href="https://www.youtube.com/results?search_query=${m.title}" target="_blank">
                 <p>Find a video</p>
@@ -370,4 +374,29 @@ export function randomFetchButtonColor(searched, notF, notS, notT) {
     notF.style.border = '1px solid #686868'
     notS.style.border = '1px solid #686868'
     notT.style.border = '1px solid #686868'
+}
+
+export function search() {
+    const searchInput = document.querySelector("input[type='search']")
+    const searchStr = searchInput.value
+
+    if(searchStr === "") {
+        return
+    }
+
+    removingPreviousMeals('.meal')
+
+    const inputPlaceholder = document.querySelector("input[type='search']").placeholder
+
+    let type = null
+    if(inputPlaceholder === 'Egg, bacon..') {
+        type = 'findByIngredients?ingredients'
+    } else if (inputPlaceholder === 'Italian, indian..') {
+        type = 'complexSearch?cuisine'
+    } else {
+        type = 'complexSearch?diet'
+    }
+
+    // fetching and displaying meals on the page
+    fetchingMeals(searchStr, type)
 }

@@ -53,7 +53,13 @@
                 @include for-width(900px) {
                     height: 50%;
                 }
+
+                
         
+            }
+
+            .height-fix {
+                height: 250px;
             }
         
             .icons {

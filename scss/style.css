@@ -1349,6 +1349,10 @@
   }
 }
 
+#mealpage .meal-container .mealpage-header .height-fix {
+  height: 250px;
+}
+
 #mealpage .meal-container .mealpage-header .icons {
   width: 85%;
   margin: 15px auto;
