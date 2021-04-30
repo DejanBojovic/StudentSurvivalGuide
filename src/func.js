@@ -148,7 +148,6 @@ export function showMealpage(m) {
 }
 
 export function mealpageEvents() {
-    console.log('back to jaja')
     const backButton = document.querySelector('.mealpage-back')
 
     // pages
@@ -183,7 +182,6 @@ export function fetchForMealpage(id) {
     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         const mealContainer = document.querySelector('#mealpage')
         mealContainer.insertAdjacentHTML('beforeend', showMealpage(data))
 
@@ -340,7 +338,6 @@ export function deleteNoteBtn() {
 
             // getting the id of the element
             const noteID = parseInt(e.target.parentNode.getAttribute('data-id'))
-            // console.log(noteID)
 
             // removing note from localStorage
             for(let i = 0; i < notes.length; i++) {
@@ -354,7 +351,6 @@ export function deleteNoteBtn() {
             localStorage.setItem('notes', JSON.stringify(notes))
 
             // removing note from the page
-            // console.log(e.target.parentNode)
             e.target.parentNode.remove()
 
         })

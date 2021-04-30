@@ -125,7 +125,6 @@ const searchButton = document.querySelector('.search-btn')
 
 searchButton.addEventListener('click', () => {
     const searchStr = searchInput.value
-    console.log(searchStr)
 
     if(searchStr === "") {
         return
