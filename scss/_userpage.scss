@@ -86,6 +86,10 @@
 
                     transition: .3s;
 
+                    @include for-older-mobile(350px) {
+                        width: 280px;
+                    }
+
                     @include for-both(1080px, 1920px) {
                         width: 400px;
                         height: 120px;
@@ -258,6 +262,10 @@
                 overflow: auto;
                 white-space: nowrap;
 
+                @include for-older-mobile-height(600px) {
+                    height: 80%;
+                }
+
                 @include for-width(900px) {
 
                     display: flex;
@@ -287,6 +295,10 @@
                     width: 80%;
                     height: 380px;
                     overflow: hidden;
+
+                    @include for-older-mobile-height(600px) {
+                        height: 300px;
+                    }
         
                     @include for-both(601px, 962px) {
                         display: inline-block;
@@ -458,6 +470,10 @@
 
                     overflow: auto;
                     white-space: nowrap;
+
+                    @include for-older-mobile-height(600px) {
+                        height: 50%;
+                    }
 
                     @include for-width(950px) {
                         font-size: 25px;

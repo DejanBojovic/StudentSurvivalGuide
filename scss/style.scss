@@ -24,6 +24,10 @@ $time: .2s;
     @media (max-width: $width) { @content; }
 }
 
+@mixin for-older-mobile-height($height) {
+    @media (max-height: $height) { @content; }
+}
+
 @mixin for-height-mobile($size) {
     @media (min-height: $size) and (max-width: 599px) { @content; }
 }

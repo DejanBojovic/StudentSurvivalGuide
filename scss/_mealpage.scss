@@ -132,6 +132,10 @@
             &::-webkit-scrollbar {
                 display: none;
             }
+
+            @include for-older-mobile-height(600px) {
+                height: 35%;
+            }
     
             @include for-width(750px) {
                 width: 80%;

@@ -218,6 +218,12 @@
   text-align: center;
 }
 
+@media (max-height: 600px) {
+  #frontpage .frontpage-inner .fp-inner-headline {
+    margin-bottom: 70px;
+  }
+}
+
 @media (min-width: 1400px) {
   #frontpage .frontpage-inner .fp-inner-headline {
     margin-bottom: 0px;
@@ -293,6 +299,14 @@
   top: -80px;
 }
 
+@media (max-height: 600px) {
+  #frontpage .frontpage-inner .fp-inner-main .fpi-main-img {
+    height: 120px;
+    width: 120px;
+    top: -60px;
+  }
+}
+
 #frontpage .frontpage-inner .fp-inner-main .fpi-main-ul {
   font-size: 18px;
   padding: 0 15px;
@@ -300,6 +314,13 @@
   margin-bottom: 10px;
   line-height: 1.7;
   text-align: left;
+}
+
+@media (max-height: 600px) {
+  #frontpage .frontpage-inner .fp-inner-main .fpi-main-ul {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
 }
 
 #frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li {
@@ -314,6 +335,12 @@
   border-radius: 50%;
   background-color: #d34338;
   font-weight: 500;
+}
+
+@media (max-height: 600px) {
+  #frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li span {
+    padding: 5px 10px;
+  }
 }
 
 #frontpage .frontpage-inner .fp-inner-main .fpi-main-ul li:last-child {
@@ -333,6 +360,15 @@
   bottom: -20px;
   -webkit-transition: .1s;
   transition: .1s;
+}
+
+@media (max-height: 600px) {
+  #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    bottom: -10px;
+  }
 }
 
 #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:hover, #frontpage .frontpage-inner .fp-inner-main .fpi-main-btn:active {
@@ -506,6 +542,12 @@
   padding: 10px;
   height: 40px;
   border-radius: 0 18px 18px 0;
+}
+
+@media (max-width: 350px) {
+  #homepage .search .searchbar .searchbar-main input {
+    width: 70%;
+  }
 }
 
 @media (min-width: 500px) {
@@ -812,6 +854,12 @@
   transition: .3s;
 }
 
+@media (max-width: 350px) {
+  #homepage .search .search-settings-menu .ssm-inner div {
+    width: 280px;
+  }
+}
+
 @media (min-height: 1024px) and (min-width: 768px) {
   #homepage .search .search-settings-menu .ssm-inner div {
     height: 120px;
@@ -878,6 +926,12 @@
           justify-content: space-between;
 }
 
+@media (max-width: 350px) {
+  #homepage .meal-sections {
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 400px) {
   #homepage .meal-sections {
     font-size: 18px;
@@ -916,6 +970,13 @@
   padding: 5px 8px;
   border: 1px solid #686868;
   border-radius: 10px;
+}
+
+@media (max-width: 350px) {
+  #homepage .meal-sections div {
+    padding: 3px 5px;
+    border-radius: 8px;
+  }
 }
 
 @media (min-width: 400px) {
@@ -998,6 +1059,12 @@
   scrollbar-width: none;
 }
 
+@media (max-height: 600px) {
+  #homepage .results {
+    height: 55vh;
+  }
+}
+
 @media (min-width: 600px) {
   #homepage .results {
     display: -webkit-box;
@@ -1074,6 +1141,12 @@
   height: 380px;
   overflow: hidden;
   z-index: 2;
+}
+
+@media (max-height: 600px) {
+  #homepage .results .meal {
+    height: 300px;
+  }
 }
 
 @media (min-height: 601px) and (min-width: 962px) {
@@ -1438,6 +1511,12 @@
   display: none;
 }
 
+@media (max-height: 600px) {
+  #mealpage .meal-container .mealpage-main {
+    height: 35%;
+  }
+}
+
 @media (min-width: 750px) {
   #mealpage .meal-container .mealpage-main {
     width: 80%;
@@ -1681,6 +1760,12 @@
   transition: .3s;
 }
 
+@media (max-width: 350px) {
+  #userpage .header .userpage-menu .userpage-inner div {
+    width: 280px;
+  }
+}
+
 @media (min-height: 1080px) and (min-width: 1920px) {
   #userpage .header .userpage-menu .userpage-inner div {
     width: 400px;
@@ -1881,6 +1966,12 @@
   scrollbar-width: none;
 }
 
+@media (max-height: 600px) {
+  #userpage .main .main-inner .favorites {
+    height: 80%;
+  }
+}
+
 @media (min-width: 900px) {
   #userpage .main .main-inner .favorites {
     display: -webkit-box;
@@ -1913,6 +2004,12 @@
   width: 80%;
   height: 380px;
   overflow: hidden;
+}
+
+@media (max-height: 600px) {
+  #userpage .main .main-inner .favorites .meal-f {
+    height: 300px;
+  }
 }
 
 @media (min-height: 601px) and (min-width: 962px) {
@@ -2126,6 +2223,12 @@
   background-color: #fff;
   overflow: auto;
   white-space: nowrap;
+}
+
+@media (max-height: 600px) {
+  #userpage .main .main-inner .notes .notes-inner {
+    height: 50%;
+  }
 }
 
 @media (min-width: 950px) {

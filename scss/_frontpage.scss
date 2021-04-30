@@ -27,6 +27,10 @@
             margin-bottom: 100px;
             text-align: center;
 
+            @include for-older-mobile-height(600px) {
+                margin-bottom: 70px;
+            }
+
             @include for-width(1400px) {
                 margin-bottom: 0px;
             }
@@ -90,6 +94,12 @@
                 background-size: cover;
                 position: relative;
                 top: -80px;
+
+                @include for-older-mobile-height(600px) {
+                    height: 120px;
+                    width: 120px;
+                    top: -60px;
+                }
             }
             
             .fpi-main-ul {
@@ -99,6 +109,11 @@
                 margin-bottom: 10px;
                 line-height: 1.7;
                 text-align: left;
+
+                @include for-older-mobile-height(600px) {
+                    font-size: 16px;
+                    margin-bottom: 0px;
+                }      
 
                 li {
                     margin-bottom: 15px;
@@ -111,6 +126,10 @@
                         border-radius: 50%;
                         background-color: $colorButton;
                         font-weight: 500;
+
+                        @include for-older-mobile-height(600px) {
+                            padding: 5px 10px;
+                        } 
                     }
                 }
                 
@@ -131,6 +150,13 @@
                 position: relative;
                 bottom: -20px;
                 transition: .1s;
+
+                @include for-older-mobile-height(600px) {
+                    font-size: 15px;
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    bottom: -10px;
+                }
 
                 &:hover,
                 &:active {
