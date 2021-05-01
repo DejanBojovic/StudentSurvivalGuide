@@ -214,3 +214,14 @@ userButtonD.addEventListener('click', () => {
     // getting all the things from localStorage to userpage
     fetchingFavorites()
 })
+
+if(window.screen.width <= 900) {
+    const input = document.querySelector("input[type='search']")
+    input.addEventListener('focus', () => {
+        document.querySelector('.menu').style.display = 'none'
+    })
+
+    input.addEventListener('focusout', () => {
+        document.querySelector('.menu').style.display = 'flex'
+    })
+}
