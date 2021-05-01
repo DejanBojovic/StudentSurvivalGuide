@@ -87,9 +87,6 @@ searchCuisine.addEventListener('click', () => {
 })
 
 // SECTIONS random/meat/vegeterian/fruit ----------------------------------------------------------
-// random fetch for main page
-
-
 // settings event listeners for meal sections = random/meat/vegetables/fruit
 const randomButton = document.querySelector('.random')
 const meatButton = document.querySelector('.meat')
