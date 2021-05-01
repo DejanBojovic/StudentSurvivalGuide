@@ -124,55 +124,12 @@ fruitButton.addEventListener('click', () => {
 const searchButton = document.querySelector('.search-btn')
 
 searchButton.addEventListener('click', () => {
-    // const searchStr = searchInput.value
-
-    // if(searchStr === "") {
-    //     return
-    // }
-
-    // removingPreviousMeals('.meal')
-
-    // const inputPlaceholder = document.querySelector("input[type='search']").placeholder
-
-    // let type = null
-    // if(inputPlaceholder === 'Egg, bacon..') {
-    //     type = 'findByIngredients?ingredients'
-    // } else if (inputPlaceholder === 'Italian, indian..') {
-    //     type = 'complexSearch?cuisine'
-    // } else {
-    //     type = 'complexSearch?diet'
-    // }
-
-    // // fetching and displaying meals on the page
-    // fetchingMeals(searchStr, type)
     search()
 })
 
 window.addEventListener('keypress', (e) => {
-    console.log(e.key)
-    if(e.key === 'Enter') {
+    if(e.key === 'Enter' && homepage.style.display === 'block') {
         search()
-        // const searchStr = searchInput.value
-
-        // if(searchStr === "") {
-        //     return
-        // }
-
-        // removingPreviousMeals('.meal')
-
-        // const inputPlaceholder = document.querySelector("input[type='search']").placeholder
-
-        // let type = null
-        // if(inputPlaceholder === 'Egg, bacon..') {
-        //     type = 'findByIngredients?ingredients'
-        // } else if (inputPlaceholder === 'Italian, indian..') {
-        //     type = 'complexSearch?cuisine'
-        // } else {
-        //     type = 'complexSearch?diet'
-        // }
-
-        // // fetching and displaying meals on the page
-        // fetchingMeals(searchStr, type)
     }
 })
 
