@@ -812,6 +812,10 @@
   font-size: 50px;
 }
 
+#homepage .search .search-settings-menu .close:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 600px) {
   #homepage .search .search-settings-menu .close {
     font-size: 80px;
@@ -970,6 +974,10 @@
   padding: 5px 8px;
   border: 1px solid #686868;
   border-radius: 10px;
+}
+
+#homepage .meal-sections div:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 350px) {
@@ -1669,6 +1677,10 @@
   bottom: 20px;
 }
 
+#userpage .header .main-nav-inner:hover {
+  cursor: pointer;
+}
+
 #userpage .header .main-nav-inner i {
   font-size: 30px;
 }
@@ -1710,6 +1722,10 @@
 #userpage .header .userpage-menu .close-userpage {
   color: #df8723;
   font-size: 50px;
+}
+
+#userpage .header .userpage-menu .close-userpage:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
@@ -2215,6 +2231,10 @@
   color: #686868;
 }
 
+#userpage .main .main-inner .notes .notes-input i:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 950px) {
   #userpage .main .main-inner .notes .notes-input i {
     font-size: 50px;
@@ -2267,6 +2287,10 @@
 #userpage .main .main-inner .notes .notes-inner .note i {
   margin-left: 20px;
   font-size: 20px;
+}
+
+#userpage .main .main-inner .notes .notes-inner .note i:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 950px) {

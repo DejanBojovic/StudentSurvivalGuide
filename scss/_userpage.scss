@@ -22,6 +22,10 @@
             position: relative;
             bottom: 20px;
 
+            &:hover {
+                cursor: pointer;
+            }
+
             i {
                 font-size: 30px;
 
@@ -56,6 +60,10 @@
             .close-userpage {
                 color: $colorSP;
                 font-size: 50px;
+
+                &:hover {
+                    cursor: pointer;
+                }
 
                 @include for-width(600px) {
                     font-size: 80px;
@@ -459,6 +467,10 @@
                         font-size: 40px;
                         color: $gray;
 
+                        &:hover {
+                            cursor: pointer;
+                        }
+
                         @include for-width(950px) {
                             font-size: 50px;
                         }
@@ -499,6 +511,10 @@
                         i {
                             margin-left: 20px;
                             font-size: 20px;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
 
                             @include for-width(950px) {
                                 font-size: 25px;

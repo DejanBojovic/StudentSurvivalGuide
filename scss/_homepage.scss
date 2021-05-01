@@ -332,6 +332,10 @@
                 color: $colorSP;
                 font-size: 50px;
 
+                &:hover {
+                    cursor: pointer;
+                }
+
                 @include for-width(600px) {
                     font-size: 80px;
                 }
@@ -452,6 +456,10 @@
             padding: 5px 8px;
             border: 1px solid $gray;
             border-radius: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
 
             @include for-older-mobile(350px) {
                 padding: 3px 5px;

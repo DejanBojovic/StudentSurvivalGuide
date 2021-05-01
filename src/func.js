@@ -84,7 +84,7 @@ export function showMealpage(m) {
 
     let imgFixed = `<img src=${m.image} alt=${m.title}>`
     if(m.image === undefined) {
-        imgFixed = `<img class="height-fix" src="../images/frontpage/meal.jpg" alt=${m.title}>`
+        imgFixed = `<img class="height-fix" src="images/frontpage/meal.jpg" alt=${m.title}>`
     }
 
     let instructionSafe = m.instructions
