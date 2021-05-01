@@ -9,20 +9,6 @@ export function removingPreviousMeals(cl) {
 }
 
 export default function fetchingMeals(searchItem, type) {
-
-    // random
-    // `https://api.spoonacular.com/recipes/random?number=5&tags=${tag}apiKey=${apiKey}`
-    
-    // https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchStr}&number=50&apiKey=${apiKey}
-    // `https://api.spoonacular.com/recipes/complexSearch?cuisine=${searchStr}&number=50&apiKey=${apiKey}`
-    // `https://api.spoonacular.com/recipes/complexSearch?diet=${searchStr}&number=50&apiKey=${apiKey}`
-
-    // types
-    // complexSearch?cuisine
-    // complexSearch?diet
-    // findByIngredients?ingredients
-    // random
-
     let fetchString = null
 
     // separating fetch string into part where i fetch random meals
