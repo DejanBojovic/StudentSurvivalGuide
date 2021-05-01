@@ -259,7 +259,7 @@ export function mealCreation(url, title, id, cl='') {
     let urlSafe = url
 
     if(urlSafe === undefined) {
-        urlSafe = '../images/frontpage/meal.jpg'
+        urlSafe = 'images/frontpage/meal.jpg'
     }
 
     return `
