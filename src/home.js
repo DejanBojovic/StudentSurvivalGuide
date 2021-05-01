@@ -221,9 +221,11 @@ if(window.screen.width <= 900) {
         document.querySelector('.menu').style.display = 'none'
     })
 
-    setTimeout(() => {
-        input.addEventListener('focusout', () => {
+
+    input.addEventListener('focusout', () => {
+        setTimeout(() => {
             document.querySelector('.menu').style.display = 'flex'
-        })
-    }, 300)
+        }, 300)
+    })
+
 }
