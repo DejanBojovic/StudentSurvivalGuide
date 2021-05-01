@@ -161,8 +161,10 @@ if(window.screen.width <= 900) {
         document.querySelector('.menu').style.display = 'none'
     })
 
-    input.addEventListener('focusout', () => {
-        document.querySelector('.menu').style.display = 'flex'
-    })
+    setTimeout(() => {
+        input.addEventListener('focusout', () => {
+            document.querySelector('.menu').style.display = 'flex'
+        })
+    }, 300)
 }
 
