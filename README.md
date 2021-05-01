@@ -8,4 +8,6 @@ Postoji nekoliko kategorija za nasumicne recepte kao i kategorije za razlicitu p
 Aplikacija koristi localStorage kako bi sacuvala favorizovane recepte i poruke koje korisnik unosi.
 Za pretragu recepata se koristi Spoonacular API besplatana verzija koja je ogranicena na 150 request-ova dnevno.
 
-Za pokretanje ove aplikacije na lokalu najbolje je pokrenuti Live Server by Ritwick Dey koji sam i ja koristio.
+Za pokretanje ove aplikacije na lokalu najbolje je pokrenuti Live Server by Ritwick Dey u VS Code-u koji sam i ja koristio.
+
+S obzirom da studenti najvise koriste mobilne telefone i sam dizajn aplikacije je ka tome okrenut, iako je aplikacija pregledna na svim uredjajima.
