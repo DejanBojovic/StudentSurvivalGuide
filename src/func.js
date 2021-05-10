@@ -1,4 +1,5 @@
-const apiKey = '8a468c52f80948a697ca86daf1502bc3'
+const apiKey = '8e6a22647803415cb166f6beee901a24'
+
 
 // USED IN SCRIPT.JS
 export function removingPreviousMeals(cl) {
@@ -152,16 +153,20 @@ export function mealpageEvents() {
             mealpage.style.display = 'none'
             homepage.style.display = 'block'
 
-            const menu = document.querySelector('.menu')
-            menu.style.display = 'flex'
+            if(screen.width < 900) {
+                const menu = document.querySelector('.menu')
+                menu.style.display = 'flex'
+            }
         } else if (previousPage === 'userpage') {
             // fetchuje se opet za slucaj da je user izbrisao meal iz favorties
             fetchingFavorites()
             mealpage.style.display = 'none'
             userpage.style.display = 'block'
 
-            const menu = document.querySelector('.menu')
-            menu.style.display = 'flex'
+            if(screen.width < 900) {
+                const menu = document.querySelector('.menu')
+                menu.style.display = 'flex'
+            }
         }
 
         localStorage.setItem('previousPage', '')
