@@ -3,6 +3,8 @@ Cookbook for idiots
 
 https://dejanbojovic.github.io/StudentSurvivalGuide/
 
+Predstavljanje aplikacije - https://youtu.be/ZX3hZpHz6D4
+
 StudentSurvivalGuide je aplikacija za pretragu i cuvanje recepata koja studentima moze da olaksa pronalazenje jela za spremanje.
 Postoji nekoliko kategorija za nasumicne recepte kao i kategorije za razlicitu pretragu recepata.
 Aplikacija koristi localStorage kako bi sacuvala favorizovane recepte i poruke koje korisnik unosi.
