@@ -9,6 +9,7 @@ Aplikacija koristi localStorage kako bi sacuvala favorizovane recepte i poruke k
 Svaka stranica sa posebnim jelom sadrzi sliku jela, sastojke, proceduru spremanja kao i link ka youtube pretrazi za dati recept.
 
 Za pretragu recepata se koristi Spoonacular API besplatana verzija koja je ogranicena na 150 request-ova dnevno.
+Koriscenje API kljuca iziskuje registraciju na Spoonacular sajtu.
 
 Za pokretanje ove aplikacije na lokalu najbolje je pokrenuti Live Server by Ritwick Dey u VS Code-u koji sam i ja koristio.
 
